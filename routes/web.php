@@ -22,3 +22,6 @@ Route::get('/modul', function () {
 Route::get('/coba', function () {
     return view('coba');
 });
+Route::get('/quiz', function () {
+    return view('quiz');
+});

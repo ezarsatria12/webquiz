@@ -17,6 +17,9 @@
             <div class="max-w-lg">
                 <h1 class="text-xl tracking-wide text-white text-black lg:text-3xl lg:text-4xl">
                     Anak kecil</h1>
+                    <div class="backdrop-filter backdrop-blur-lg md:backdrop-filter-none ...">
+  <!-- ... -->
+</div>
                 <p class="mt-4 text-gray-300 text-gray-600">Lorem ipsum, dolor sit amet consectetur
                     adipisicing elit. Aut quia asperiores alias vero magnam recusandae adipisci ad vitae
                     laudantium quod rem voluptatem eos accusantium cumque.</p>
@@ -34,7 +37,6 @@
     </div>
 </div>
   </section>
-
 <section class="flex justify-center mx-auto container relative w-screen bg-contain bg-white">
   <div class="text-center w-3/4">
     <a class="font-extrabold text-4xl">Fitur utama kami</a>

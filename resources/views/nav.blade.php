@@ -8,12 +8,12 @@
 </head>
 <body>
     <nav class="bg-contain w-screen flex justify-between px-8 py-8 bg-white">
-  <div onclick="handleclick" class="text-2xl font-medium "><a href="/">
+  <div onclick="handleclick" class="text-3xl font-medium "><a href="/">
     <h3>LOGO</h3>
   </div>
   <div onclick="handleclick" class=" hidden sm:flex  content-center text-grey-fade m-auto text-center">
     <a class="mr-5 hover:text-green-111 focus:text-green-111 active:text-green-700" href="#about us">About Us</a>
-    <a class="mx-5 hover:text-green-111 focus:text-green-111 active:text-green-700" href="#Quiz">Quiz</a>
+    <a class="mx-5 hover:text-green-111 focus:text-green-111 active:text-green-700" href="/quiz">Quiz</a>
     <a class="mx-5 hover:text-green-111 focus:text-green-111 active:text-green-700" href="/modul">Modul</a>
     <a class="ml-5 hover:text-green-111 focus:text-green-111 active:text-green-700" href="/coba">Help</a>
   </div>

@@ -28,6 +28,9 @@ module.exports = {
         grey: {
           fade: 'rgb(153, 153, 153)',
         },
+        red: {
+          redFF6767 : 'rgb(255, 103, 103)'
+        },
     },
   },
   plugins: [],

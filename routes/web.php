@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use app\Http\Controllers;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\QuizController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +28,7 @@ Route::get('/coba', function () {
 Route::get('/quiz', function () {
     return view('quiz');
 });
+
+/*resource*/
+Route::resource('/user', UserController::class);
+Route::resource('/quiz', QuizController::class);

@@ -4,6 +4,7 @@ module.exports = {
     "./resources/**/*.blade.php",
     "./resources/**/*.js",
     "./resources/**/*.vue",
+    "./resources/**/*.css"
   ],
   // tailwind.config.js
   theme: {
@@ -31,6 +32,10 @@ module.exports = {
         red: {
           redFF6767 : 'rgb(255, 103, 103)'
         },
+    },
+    fontFamily:{
+      poppins:['poppins', 'sans-serif'],
+      inter:['inter', 'sans-serif'],
     },
   },
   plugins: [],

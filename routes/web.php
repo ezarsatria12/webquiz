@@ -17,7 +17,7 @@ use App\Http\Controllers\QuizController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home2');
 });
 Route::get('/modul', function () {
     return view('modul');

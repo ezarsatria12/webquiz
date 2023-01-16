@@ -15,11 +15,12 @@
     <div class="container px-6 py-4 mx-auto lg:flex lg:h-[800px] lg:py-20 ">
         <div class="flex flex-col justify-center items-center w-full lg:flex-row lg:w-1/2">
             <div class="max-w-lg">
-                <h1 class="text-xl tracking-wide text-white text-black lg:text-3xl lg:text-4xl">
-                    Anak kecil</h1>
-                    <div class="backdrop-filter backdrop-blur-lg md:backdrop-filter-none ...">
+                <p class="text-xl tracking-wide text-white text-black lg:text-3xl lg:text-4xl">
+                    Anak kecil</p>
+                    <br>
+                    <div class="backdrop-filter backdrop-blur-lg md:backdrop-filter-none bg-green-111">
   <!-- ... -->
-</div>
+                </div>
                 <p class="mt-4 text-gray-300 text-gray-600">Lorem ipsum, dolor sit amet consectetur
                     adipisicing elit. Aut quia asperiores alias vero magnam recusandae adipisci ad vitae
                     laudantium quod rem voluptatem eos accusantium cumque.</p>

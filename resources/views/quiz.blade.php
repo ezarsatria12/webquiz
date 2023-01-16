@@ -10,11 +10,10 @@
     @include('.nav')
 <main>
     <section>
-        <div class="container p-10 mx-auto flex flex-wrap sm:w-full justify-between  font-medium text-3xl">
+        <div class="container p-6 mx-auto flex flex-wrap sm:w-full justify-between  font-medium text-3xl">
             <h1>Daftar Quiz</h1>
             <a href="#"><img class="w-8 h-8 sm:bg-blend-color-burn hover:ring-1 hover:ring-green-111" src="Pictures/plus.png" alt="whatsapp"></a>
         </div>
-        
     </section>
 <section>
 <!-- ====== Cards Section Start -->

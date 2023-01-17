@@ -11,6 +11,37 @@
       <a class="ml-5 font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700" href="/coba">Help</a>
     </div>
     <!--button sign in-->
+    @guest
+      @if (Route::has('login'))
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+        </li>
+      @endif
+
+      @if (Route::has('register'))
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+        </li>
+      @endif
+    @else
+      <li class="nav-item dropdown">
+        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+          {{ Auth::user()->name }}
+        </a>
+
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{{ route('logout') }}"
+            onclick="event.preventDefault();
+              document.getElementById('logout-form').submit();">
+              {{ __('Logout') }}
+          </a>
+
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+          </form>
+        </div>
+      </li>
+    @endguest
     <button class="bg-green-111 px-4 py-2 rounded font-inter font-medium text-white ">
       Sign In
     </button>
@@ -25,7 +56,7 @@
               </svg>
             </div>
   
-            <div class="flex flex-col justify-between justify-center w-[20px] h-[10px] transform transition-all duration-300 origin-center overflow-hidden -translate-y-3">
+            <div class="flex flex-col justify-between w-[20px] h-[10px] transform transition-all duration-300 origin-center overflow-hidden -translate-y-3">
               <div class="bg-white h-[2px] w-7 transform transition-all duration-300 origin-left group-focus:translate-y-6"></div>
               <div class="bg-white h-[2px] w-7 transform transition-all duration-300 group-focus:translate-y-6 delay-75"></div>
               <div class="bg-white h-[2px] w-7 transform transition-all duration-300 origin-left group-focus:translate-y-6 delay-100"></div>

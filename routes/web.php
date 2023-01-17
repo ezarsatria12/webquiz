@@ -31,6 +31,9 @@ Route::get('/quiz', function () {
 Route::get('/app', function () {
     return view('app');
 });
+Route::get('/login', function () {
+    return view('authuser.login');
+});
 
 /*resource*/
 Route::resource('/user', UserController::class);

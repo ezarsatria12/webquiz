@@ -19,6 +19,9 @@ use App\Http\Controllers\QuizController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/app', function () {
+    return view('app');
+});
 
 /*resource*/
 Route::resource('/user', UserController::class);

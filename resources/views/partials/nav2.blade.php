@@ -10,7 +10,7 @@
             <a class="ml-5 font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700" href="/coba">Help</a>
         </div>
         <!--button sign in-->
-        <button class="bg-green-111 px-4 py-2 rounded font-inter font-medium text-white ">
+        <button class="bg-green-111 px-4 py-2 rounded font-inter font-medium text-white hover:shadow-lg">
             Sign In
         </button>
     </div>

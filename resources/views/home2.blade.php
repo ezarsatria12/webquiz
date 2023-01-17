@@ -50,7 +50,7 @@
                 <h1 class="text-3xl font-medium">Quiz</h1>
                 <p class="pb-[50px] sm:mt-4 font-poppins">Lorem ipsum, dolor sit amet consectetur
                     adipisicing elit. Aut quia asperiores alias vero magnam recusandae adipisci ad vitae
-                    laudantium quod rem voluptatem eos accusantium cumque.</p>
+                    laudantium quod rem voluptatem eos accusantium cumquea.</p>
             </div>
         </div>
 <!-- ... -->

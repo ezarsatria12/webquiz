@@ -28,6 +28,9 @@ Route::get('/coba', function () {
 Route::get('/quiz', function () {
     return view('quiz');
 });
+Route::get('/app', function () {
+    return view('app');
+});
 
 /*resource*/
 Route::resource('/user', UserController::class);

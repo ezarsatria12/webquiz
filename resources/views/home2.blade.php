@@ -6,7 +6,7 @@
     <div class="container px-6 py-4 mx-auto lg:flex lg:h-[800px] lg:py-20 ">
         <div class="flex flex-col justify-center items-center w-full lg:flex-row lg:w-1/2">
             <div class="max-w-lg">
-                <p class="text-xl tracking-wide text-white text-black lg:text-3xl lg:text-4xl font-inter font-semibold">
+                <p class="text-xl tracking-wide md:text-3xl lg:text-4xl font-inter font-semibold">
                     aasdasdl</p>
                     <br>
                     <div class="backdrop-filter backdrop-blur-lg md:backdrop-filter-none bg-green-111">

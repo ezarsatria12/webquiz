@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use app\Http\Controllers;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\QuizController;
+use App\Http\Controllers\AuthGoogleController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +20,7 @@ use App\Http\Controllers\QuizController;
 
 Route::get('/', function () {
     return view('home2');
-});
+})->name('home');
 Route::get('/modul', function () {
     return view('modul');
 });
@@ -34,6 +36,14 @@ Route::get('/app', function () {
 Route::get('/login', function () {
     return view('authuser.login');
 });
+
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'store']);
+
+Route::post('/logout', [LoginController::class, 'out']);
+
+Route::get('/auth/google/redirect', [AuthGoogleController::class, 'redirectToProvider']);
+Route::get('/auth/google/callback', [AuthGoogleController::class, 'handleProviderCallback']);
 
 /*resource*/
 Route::resource('/user', UserController::class);

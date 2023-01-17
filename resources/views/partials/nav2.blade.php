@@ -11,7 +11,7 @@
         </div>
         <!--button sign in-->
         <div class="hidden sm:flex content-end my-auto">
-            <button class="bg-green-111 px-4 py-2 rounded font-inter font-medium text-white ">
+            <button class="bg-green-111 px-4 py-2 rounded font-inter font-medium text-white  ">
                 Sign In
             </button>
         </div>

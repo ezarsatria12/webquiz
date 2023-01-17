@@ -1,7 +1,7 @@
-<footer class="footer relative h-fit w-full bg-green-111  text-white">
-    <div class="self-center mx-auto px-20 py-8 ">
+<footer class="footer relative h-fit w-screen bg-green-111  text-white">
+    <div class="self-center lg:px-20 lg:py-8 ">
         <div class="sm:flex sm:mt-8 justify-between">
-            <div class="mt-8 sm:mt-0 sm:w-full sm:px-8 flex flex-col  md:flex-row justify-between ">
+            <div class="mt-8 sm:mt-0 sm:w-full flex flex-col  md:flex-row justify-between ">
                 <div class="flex flex-col">
                     <a class="text-5xl font-medium hover:underline" href="#home">LOGO</a>
                     <h1 class="text-sm font-normal mt-2">Copyright</h1>

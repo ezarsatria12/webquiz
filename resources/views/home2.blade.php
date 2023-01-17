@@ -23,7 +23,7 @@
                 </div>
             </div>
         </div>
-        <div class="flex items-center self-center justify-center w-full mt-2 lg:h-96 lg:w-1/2">
+        <div class="flex  self-center  w-full mt-2 lg:h-96 lg:w-1/2">
             <img class="object-cover w-full max-w-2xllg:h-full"
                 src="pictures/gambar-hero.png" alt="anak-kecil">
         </div>
@@ -39,6 +39,16 @@
         Mauris ullamcorper nascetur suspendisse elit vulputate lorem dolor.
         Adipiscing orci et erat eu placerat commodo. Arcu in nec id nibh interdum.</a>
         </div>
+        <div class="max-w-sm rounded overflow-hidden shadow-lg">
+            <img class="w-full" src="/img/card-top.jpg" alt="Sunset in the mountains">
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
+              <p class="text-gray-700 text-base">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+              </p>
+            </div>
+        </div>
+    </div>
 </section>
 <!-- ... -->
 <section>

@@ -11,7 +11,7 @@
         </div>
             <div name="Title" class="h-fit w-full space-y-3 sm:w-1/2">
                 <p class="">Kategori</p>
-                <select id="Kategori" name="Kategori" required class="w-full sm:w-[630px] select-none text-black-primary
+                <select id="Kategori" name="Kategori" required class="w-full sm:w-full select-none text-black-primary
                 invalid:text-gray-400 focus:outline-green-111 rounded border-2 border-gray-200 box-border h-10 p-2 ">
                     <option value="" disabled selected>Pilih Kategori</option>
                     <option value="mudah">Mudah</option>

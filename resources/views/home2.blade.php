@@ -16,15 +16,15 @@
                     adipisicing elit. Aut quia asperiores alias vero magnam recusandae adipisci ad vitae
                     laudantium quod rem voluptatem eos accusantium cumque.</p>
                 <div class="mt-6">
-                    <a href="#"
-                        class="inline-block px-3 py-2 font-semibold text-center text-white transition-colors duration-200 transform 
+                    <button href="#"
+                        class="inline-block px-3 py-2 font-semibold text-center text-white transition-colors duration-200 transform
                         bg-green-111 rounded-md hover:text-green-700">
-                        Read More</a>
+                        Read More</button>
                 </div>
             </div>
         </div>
-        <div class="flex  self-center  w-full mt-2 lg:h-96 lg:w-1/2">
-            <img class="object-cover w-full max-w-2xllg:h-full"
+        <div class="flex  self-center  w-full mt-2 lg:w-1/2">
+            <img class="object-cover w-full max-w-2xl lg:h-full"
                 src="pictures/gambar-hero.png" alt="anak-kecil">
         </div>
     </div>
@@ -39,7 +39,10 @@
         Mauris ullamcorper nascetur suspendisse elit vulputate lorem dolor.
         Adipiscing orci et erat eu placerat commodo. Arcu in nec id nibh interdum.</a>
         </div>
+<<<<<<< HEAD
+=======
         
+>>>>>>> 8e17e4daf6b2370d9fb4c57080f7338f59f6c571
     </div>
 </section>
 <!-- ... -->

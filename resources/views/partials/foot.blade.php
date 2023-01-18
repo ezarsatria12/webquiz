@@ -1,5 +1,5 @@
 <footer class="footer relative h-fit w-screen bg-green-111  text-white">
-    <div class="self-center lg:px-20 lg:py-8 ">
+    <div class="self-center sm:px-20 lg:py-8 ">
         <div class="sm:flex sm:mt-8 justify-between">
             <div class="mt-8 sm:mt-0 sm:w-full flex flex-col  md:flex-row justify-between ">
                 <div class="flex flex-col">

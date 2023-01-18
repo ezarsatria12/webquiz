@@ -17,6 +17,9 @@ use App\Http\Controllers\QuizController;
 */
 
 Route::get('/', function () {
+    return view('modul2');
+});
+Route::get('/home', function () {
     return view('home2');
 });
 Route::get('/modul', function () {
@@ -34,7 +37,10 @@ Route::get('/app', function () {
 Route::get('/login', function () {
     return view('authuser.login');
 });
+Route::get('/addsoal', function () {
+    return view('addsoal');
+});
 
 /*resource*/
 Route::resource('/user', UserController::class);
-Route::resource('/quiz', QuizController::class);
+Route::resource('/quisz', QuizController::class);

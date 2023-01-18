@@ -23,7 +23,8 @@
             </form>
             <h2>or</h2>
             <div class="px-6 py-4">
-            <form action="/">
+              <a href="/auth/google/redirect">loginn gugel</a>
+            <form action="/auth/google/redirect">
               <button>
                 <img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png" alt="" class="w-8 h-8">
                 <h1>Login With Google</h1>

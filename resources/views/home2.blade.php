@@ -16,15 +16,15 @@
                     adipisicing elit. Aut quia asperiores alias vero magnam recusandae adipisci ad vitae
                     laudantium quod rem voluptatem eos accusantium cumque.</p>
                 <div class="mt-6">
-                    <a href="#"
-                        class="inline-block px-3 py-2 font-semibold text-center text-white transition-colors duration-200 transform 
+                    <button href="#"
+                        class="inline-block px-3 py-2 font-semibold text-center text-white transition-colors duration-200 transform
                         bg-green-111 rounded-md hover:text-green-700">
-                        Read More</a>
+                        Read More</button>
                 </div>
             </div>
         </div>
-        <div class="flex  self-center  w-full mt-2 lg:h-96 lg:w-1/2">
-            <img class="object-cover w-full max-w-2xllg:h-full"
+        <div class="flex  self-center  w-full mt-2 lg:w-1/2">
+            <img class="object-cover w-full max-w-2xl lg:h-full"
                 src="pictures/gambar-hero.png" alt="anak-kecil">
         </div>
     </div>
@@ -38,15 +38,6 @@
         Diam cursus lacus tincidunt fermentum pulvinar nunc sollicitudin scelerisque.
         Mauris ullamcorper nascetur suspendisse elit vulputate lorem dolor.
         Adipiscing orci et erat eu placerat commodo. Arcu in nec id nibh interdum.</a>
-        </div>
-        <div class="max-w-sm rounded overflow-hidden shadow-lg">
-            <img class="w-full" src="/img/card-top.jpg" alt="Sunset in the mountains">
-            <div class="px-6 py-4">
-              <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
-              <p class="text-gray-700 text-base">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-              </p>
-            </div>
         </div>
     </div>
 </section>

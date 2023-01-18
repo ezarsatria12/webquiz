@@ -18,6 +18,9 @@ module.exports = {
         '920px' : '',
         '460px' : '460px'
       },
+      boxShadow: {
+        'boxjawaban': '8px 11px 4px rgba(0, 0, 0, 0.25);',
+      },
       fontSize: {
       sm: ['14px', '20px'],
       hero: ['40px','40'],

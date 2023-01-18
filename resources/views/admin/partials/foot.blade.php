@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-<footer class="footer relative bottom-0 h-fit w-full sm:  bg-green-111 pt-1 text-white">
-    <div class="self-center mx-auto px-12 pb-12 ">
+<footer class="footer relative h-fit w-screen bg-green-111  text-white">
+    <div class="self-center lg:px-20 lg:py-8 ">
         <div class="sm:flex sm:mt-8 justify-between">
-            <div class="mt-8 sm:mt-0 sm:w-full sm:px-8 flex flex-col  md:flex-row justify-between ">
+            <div class="mt-8 sm:mt-0 sm:w-full flex flex-col  md:flex-row justify-between ">
                 <div class="flex flex-col">
                     <a class="text-5xl font-medium hover:underline" href="#home">LOGO</a>
                     <h1 class="text-sm font-normal mt-2">Copyright</h1>
@@ -36,6 +27,3 @@
         </div>
     </div>
 </footer>
-
-</body>
-</html>

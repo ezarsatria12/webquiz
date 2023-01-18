@@ -32,22 +32,14 @@
 </section>
 <section class="flex justify-center mx-auto container relative w-screen bg-contain bg-white">
 <div class="text-center w-3/4">
-    <a class="font-extrabold text-4xl">Fitur utama kami</a>
+    <a class="font-inter font-extrabold text-4xl">Fitur utama kami</a>
     <br></br>
     <a>Lorem ipsum dolor sit amet consectetur.
         Diam cursus lacus tincidunt fermentum pulvinar nunc sollicitudin scelerisque.
         Mauris ullamcorper nascetur suspendisse elit vulputate lorem dolor.
         Adipiscing orci et erat eu placerat commodo. Arcu in nec id nibh interdum.</a>
         </div>
-        <div class="max-w-sm rounded overflow-hidden shadow-lg">
-            <img class="w-full" src="/img/card-top.jpg" alt="Sunset in the mountains">
-            <div class="px-6 py-4">
-              <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
-              <p class="text-gray-700 text-base">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-              </p>
-            </div>
-        </div>
+        
     </div>
 </section>
 <!-- ... -->

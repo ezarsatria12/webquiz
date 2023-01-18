@@ -37,6 +37,10 @@ Route::get('/login', function () {
     return view('authuser.login');
 });
 
+Route::get('/admin', function () {
+    return view('admin.modul');
+});
+
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
 

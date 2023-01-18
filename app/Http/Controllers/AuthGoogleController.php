@@ -32,22 +32,23 @@ class AuthGoogleController extends Controller
             //$user_google menyimpan data google account seperti email, foto, dsb
 
             if($user != null){
-                Auth::login($user);
+                \auth()->login($user, true);
                 return redirect()->route('home');
             }else{
                 $create = User::Create([
                     'email'             => $user_google->getEmail(),
                     'name'              => $user_google->getName(),
                     'password'          => 0,
-                    'google_id'         => $user->id,
                     'email_verified_at' => now()
                 ]);
-                Auth::login($create);
+        
+                
+                \auth()->login($create, true);
                 return redirect()->route('home');
             }
 
         } catch (\Exception $e) {
-            return redirect()->route('home');
+            return redirect()->route('login');
         }
 
 

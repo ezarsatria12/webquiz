@@ -32,13 +32,17 @@
 </section>
 <section class="flex justify-center mx-auto container relative w-screen bg-contain bg-white">
 <div class="text-center w-3/4">
-    <a class="font-extrabold text-4xl">Fitur utama kami</a>
+    <a class="font-inter font-extrabold text-4xl">Fitur utama kami</a>
     <br></br>
     <a>Lorem ipsum dolor sit amet consectetur.
         Diam cursus lacus tincidunt fermentum pulvinar nunc sollicitudin scelerisque.
         Mauris ullamcorper nascetur suspendisse elit vulputate lorem dolor.
         Adipiscing orci et erat eu placerat commodo. Arcu in nec id nibh interdum.</a>
         </div>
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 8e17e4daf6b2370d9fb4c57080f7338f59f6c571
     </div>
 </section>
 <!-- ... -->

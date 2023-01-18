@@ -196,6 +196,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
     ],
+    'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     /*
     |--------------------------------------------------------------------------

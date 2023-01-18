@@ -18,13 +18,13 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         DB::table('categories')->insert([
-            'category' => 'B Indonesia'
+            'category' => 'Mudah'
         ]);
         DB::table('categories')->insert([
-            'category' => 'Matematika'
+            'category' => 'Sedang'
         ]);
         DB::table('categories')->insert([
-            'category' => 'IPA'
+            'category' => 'Sulit'
         ]);
     }
 }

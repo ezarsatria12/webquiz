@@ -39,10 +39,6 @@
         Mauris ullamcorper nascetur suspendisse elit vulputate lorem dolor.
         Adipiscing orci et erat eu placerat commodo. Arcu in nec id nibh interdum.</a>
         </div>
-<<<<<<< HEAD
-=======
-        
->>>>>>> 8e17e4daf6b2370d9fb4c57080f7338f59f6c571
     </div>
 </section>
 <!-- ... -->

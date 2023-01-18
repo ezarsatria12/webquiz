@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\module;
+use Illuminate\Support\Facades\Auth;
 
 class ModuleController extends Controller
 {
@@ -13,7 +15,10 @@ class ModuleController extends Controller
      */
     public function index()
     {
-        return view('admin.module');
+        return view('admin.modul', [
+            'moduls' => module::where('id_user', auth()->user()->id)->get()
+        ]);
+        
     }
 
     /**
@@ -23,7 +28,7 @@ class ModuleController extends Controller
      */
     public function create()
     {
-        
+        return view('admin.addmodul');
     }
 
     /**
@@ -34,7 +39,18 @@ class ModuleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $validatedData = $request->validate([
+            'moduletitle'=>'required',
+            'moduledesc'=>'required',
+            'media'=>'required|file'
+        ]);
+        if($request->file('media')){
+            $validatedData['media'] = $request->file('media')->store('modulemedia');
+        }
+        $validatedData['id_user'] = Auth::id();
+        module::create($validatedData);
+        return redirect('home');
     }
 
     /**

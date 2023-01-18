@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\AuthGoogleController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ModuleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,9 +44,6 @@ Route::get('/addsoal', function () {
     return view('addsoal');
 });
 
-Route::get('/admin', function () {
-    return view('admin.modul');
-});
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
@@ -58,3 +56,4 @@ Route::get('/auth/google/callback', [AuthGoogleController::class, 'handleProvide
 /*resource*/
 Route::resource('/user', UserController::class);
 Route::resource('/quisz', QuizController::class);
+Route::resource('/module', ModuleController::class);

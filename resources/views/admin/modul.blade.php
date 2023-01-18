@@ -6,7 +6,7 @@
         <div class="container p-6 mx-auto flex flex-wrap sm:w-full justify-between  font-medium text-3xl">
             <p>Daftar Modul</p>
             <div>
-            <a href="#"><img class="w-8 h-8 sm:bg-blend-color-burn hover:ring-1 hover:ring-green-111" src="Pictures/plus.png" alt="whatsapp"></a>
+            <a href="/module/create"><img class="w-8 h-8 sm:bg-blend-color-burn hover:ring-1 hover:ring-green-111" src="Pictures/plus.png" alt="whatsapp"></a>
           </div>
         </div>
     </section>
@@ -17,6 +17,8 @@
     <div class="h-fit px-1 mx-auto flex flex-wrap  ">
       <div class="mx-auto my-auto px-5  rounded md:w-1/2 xl:w-1/3 ">
         <!-- ====== Cards 1 -->
+        @foreach ( $moduls as $modul )
+       @csrf
         <div class="p-5 mb-10 overflow-hidden rounded-3xl shadow-2xl">
           <img
             src="https://cdn.tailgrids.com/2.0/image/application/images/cards/card-01/image-01.jpg"
@@ -29,7 +31,7 @@
                 href="javascript:void(0)"
                 class="text-dark hover:text-primary mb-4 block text-xl font-semibold sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]"
               >
-                Judul Modul
+              {{ $modul->moduletitle}}
               </a>
             </h3>
             <p class="h-full text-body-color mb-7 text-base leading-relaxed">
@@ -52,84 +54,10 @@
             </a>
           </div>
         </div>
-      </div>
-      <!-- ====== Cards 1 end -->
-      <div class="mx-auto my-auto px-5  rounded md:w-1/2 xl:w-1/3 ">
-        <div class="p-5 mb-10 overflow-hidden rounded-3xl shadow-2xl">
-            <img
-            src="https://cdn.tailgrids.com/2.0/image/application/images/cards/card-01/image-01.jpg"
-            alt="image"
-            class=" w-full"
-          />
-          <div class="text-start pt-5 px-3 sm: md: xl:">
-            <h3>
-              <a
-                href="javascript:void(0)"
-                class="text-dark hover:text-primary mb-4 block text-xl font-semibold sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]"
-              >
-                Judul Modul
-              </a>
-            </h3>
-            <p class="h-full text-body-color mb-7 text-base leading-relaxed">
-              Lorem ipsum dolor sit amet pretium consectetur adipiscing elit.
-              Lorem consectetur adipiscing elit.
-            </p>
-            <a
-              href="javascript:void(0)"
-              class="my-1 w-full h-fit text-center hover:border-green-111 inline-block rounded-full border-2 border-[#E5E7EB] py-2 px-7
-              text-base font-medium transition hover:text-green-111"
-            >
-              Edit
-            </a>
-            <a
-              href="/setting"
-              class="my-1 w-full h-fit bg-red-redFF6767 text-center hover:border-red-500 inline-block rounded-full border-2 border-[#E5E7EB] py-2 px-7
-              text-base font-medium transition hover:text-white"
-            >
-              Delete
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="mx-auto my-auto px-5  rounded md:w-1/2 xl:w-1/3 ">
-        <div class="p-5 mb-10 overflow-hidden rounded-3xl shadow-2xl">
-          <img
-            src="https://cdn.tailgrids.com/2.0/image/application/images/cards/card-01/image-01.jpg"
-            alt="image"
-            class=" w-full"
-          />
-          <div class="text-start pt-5 px-3 sm: md: xl:">
-            <h3>
-              <a
-                href="javascript:void(0)"
-                class="text-dark hover:text-primary mb-4 block text-xl font-semibold sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]"
-              >
-                Judul Modul
-              </a>
-            </h3>
-            <p class="h-full text-body-color mb-7 text-base leading-relaxed">
-              Lorem ipsum dolor sit amet pretium consectetur adipiscing elit.
-              Lorem consectetur adipiscing elit.
-            </p>
-            <a
-              href="javascript:void(0)"
-              class="my-1 w-full h-fit text-center hover:border-green-111 inline-block rounded-full border-2 border-[#E5E7EB] py-2 px-7
-              text-base font-medium transition hover:text-green-111"
-            >
-              Edit
-            </a>
-            <a
-              href="/setting"
-              class="my-1 w-full h-fit bg-red-redFF6767 text-center hover:border-red-500 inline-block rounded-full border-2 border-[#E5E7EB] py-2 px-7
-              text-base font-medium transition hover:text-white"
-            >
-              Delete
-            </a>
-          </div>
-        </div>
+        @endforeach
       </div>
     </div>
-  </div>
+  </div>  
 </section>
 <!-- ====== Cards Section End -->
 <!-- ====== Page selection -->

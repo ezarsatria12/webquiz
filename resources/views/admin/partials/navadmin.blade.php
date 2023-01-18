@@ -9,7 +9,7 @@
         </div>
         <!--button sign in-->
         @if(Auth::check())
-        <form action="/admin">
+        <form action="/module" method="GET">
             @csrf 
             <button class="bg-green-111 px-4 py-2 rounded font-inter font-medium text-white hover:shadow-lg">
                 hello

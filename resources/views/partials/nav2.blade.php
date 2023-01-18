@@ -12,25 +12,6 @@
             <a class="ml-5 font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700" href="/coba">Help</a>
             </div>
         <!--button sign in-->
-<<<<<<< HEAD
-        <div class="hidden my-auto content-end lg:flex  ">
-            <button class="bg-green-111 hover:bg-white hover:text-green-111 px-4 py-2 rounded font-inter font-medium text-white ">
-                Sign In
-            </button>
-            </div>
-            <div id="nav-toggle" class="w-[32px] h-[32px] my-auto lg:hidden">
-                <a href="">
-                    <img src="pictures/hamburgerbutton.png" alt="menu">
-                    </a>
-            </div>
-            <script>
-            //Javascript to toggle the menu
-            document.getElementById('nav-toggle').onclick = function(){
-                document.getElementById("nav-content").classList.toggle("hidden");
-            }
-        </script>
-            </div>
-=======
         @if(Auth::check())
         <form action="/admin">
             @csrf 
@@ -47,12 +28,22 @@
         @else
         <form action="/login">
             @csrf 
-            <button class="bg-green-111 px-4 py-2 rounded font-inter font-medium text-white hover:shadow-lg">
+            <button class="hidden lg:flex bg-green-111 px-4 py-2 rounded font-inter font-medium text-white hover:shadow-lg">
                 Sign In
             </button>
         </form>
         @endif
->>>>>>> 8e17e4daf6b2370d9fb4c57080f7338f59f6c571
+        <div id="nav-toggle" class="w-[32px] h-[32px] my-auto lg:hidden">
+                <a href="">
+                    <img src="pictures/hamburgerbutton.png" alt="menu">
+                    </a>
+            </div>
+            <script>
+            //Javascript to toggle the menu
+            document.getElementById('nav-toggle').onclick = function(){
+                document.getElementById("nav-content").classList.toggle("hidden");
+            }
+        </script>
         </div>
     </div>
 </nav>

@@ -12,9 +12,9 @@
                 <p class="">Kategori</p>
                 <select id="Kategori" name="Kategori" required class="select-none text-black-primary invalid:text-gray-400 focus:outline-green-111 rounded border-2 border-gray-200 box-border w-full h-10 p-2 ">
                     <option value="" disabled selected>Pilih Kategori</option>
-                    <option value="volvo">Mudah</option>
-                    <option value="saab">Sedang</option>
-                    <option value="fiat">Sulit</option>
+                    <option value="mudah">Mudah</option>
+                    <option value="sedang">Sedang</option>
+                    <option value="sulit">Sulit</option>
             </select>
         </div>
     </div>

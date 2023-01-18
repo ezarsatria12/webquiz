@@ -13,7 +13,7 @@ class ModuleController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.module');
     }
 
     /**
@@ -23,7 +23,7 @@ class ModuleController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**

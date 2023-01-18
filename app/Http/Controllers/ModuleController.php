@@ -18,7 +18,6 @@ class ModuleController extends Controller
         return view('admin.modul', [
             'moduls' => module::where('id_user', auth()->user()->id)->get()
         ]);
-        
     }
 
     /**

@@ -4,8 +4,8 @@
         <div class="sm:flex text-grey-fade m-auto ">
             <a class="mr-5  font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700" href="/">Home</a>
             <a class="ml-5 font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700 {{ Request::is('profile') ? 'text-green-700' : ''}}" href="/profile">Profile</a>
-            <a class="mx-5 font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700" href="/quis">Quiz</a>
-            <a class="mx-5 font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700" href="/module">Modul</a>
+            <a class="mx-5 font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700 {{ Request::is('quiz') ? 'text-green-700' : ''}}" href="/quis">Quiz</a>
+            <a class="mx-5 font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700 {{ Request::is('module') ? 'text-green-700' : ''}}" href="/module">Modul</a>
         </div>
         <!--button sign in-->
         @if(Auth::check())

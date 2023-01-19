@@ -15,7 +15,7 @@ class ModuleController extends Controller
      */
     public function index()
     {
-        return view('admin.modul', [
+        return view('admin.modul2', [
             'moduls' => module::where('id_user', auth()->user()->id)->get()
         ]);
     }

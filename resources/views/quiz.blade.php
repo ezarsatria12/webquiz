@@ -1,13 +1,6 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  @vite('resources/css/app.css')
-</head>
+@extends('partials.index')
 
-<body>
-    @include('.nav')
+@section('container')
 <main>
     <section>
         <div class="container p-6 mx-auto flex flex-wrap sm:w-full justify-between  font-medium text-3xl">
@@ -174,9 +167,4 @@
 <!-- ====== Page selection -->
 </section>
 </main>
-      @include('.footer')
-      <main class="">
-        @yield('container')
-</main>
-</body>
-</html>
+@endsection

@@ -26,7 +26,7 @@ Route::get('/home', function () {
     return view('home2');
 })->name('home');
 Route::get('/modul', function () {
-    return view('modul');
+    return view('modul2');
 });
 Route::get('/coba', function () {
     return view('coba');

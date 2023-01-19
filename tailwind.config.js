@@ -20,6 +20,7 @@ module.exports = {
       },
       boxShadow: {
         'boxjawaban': '8px 11px 4px rgba(0, 0, 0, 0.25);',
+        'card': ' 5px 6px 11px 3px rgba(0,0,0,0.25);',
       },
       fontSize: {
       sm: ['14px', '20px'],

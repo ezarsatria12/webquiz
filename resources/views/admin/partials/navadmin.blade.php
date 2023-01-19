@@ -3,9 +3,9 @@
         <!--nav button-->
         <div class="sm:flex text-grey-fade m-auto ">
             <a class="mr-5  font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700" href="#about us">Home</a>
-            <a class="ml-5 font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700" href="/coba">Profile</a>
+            <a class="ml-5 font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700 {{ Request::is('profile') ? 'text-green-700' : ''}}" href="/profile">Profile</a>
             <a class="mx-5 font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700" href="/quiz">Quiz</a>
-            <a class="mx-5 font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700" href="/modul">Modul</a>
+            <a class="mx-5 font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700" href="/module">Modul</a>
         </div>
         <!--button sign in-->
         @if(Auth::check())

@@ -13,7 +13,7 @@
             </div>
         <!--button sign in-->
         @if(Auth::check())
-        <form action="/module">
+        <form action="/profile">
             @csrf 
             <button class="bg-green-111 px-4 py-2 rounded font-inter font-medium text-white hover:shadow-lg">
                 hello

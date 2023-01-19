@@ -1,4 +1,4 @@
-<nav class="top-0 w-screen sm:sticky">
+<nav class="top-0 w-screen">
     <div class="px-8 py-6 flex flex-row justify-between bg-white px10 lg:px-20 lg:py-auto">
         <!--logo-->
         <a href="/home">

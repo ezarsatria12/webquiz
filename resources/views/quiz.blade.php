@@ -1,4 +1,4 @@
-@extends('partials.index')
+@extends('admin.partials.index')
 
 @section('container')
 <main>

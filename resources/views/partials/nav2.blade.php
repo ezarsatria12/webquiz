@@ -15,14 +15,8 @@
         @if(Auth::check())
         <form action="/profile">
             @csrf 
-            <button class="bg-green-111 px-4 py-2 rounded font-inter font-medium text-white hover:shadow-lg">
-                hello
-            </button>
-        </form>
-        <form action="/logout" method="POST">
-            @csrf 
-            <button class="bg-green-111 px-4 py-2 rounded font-inter font-medium text-white hover:shadow-lg">
-                logout
+            <button class=" px-4 py-2  font-inter font-medium text-black ">
+                {{ Auth::user()->name}}
             </button>
         </form>
         @else

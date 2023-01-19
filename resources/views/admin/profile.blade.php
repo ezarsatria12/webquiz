@@ -11,13 +11,19 @@
         <div class="">
             <div>
                 <h2>Nama</h2>
-                <h2>Edgar Baik</h2>
+                <h2>{{ Auth::user()->name}}</h2>
             </div>
             <div class="">
                 <h2>Email</h2>
-                <h2>EdgarBaik@gmail.com</h2>
+                <h2>{{ Auth::user()->email}}</h2>
             </div>
         </div>
+        <form action="/logout" method="POST">
+            @csrf 
+            <button class="bg-green-111 px-4 py-2 rounded font-inter font-medium text-white hover:shadow-lg">
+                logout
+            </button>
+        </form>
     </section>
 <!-- ====== Page selection -->
 @endsection

@@ -57,5 +57,5 @@ Route::get('/auth/google/callback', [AuthGoogleController::class, 'handleProvide
 
 /*resource*/
 Route::resource('/user', UserController::class);
-Route::resource('/quisz', QuizController::class);
+Route::resource('/quis', QuizController::class);
 Route::resource('/module', ModuleController::class);

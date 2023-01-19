@@ -1,4 +1,4 @@
-@extends('partials.index')
+@extends('admin.partials.index')
 
 @section('container')
 <section>
@@ -43,9 +43,6 @@
                         <span>Delete</span>
                       </a>
                     <!-- tanda panah klo bukan admin -->
-                    <div class="container justify-end w-full h-auto flex pr-3 sm:pr-5 mb-3 sm:mb-5 mt-auto flex-row">
-                    <img class="w-[16px] h-[16px] sm:w-[50px] sm:h-[50px]" src="pictures/go.png" alt="">
-                </div>
             </div>
           </div>
           </a>

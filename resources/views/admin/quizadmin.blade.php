@@ -28,10 +28,21 @@
                     <h1 class="flex justify-start px-3 sm:px-7 font-medium text-[12px] sm:text-[16px] sm:text-3xl ">Judul Quiz</h1>
                     <p class="text-[8px] sm:text-[20px] flex flex-col font-light justify-start px-3 sm:px-7">deskripsi Quiz</p>
                     </div>
+                    <!-- tombol kalo login -->
+                    <div class="container mx-auto w-full px-6 text-center h-auto flex space-y-2 flex-col">
+                      <a class="text-[12px] sm:text-[18px] mx-auto sm:py-1 text-gray-700 hover:scale-105
+                      hover:text-green-111 border-2 rounded-[4px] sm:rounded-[6px] w-full" href="">
+                        <span>Review</span>
+                      </a>
+                      <a class="text-[12px] sm:text-[18px] mx-auto sm:py-1 text-gray-700 hover:scale-105
+                      hover:text-green-111 border-2 rounded-[4px] sm:rounded-[6px] w-full" href="">
+                        <span>Edit</span>
+                      </a>
+                      <a class="text-[12px] sm:text-[18px] mx-auto sm:py-1 bg-red-redFF6767 text-gray-700 hover:scale-105
+                      hover:text-white rounded-[4px] sm:rounded-[6px] w-full" href="">
+                        <span>Delete</span>
+                      </a>
                     <!-- tanda panah klo bukan admin -->
-                    <div class="container justify-end w-full h-auto flex pr-3 sm:pr-5 mb-3 sm:mb-5 mt-auto flex-row">
-                    <img class="w-[16px] h-[16px] sm:w-[24px] sm:h-[24px]" src="pictures/go.png" alt="">
-                </div>
             </div>
           </div>
           </a>

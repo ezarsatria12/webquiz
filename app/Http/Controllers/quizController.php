@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\quiz;
 use Illuminate\Http\Request;
 
 class quizController extends Controller
@@ -13,7 +14,9 @@ class quizController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.quizadmin', [
+            'moduls' => quiz::where('id_user', auth()->user()->id)->get()
+        ]);
     }
 
     /**

@@ -7,6 +7,7 @@ use App\Http\Controllers\QuizController;
 use App\Http\Controllers\AuthGoogleController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ModuleController;
+use App\Http\Controllers\ModuleGuestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,7 @@ use App\Http\Controllers\ModuleController;
 */
 
 Route::get('/', function () {
-    return view('modul2');
+    return view('home2');
 });
 Route::get('/home', function () {
     return view('home2');
@@ -59,3 +60,4 @@ Route::get('/auth/google/callback', [AuthGoogleController::class, 'handleProvide
 Route::resource('/user', UserController::class);
 Route::resource('/quis', QuizController::class);
 Route::resource('/module', ModuleController::class);
+Route::resource('/modul', ModuleGuestController::class);

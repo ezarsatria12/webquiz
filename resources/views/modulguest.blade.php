@@ -1,4 +1,4 @@
-@extends('admin.partials.index')
+@extends('partials.index')
 
 @section('container')
 <section>
@@ -6,9 +6,6 @@
         <div class="container h-fit space-y-5 justify-start flex m-auto sm:w-[1280px] lg:flex-row sm:space-y-0 sm:space-x-20">
               <div class="container h-fit mx-auto relative flex flex-wrap w-full justify-between font-medium text-2xl sm:text-3xl sm:w-[1280px] sm:h-[40px]">
             <h1>Daftar modul</h1>
-            <a href="#" class="self-center">
-            <img class="w-6 h-6 bg-blend-color-burn hover:ring-1 hover:ring-green-111 sm:w-8 sm:h-8" src="Pictures/plus.png" alt="whatsapp">
-        </a>
     </div>
 </div>
     <div class="container h-fit space-x-3 justify-start flex m-auto sm:w-[1280px] lg:flex-row sm:space-y-0 sm:space-x-5">

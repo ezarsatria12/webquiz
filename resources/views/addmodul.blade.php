@@ -17,16 +17,24 @@
                 name="Title" id="Title" cols="80" rows="6" placeholder="Masukkan Judul Modul"></textarea>
         </div>
         <div name="add" class="space-y-3">
+                <p class="">Pilih Thumbnail modul</p>
+            </div>
+        <div name="add" class="space-y-3">
                 <p class="">Add File</p>
-                <div class="flex flex-row">
-                    <button class="" href="#">
-                    <img class="w-[60px] h-[60px] hover:scale-105" src="pictures/Insert pict.png" alt="pilgan"></button>
-                    <button class="" href="">
-                    <img class="w-[60px] h-[60px] hover:scale-105" src="pictures/Insert audio.png" alt="pilgan"></button>
-                    <button class="" href="">
-                    <img class="w-[60px] h-[60px] hover:scale-105" src="pictures/Insert mp4.png" alt="pilgan"></button>
-                    <button class="" href="">
-                    <img class="w-[60px] h-[60px] hover:scale-105" src="pictures/Insert file.png" alt="pilgan"></button>
+                
+                <div id="file" class="flex flex-col">
+                    <p><input type="file" name="image" id="file-modul"
+                    onchange="loadFile(event)" style="display: none;"></p>
+                    <p><label for="file-modul" style="cursor: pointer;">
+                    <img class="w-[60px] h-[60px] hover:scale-105" src="pictures/Insert file.png" alt="pilgan">
+                    </label></p>
+                    <p><img id="filemodul" class="w-[300px] h-[200px]"/></p>
+                    <script>
+                    var loadFile = function(event) {
+                        var image = document.getElementById('filemodul');
+                        image.src = URL.createObjectURL(event.target.files[0]);
+                    };
+                    </script>
                 </div>
         </div>
         <div class="container flex flex-row w-full sm:w-[1280px] h-[38px] justify-end">

@@ -35,8 +35,7 @@
               </a>
             </h3>
             <p class="h-full text-body-color mb-7 text-base leading-relaxed">
-              Lorem ipsum dolor sit amet pretium consectetur adipiscing elit.
-              Lorem consectetur adipiscing elit.
+              {{ $modul->moduledesc}}
             </p>
             <a
               href="javascript:void(0)"

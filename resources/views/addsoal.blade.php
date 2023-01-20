@@ -3,7 +3,7 @@
 @section('container')
 <section>
     <div class="container space-y-5 m-auto px-3 sm:w-[1440px] sm:h-[1024px] sm:space-y-16">
-        <div class="container h-fit space-y-5 justify-start flex flex-col m-auto sm:w-[1280px] lg:h-[64px] lg:flex-row sm:space-y-0 sm:space-x-20">
+        <div class="container h-fit space-y-5 justify-start flex flex-col m-auto sm:w-[1280px] sm:h-[64px] sm:flex-row sm:space-y-0 sm:space-x-20">
             <div name="Title" class="h-fit w-full sm:w-[630px] space-y-3">
                 <p class="">Quiz Title</p>
                 <textarea required class="outline-green-111 rounded border-2 p-2 w-full sm:w-[630px] border-gray-200 resize-none"
@@ -44,5 +44,20 @@
         </div>
     </div>
 </div>
+</section>
+<section>
+    <div name="pilgan" class>
+
+    </div>
+</section>
+<section>
+    <div name="essay" class>
+
+    </div>
+</section>
+<section>
+    <div name="dragndrop" class>
+
+    </div>
 </section>
 @endsection

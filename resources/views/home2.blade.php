@@ -30,7 +30,7 @@
     </div>
 </div>
 </section>
-<section class="flex justify-center mx-auto container relative w-screen bg-contain bg-white">
+<section class="flex justify-center mx-auto container relative bg-contain bg-white">
 <div class="text-center w-3/4">
     <a class="font-inter font-extrabold text-4xl">Fitur utama kami</a>
     <br></br>

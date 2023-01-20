@@ -7,7 +7,7 @@
     <title>Document</title>
     @vite('resources/css/app.css')
 </head>
-<body class="container w-screen sm:w-[1440px] sm:h-[1024px] m-auto">
+<body class="container sm:w-[1440px] sm:h-[1024px] m-auto">
     <div class="container h-fit sm:w-[1280px] sm:h-[960px] px-3 pt-[32px] flex flex-col space-y-[10px]">
         <div class="w-[50px] h-[50px]">
             <a href="#back">
@@ -17,7 +17,7 @@
         <!-- soal -->
         <div class="container flex-col sm:w-[1280px] sm:h-[426px] space-y-[10px] sm:space-x-[20px] flex sm:flex-row">
             <img class="rounded-[10px] h-fit w-[340px] sm:w-[400px] sm:h-[400px] sm:m-[10px]" src="pictures/template.png" alt="asd">
-            <h1 class="text-2xl flex sm:text-4xl sm:m-[10px] sm:w-full">Lorem ipsum dolor sit amet pretium consectetur adipiscing elit.
+            <h1 class="text-2xl flex sm:text-4xl sm:m-[10px] sm:w-full ">Lorem ipsum dolor sit amet pretium consectetur adipiscing elit.
             Lorem consectetur adipiscing elit
         </h1>
         </div>
@@ -37,7 +37,7 @@
             <button class="bg-[#FFF6BF] hover:scale-105 hover:brightness-125 rounded-[10px] shadow-boxjawaban w-[150px] h-[150px] sm:h-[300px] sm:w-[300px] m-[10px]">
                 C
             </button>
-            </a>
+            <a href="#A">
             <button class="bg-[#7FB77E] hover:scale-105 hover:brightness-125 rounded-[10px] shadow-boxjawaban w-[150px] h-[150px] sm:h-[300px] sm:w-[300px] m-[10px]">
                 D
             </button>

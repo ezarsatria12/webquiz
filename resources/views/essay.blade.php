@@ -7,7 +7,7 @@
     <title>Document</title>
     @vite('resources/css/app.css')
 </head>
-<body class="container w-screen sm:w-[1440px] sm:h-[1024px] m-auto">
+<body class="container sm:w-[1440px] sm:h-[1024px] m-auto">
     <div class="container h-fit sm:w-[1280px] sm:h-[960px] px-3 pt-[32px] flex flex-col space-y-[20px]">
         <div class="w-[50px] h-[50px]">
             <a href="#back">

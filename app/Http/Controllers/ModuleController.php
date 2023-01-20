@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\module;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ModuleController extends Controller
 {
@@ -15,7 +16,7 @@ class ModuleController extends Controller
      */
     public function index()
     {
-        return view('admin.modul', [
+        return view('admin.modul2', [
             'moduls' => module::where('id_user', auth()->user()->id)->get()
         ]);
     }
@@ -45,11 +46,11 @@ class ModuleController extends Controller
             'media'=>'required|file'
         ]);
         if($request->file('media')){
-            $validatedData['media'] = $request->file('media')->store('modulemedia');
+            $validatedData['media'] = $request->file('media')->store('public/modulemedia');
         }
         $validatedData['id_user'] = Auth::id();
         module::create($validatedData);
-        return redirect('home');
+        return redirect('/module');
     }
 
     /**
@@ -69,9 +70,12 @@ class ModuleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($module)
     {
-        //
+        $modul = module::find($module);
+        return View('admin.editmodul', [
+            'moduls' => $modul
+        ]);
     }
 
     /**
@@ -81,9 +85,20 @@ class ModuleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,module $module)
     {
-        //
+        $rules=[
+            'moduletitle'=>'required',
+            'moduledesc'=>'required',
+            'media'=>'required|file'
+        ];
+        $validatedData = $request->validate($rules);
+        storage::delete($module->media);
+        $validatedData['media'] = $request->file('media')->store('public/modulemedia');
+        module::where('id', $module)
+            ->update($validatedData);
+
+        return redirect('/module');
     }
 
     /**
@@ -92,8 +107,11 @@ class ModuleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function destroy(module $module)
+    { 
+        Storage::delete($module->media);
+        $module->delete();
+        return redirect('/module')->with('success', 
+        'Data telah dihapus.'); 
     }
 }

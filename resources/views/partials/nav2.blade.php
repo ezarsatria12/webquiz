@@ -1,5 +1,5 @@
-<nav class="top-0 w-screen">
-    <div class="px-8 py-6 flex flex-row justify-between bg-white px10 lg:px-20 lg:py-auto">
+<nav class="top-0 ">
+    <div class="px-8 py-6 flex flex-row justify-between bg-white ">
         <!--logo-->
         <a href="/home">
         <h3 class=" text-2xl lg:text-3xl font-medium ">LOGO</h3>

@@ -22,6 +22,30 @@
       />
     </button>
   </div>
+
+  <!-- drop -->
+        <div class="container w-[1280px] h-[320px] m-auto flex flex-row">
+            <button class="bg-[#ED6A5E] hover:brightness-125 rounded-[10px] shadow-boxjawaban h-[300px] w-[300px] m-[10px]">
+                A
+            </button>
+            <button class="bg-[#A5F1E9] hover:brightness-125 rounded-[10px] shadow-boxjawaban h-[300px] w-[300px] m-[10px]">
+                B
+            </button>
+            <button class="bg-[#FFF6BF] hover:brightness-125 rounded-[10px] shadow-boxjawaban h-[300px] w-[300px] m-[10px]">
+            </button>
+            <button class="bg-[#7FB77E] hover:brightness-125 rounded-[10px] shadow-boxjawaban h-[300px] w-[300px] m-[10px]">
+                D
+            </button>
+        </div>
+
+  <!-- button jawaban -->
+        <div class="container m-[10px] w-[1280px] h-[320px] flex flex-col space-y-[20px]">
+        <textarea class="bg-gray-100 h-full w-full rounded-[10px] form-control block px-3 py-1.5 text-2xl font-normal text-gray-700
+        bg-clip-padding border border-solid outline outline-gray-400 transition ease-in-outm-0
+        focus:text-gray-700 focus:bg-white focus:outline-green-111 focus:outline-4"
+        id="exampleFormControlTextarea1"rows="3"placeholder="Masukkan Jawaban Disini">
+    </textarea>
+    </div>
   <!--
   Profile dropdown panel, show/hide based on dropdown state.
 

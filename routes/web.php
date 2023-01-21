@@ -21,7 +21,7 @@ use App\Http\Controllers\ModuleGuestController;
 */
 
 Route::get('/', function () {
-    return view('home2');
+    return view('quiz');
 });
 Route::get('/home', function () {
     return view('home2');

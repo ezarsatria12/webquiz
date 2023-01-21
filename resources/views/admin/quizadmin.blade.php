@@ -6,7 +6,7 @@
         <div class="container h-fit space-y-5 justify-start flex m-auto sm:w-[1280px] lg:flex-row sm:space-y-0 sm:space-x-20">
               <div class="container h-fit mx-auto relative flex flex-wrap w-full justify-between font-medium text-2xl sm:text-3xl sm:w-[1280px] sm:h-[40px]">
             <h1>Daftar Quiz</h1>
-            <a href="#" class="self-center">
+            <a href="/quis/create" class="self-center">
             <img class="w-6 h-6 bg-blend-color-burn hover:ring-1 hover:ring-green-111 sm:w-8 sm:h-8" src="Pictures/plus.png" alt="whatsapp">
         </a>
     </div>
@@ -19,7 +19,8 @@
             </div>
             <!-- cardsection -->
             <div class="container mx-auto flex flex-wrap sm:flex-row space-x-2 w-[360px] h-fit pb-[10px] space-y-3 sm:w-[1280px] sm:flex-wrap sm:space-y-5">
-            <!-- card1 -->
+            @foreach ( $quizs as $quiz )
+              <!-- card1 -->
             <a href="#">
             <div class="container w-[150px] m-auto pb-5 flex flex-col justify-start h-fit sm:w-[400px] sm:space-y-3 sm:h-fit shadow-card rounded-[10px] bg-white">
                     <div>
@@ -47,6 +48,7 @@
           </div>
           </a>
           <!-- card end -->
+          @endforeach
         </div>
     </div>
     

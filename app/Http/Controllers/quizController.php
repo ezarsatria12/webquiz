@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\quiz;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class quizController extends Controller
 {
@@ -15,7 +16,7 @@ class quizController extends Controller
     public function index()
     {
         return view('admin.quizadmin', [
-            'moduls' => quiz::where('id_user', auth()->user()->id)->get()
+            'quizs' => quiz::where('id_user', auth()->user()->id)->get()
         ]);
     }
 
@@ -26,7 +27,7 @@ class quizController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.addsoal');
     }
 
     /**
@@ -37,7 +38,17 @@ class quizController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'moduletitle'=>'required',
+            'moduledesc'=>'required',
+            'media'=>'required|file'
+        ]);
+        if($request->file('media')){
+            $validatedData['media'] = $request->file('media')->store('public/modulemedia');
+        }
+        $validatedData['id_user'] = Auth::id();
+        quiz::create($validatedData);
+        return redirect('/module');
     }
 
     /**

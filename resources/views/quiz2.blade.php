@@ -38,10 +38,46 @@
                       hover:text-green-111 border-2 rounded-[4px] sm:rounded-[6px] w-full" href="">
                         <span>Edit</span>
                       </a>
-                      <a class="text-[12px] sm:text-[18px] mx-auto sm:py-1 bg-red-redFF6767 text-gray-700 hover:scale-105
-                      hover:text-white rounded-[4px] sm:rounded-[6px] w-full" href="">
+                      <!-- delete pop up -->
+                      <button type="button" onclick="toggleModal('modal-id')" 
+                      class="toggleModal text-[12px] sm:text-[18px] mx-auto sm:py-1 bg-red-redFF6767 text-gray-700 
+                      hover:scale-105hover:text-white rounded-[4px] sm:rounded-[6px] w-full">
                         <span>Delete</span>
-                      </a>
+                      </button>
+                      <!-- popup -->
+                      <div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="modal-id">
+                        <div id="card" class="container flex flex-col justify-start py-5 z-10 w-[300px] h-[125px] sm:w-[600px] sm:h-[200px] 
+                        rounded-[10px] shadow-card bg-white space-y-2 sm:space-y-3">
+                            <!-- body -->
+                            <div class="container mx-auto w-full px-6 h-full flex space-y-2 flex-col justify-center">
+                                <p class="text-[12px] sm:text-[20px] flex flex-col font-light text-center">
+                                  Apakah anda ingin menghapus quiz ini?
+                                </p>
+                            </div>
+                            <!-- button masuk -->
+                            <div class="container mx-auto w-full px-6 text-center h-auto flex flex-row space-x-5">
+                                <a class="text-[12px] sm:text-[18px] mx-auto sm:py-1 text-gray-700 hover:scale-105
+                                hover:text-green-111 border-2 rounded-[4px] sm:rounded-[6px] w-full" href="#">
+                                  <span>Batal</span>
+                                </a>
+                                <a class="text-[12px] sm:text-[18px] mx-auto sm:py-1 text-gray-700 hover:scale-105
+                                hover:text-white border-2 rounded-[4px] sm:rounded-[6px] w-full bg-red-redFF6767" href="#">
+                                    <p>Hapus</p>
+                                </a>
+                            </div>
+                                <!--  -->
+                        </div>
+                    </div>
+                      <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id-backdrop"></div>
+                      <script type="text/javascript">
+                        var modal = document.getElementById(modalID);
+                        function toggleModal(modalID){
+                            document.getElementById(modalID).classList.toggle("hidden");
+                            document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
+                            document.getElementById(modalID).classList.toggle("flex");
+                            document.getElementById(modalID + "-backdrop").classList.toggle("flex");
+                        }
+                      </script>
                     <!-- tanda panah klo bukan admin -->
                     <div class="container justify-end w-full h-auto flex pr-3 sm:pr-5 mb-3 sm:mb-5 mt-auto flex-row">
                     <img class="w-[16px] h-[16px] sm:w-[50px] sm:h-[50px]" src="pictures/go.png" alt="">

@@ -1,4 +1,4 @@
-@extends('partials.index')
+@extends('admin.partials.index')
 
 @section('container')
 <section>
@@ -30,16 +30,16 @@
                 <p class="">Add Question</p>
                 <div class="flex flex-row">
                     <button class="" href="#">
-                    <img class="w-[60px] h-[60px] hover:scale-105" src="pictures/Pilganda.png" alt="pilgan"></button>
+                    <img class="w-[60px] h-[60px] hover:scale-105" src="{{ URL('pictures/Pilganda.png') }}" alt="pilgan"></button>
                     <button class="" href="">
-                    <img class="w-[60px] h-[60px] hover:scale-105" src="pictures/essay.png" alt="pilgan"></button>
+                    <img class="w-[60px] h-[60px] hover:scale-105" src="{{ URL('pictures/essay.png') }}" alt="pilgan"></button>
                     <button class="" href="">
-                    <img class="w-[60px] h-[60px] hover:scale-105" src="pictures/drag.png" alt="pilgan"></button>
+                    <img class="w-[60px] h-[60px] hover:scale-105" src="{{ URL('pictures/drag.png') }}" alt="pilgan"></button>
                 </div>
         </div>
         <div class="container flex flex-row w-full sm:w-[1280px] h-[38px] justify-end">
             <button>
-                <img class="w-[130px] h-[38px] hover:scale-105" src="pictures/simpan.png" alt="">
+                <img class="w-[130px] h-[38px] hover:scale-105" src="{{ URL('Pictures/simpan.png') }}" alt="">
             </button>
         </div>
     </div>

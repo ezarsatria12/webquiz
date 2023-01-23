@@ -1,28 +1,22 @@
-<footer class="bottom-0 content-center footer h-fit bg-green-111  text-white">
-    <div class="self-center sm:px-20 sm:py-8 ">
-        <div class="sm:flex sm:mt-8 justify-between">
-            <div class="mt-8 sm:mt-0 sm:w-full flex flex-col  md:flex-row justify-between ">
-                <div class="flex flex-col">
-                    <a class="text-5xl w-fit font-medium hover:underline" href="#home">LOGO</a>
-                    <h1 class="text-sm font-normal mt-2 w-fit">Copyright</h1>
-                </div>
-                <div class="flex flex-col space-y-1 ">
-                    <a class="hover:underline w-fit" href="#about us ">About Us</a>
-                    <a class="hover:underline w-fit" href="#home">Info Pengembang</a>
-                </div>
-                <div class="flex flex-col">
-                    <h1 href="#about us" class="flex-col mb-1 w-fit">Contact</h1>
-            <div class="flex flex-col space-y-1 w-fit">
-                <div class="flex flex-row space-x-1 hover:underline" href="#home">
-                    <img class="h-6 w-6" src="Pictures/Whatsapp-icon.png" alt="whatsapp" href="#home">
-                    <a href="#home" class="my-auto">089456465465</a>
-                </div>
-                <div class="flex flex-row space-x-1 hover:underline" href="#home">
-                    <img class="h-6 w-6" src="Pictures/Instagram-icon.png" alt="whatsapp" href="#home">
-                    <a class="my-auto hover:underline ">@Bocilkoplox</a>
-                </div>
+<footer>
+    <div class="bg-green-111 h-fit text-white w-full py-[80px] px-[50px] gap-5  mx-auto sm:px-[80px] sm:py-[55px] sm:h-[200px] flex flex-col sm:flex-row content-center sm:justify-between">
+        <div class="flex flex-col">
+            <span class="text-4xl font-medium">SmartPantun</span>
+            <span class="text-xl">copyright</span>
         </div>
-                </div>
+        <div class="flex flex-col gap-3">
+            <a href="#" class="text-2xl hover:underline">About Us</a>
+            <a href="#" class="text-2xl hover:underline">Info Pengembang</a>
+        </div>
+        <div class="flex flex-col gap-3 h-fit">
+            <span class="text-2xl">Contact</span>
+            <div class="flex flex-row w-full gap-2">
+                <img src="pictures/Whatsapp-icon.png" class="w-[32px] h-[32px]" alt="">
+                <span class="text-xl">0891234567890</span>
+            </div>
+            <div class="flex flex-row w-full gap-2">
+                <img src="pictures/Instagram-icon.png" class="w-[31px] h-[31px]" alt="">
+                <span class="text-xl">@ezarganz</span>
             </div>
         </div>
     </div>

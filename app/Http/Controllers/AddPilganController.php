@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Livewire\Pilgan;
 use App\Models\multichoise;
 use App\Models\quiz;
+use App\Models\mutichoisechoise;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AddPilganController extends Controller
 {
@@ -38,20 +41,24 @@ class AddPilganController extends Controller
      */
     public function store(Request $request, $quiz)
     {
-        ddd($request);
-        $order = multichoise::create([
-            'customer_name' => $request->customer_name,
-            'customer_email' => $request->customer_email,
+        $validatedData = $request->validate([
+            'question' => 'required',
+            'media' => 'required|file'
         ]);
-
-        foreach ($request->orderProducts as $product) {
-            $order->products()->attach(
-                $product['product_id'],
-                ['quantity' => $product['quantity']]
-            );
+        $validatedData2 = $request->validate([
+            'correct' => 'boolean',
+            'answer' => 'required',
+        ]);
+        if ($request->file('media')) {
+            $validatedData['media'] = $request->file('media')->store('public/modulemedia');
         }
-
-        return 'Order stored successfully!';
+        $validatedData['id_quiz'] = $quiz;
+        $multichoise = multichoise::create($validatedData);
+        $id = $multichoise->id;
+        $validatedData2['id_multichoise'] = $id;
+        $is_active = $validatedData['correct'] ?? 0;
+        $multichoise = mutichoisechoise::create(array_merge($validatedData2, ['correct' => $is_active]));
+        return redirect()->route('quiz.index');
     }
 
     /**
@@ -71,9 +78,10 @@ class AddPilganController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($quiz)
     {
-        //
+        $pilgan = quiz::where('id', $quiz)->get();
+        return view('admin.tabel.pilgantabel', compact('pilgan', 'quiz'));
     }
 
     /**
@@ -83,9 +91,24 @@ class AddPilganController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, quiz $quiz)
     {
-        //
+        $validatedData = $request->validate([
+            'question' => 'required',
+            'media' => 'required|file'
+        ]);
+        $validatedData2 = $request->validate([
+            'correct' => 'boolean',
+            'answer' => 'required',
+        ]);
+        !is_null($quiz->media) && Storage::delete($quiz->media);
+        $validatedData['id_quiz'] = $quiz;
+        $multichoise = multichoise::create($validatedData);
+        $id = $multichoise->id;
+        $validatedData2['id_multichoise'] = $id;
+        $is_active = $validatedData['correct'] ?? 0;
+        $multichoise = mutichoisechoise::create(array_merge($validatedData2, ['correct' => $is_active]));
+        return redirect()->route('quiz.index');
     }
 
     /**

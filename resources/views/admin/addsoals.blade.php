@@ -2,7 +2,7 @@
 
 @section('container')
     <section>
-        <form action="{{ $quiz->id ? route('quis.update', $quiz->id) : route('quis.store') }}" method="post"
+        <form action="{{ $quiz->id ? route('quiz.update', $quiz->id) : route('quiz.store') }}" method="post"
             enctype="multipart/form-data">
             @csrf
             @if ($quiz->id)

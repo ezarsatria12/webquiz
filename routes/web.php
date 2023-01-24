@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use app\Http\Controllers;
+use App\Http\Controllers\AddDNDController;
+use App\Http\Controllers\AddEsayController;
+use App\Http\Controllers\AddPilganController;
+use App\Http\Controllers\AddQuizController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\AuthGoogleController;
@@ -32,7 +36,7 @@ Route::get('/modul', function () {
 Route::get('/coba', function () {
     return view('coba');
 });
-Route::get('/quiz', function () {
+Route::get('/quis', function () {
     return view('quiz');
 });
 Route::get('/app', function () {
@@ -58,6 +62,10 @@ Route::get('/auth/google/callback', [AuthGoogleController::class, 'handleProvide
 
 /*resource*/
 Route::resource('/user', UserController::class);
-Route::resource('/quis', QuizController::class);
+Route::resource('/quiz', QuizController::class);
+Route::resource('/addquiz', AddQuizController::class);
 Route::resource('/module', ModuleController::class);
 Route::resource('/modul', ModuleGuestController::class);
+Route::resource('quiz.pilgan', AddPilganController::class);
+Route::resource('quiz.dragndrop', AddDNDController::class);
+Route::resource('quiz.esay', AddEsayController::class);

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\category;
 use App\Models\quiz;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class quizController extends Controller
 {
@@ -27,7 +29,9 @@ class quizController extends Controller
      */
     public function create()
     {
-        return view('admin.addsoal');
+        $quiz = new quiz();
+        $categories = category::all();
+        return view('admin.addsoals', compact('categories','quiz'));
     }
 
     /**
@@ -36,11 +40,13 @@ class quizController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store( Request $request)
     {
+        
         $validatedData = $request->validate([
-            'moduletitle'=>'required',
-            'moduledesc'=>'required',
+            'quiztitle'=>'required',
+            'quizdesc'=>'required',
+            'id_category'=>'required',
             'media'=>'required|file'
         ]);
         if($request->file('media')){
@@ -48,7 +54,7 @@ class quizController extends Controller
         }
         $validatedData['id_user'] = Auth::id();
         quiz::create($validatedData);
-        return redirect('/module');
+        return redirect()->route('quis.index');
     }
 
     /**
@@ -59,7 +65,9 @@ class quizController extends Controller
      */
     public function show($id)
     {
-        //
+        $quiz = quiz::find($id);
+        $categories = category::all();
+        return redirect()->route('quiz.pilgan.index', compact('quiz'));
     }
 
     /**
@@ -68,9 +76,11 @@ class quizController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($quiz)
     {
-        //
+        $categories = category::all();
+        $quiz = quiz::find($quiz);
+        return route('quiz.pilgan.index', compact('quiz', 'categories'));
     }
 
     /**
@@ -80,9 +90,20 @@ class quizController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, quiz $quiz)
     {
-        //
+        $rules=([
+            'quiztitle' => 'required',
+            'quizdesc' => 'required',
+            'id_category' => 'required',
+            'media' => 'required|file'
+        ]);
+        $validatedData = $request->validate($rules);
+        !is_null($quiz->media) && Storage::delete($quiz->media);
+        $validatedData['media'] = $request->file('media')->store('public/modulemedia');
+        quiz::where('id', $quiz->id)->update($validatedData);
+
+        return redirect()->route('quis.index');
     }
 
     /**

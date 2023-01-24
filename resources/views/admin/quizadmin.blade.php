@@ -47,8 +47,13 @@
                                 </a>
                                 <a class="text-[12px] sm:text-[18px] mx-auto sm:py-1 text-gray-700 hover:scale-105
                       hover:text-green-111 border-2 rounded-[4px] sm:rounded-[6px] w-full"
-                                    href="">
+                                    href="/quiz/{{ $quiz->id}}/edit">
                                     <span>Edit</span>
+                                </a>
+                                <a class="text-[12px] sm:text-[18px] mx-auto sm:py-1 text-gray-700 hover:scale-105
+                                                      hover:text-green-111 border-2 rounded-[4px] sm:rounded-[6px] w-full"
+                                    href="{{route('quiz.show', $quiz)}}">
+                                    <span>Add & Edit Soal</span>
                                 </a>
                                 <a class="text-[12px] sm:text-[18px] mx-auto sm:py-1 bg-red-redFF6767 text-gray-700 hover:scale-105
                       hover:text-white rounded-[4px] sm:rounded-[6px] w-full"

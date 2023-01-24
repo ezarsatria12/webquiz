@@ -8,16 +8,25 @@ use Illuminate\Database\Eloquent\Model;
 class quiz extends Model
 {
     use HasFactory;
-
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
     protected $fillable = [
+        'id_user',
+        'id_category',
         'quiztitle',
-        'quizdesc'
+        'quizdesc',
+        'media',
+        
     ];
 
     public function User()
     {
         return $this->belongsTo(User::class);
     }
+    
     public function category()
     {
         return $this->belongsTo(category::class);

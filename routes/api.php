@@ -25,4 +25,3 @@ Route::get('/auth/google/redirect', [AuthGoogleController::class, 'redirectToPro
 Route::get('/auth/google/callback', [AuthGoogleController::class, 'handleProviderCallback']);
 /*resource*/
 Route::resource('/user', UserController::class);
-Route::resource('/quiz', QuizController::class);

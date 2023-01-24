@@ -58,26 +58,25 @@
                         <div class="flex flex-col w-full space-y-3">
                             <p class="font-thin">Opsi 1</p>
                             <label class="inline-flex items-center w-full">
-                                <input name="true" type="checkbox"
-                                    class="accent-green-111 w-6 h-6 border-0 rounded-md focus:ring-0">
+                                <input name="correct" type="checkbox"
+                                    class="accent-green-111 w-6 h-6 border-0 rounded-md focus:ring-0" value="1">
                                 <span class="ml-2 w-[1280px]" name="jawaban">
                                     <textarea required class="outline-green-111 rounded
-                                                border-2 p-2 w-[300px] sm:w-full border-gray-200 resize-none" name="pilgan"
-                                        id="pilgan" rows="1" placeholder="Masukkan jawaban"></textarea>
+                                                border-2 p-2 w-[300px] sm:w-full border-gray-200 resize-none" name="answer"
+                                        id="answer" rows="1" placeholder="Masukkan jawaban"></textarea>
                                 </span>
                             </label>
                         </div>
-                        <div class="flex flex-col w-full space-y-3">
-                            <p class="font-thin">Opsi 1</p>
-                            <label class="inline-flex items-center w-full">
-                                <input name="true" type="checkbox"
-                                    class="accent-green-111 w-6 h-6 border-0 rounded-md focus:ring-0">
-                                <span class="ml-2 w-[1280px]" name="jawaban">
-                                    <textarea required class="outline-green-111 rounded
-                                                border-2 p-2 w-[300px] sm:w-full border-gray-200 resize-none" name="pilgan"
-                                        id="pilgan" rows="1" placeholder="Masukkan jawaban"></textarea>
-                                </span>
-                            </label>
+                        
+            
+                        <!--button tambah opsi -->
+                        <div>
+                            <button class="hidden  sm:flex hover:scale-105 bg-green-111 hover:bg-white hover:text-green-111 px-4 py-2
+                                                                rounded font-inter font-medium text-white hover:shadow-lg"
+                                wire:click="addopsi">
+                                Tambahkan Opsi
+                            </button>
+            
                         </div>
                                 <!--  -->
                     </div>

@@ -10,6 +10,7 @@ class multichoise extends Model
     use HasFactory;
 
     protected $fillable = [
+        'id_quiz',
         'question',
         'media'
     ];

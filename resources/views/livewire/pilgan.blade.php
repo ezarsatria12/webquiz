@@ -6,7 +6,7 @@
         @csrf
         <div name="pilgan" class="container m-auto white w-full sm:w-[1440px] space-y-5">
             <div id="file" class="flex flex-col">
-                <p><input type="file" name="media" id="file-modul" onchange="loadFile(event)" style="display: none;">
+                <p><input type="file" name="media" id="media" onchange="loadFile(event)" style="display: none;">
                 </p>
                 <p><label for="file-modul" style="cursor: pointer;">
                         <img class="w-[60px] h-[60px] hover:scale-105" src="{{ URL('pictures/Insert file.png') }}"
@@ -15,7 +15,7 @@
                 <p><img id="filemodul" class="w-[300px] h-[200px]" /></p>
                 <script>
                     var loadFile = function(event) {
-                        var image = document.getElementById('filemodul');
+                        var image = document.getElementById('media');
                         image.src = URL.createObjectURL(event.target.files[0]);
                     };
                 </script>

@@ -54,7 +54,7 @@ class quizController extends Controller
         }
         $validatedData['id_user'] = Auth::id();
         quiz::create($validatedData);
-        return redirect()->route('quis.index');
+        return redirect()->route('quiz.index');
     }
 
     /**
@@ -76,11 +76,11 @@ class quizController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($quiz)
+    public function edit($id)
     {
         $categories = category::all();
-        $quiz = quiz::find($quiz);
-        return route('quiz.pilgan.index', compact('quiz', 'categories'));
+        $quiz = quiz::find($id);
+        return view('admin.addsoals', compact('quiz', 'categories'));
     }
 
     /**
@@ -103,7 +103,7 @@ class quizController extends Controller
         $validatedData['media'] = $request->file('media')->store('public/modulemedia');
         quiz::where('id', $quiz->id)->update($validatedData);
 
-        return redirect()->route('quis.index');
+        return redirect()->route('quiz.index');
     }
 
     /**

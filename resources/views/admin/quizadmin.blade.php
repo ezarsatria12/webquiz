@@ -8,7 +8,7 @@
                 <div
                     class="container h-fit mx-auto relative flex flex-wrap w-full justify-between font-medium text-2xl sm:text-3xl sm:w-[1280px] sm:h-[40px]">
                     <h1>Daftar Quiz</h1>
-                    <a href="/quis/create" class="self-center">
+                    <a href="/quiz/create" class="self-center">
                         <img class="w-6 h-6 bg-blend-color-burn hover:ring-1 hover:ring-green-111 sm:w-8 sm:h-8"
                             src="Pictures/plus.png" alt="whatsapp">
                     </a>

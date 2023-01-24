@@ -46,7 +46,7 @@
                       </button>
                       <!-- popup -->
                       <div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="modal-id">
-                        <div id="card" class="container flex flex-col justify-start py-5 z-10 w-[300px] h-[125px] sm:w-[600px] sm:h-[200px] 
+                        <div id="card" class="container flex flex-col justify-start py-5 z-10 w-[00px] h-[125px] sm:w-[600px] sm:h-[200px] 
                         rounded-[10px] shadow-card bg-white space-y-2 sm:space-y-3">
                             <!-- body -->
                             <div class="container mx-auto w-full px-6 h-full flex space-y-2 flex-col justify-center">
@@ -56,7 +56,7 @@
                             </div>
                             <!-- button masuk -->
                             <div class="container mx-auto w-full px-6 text-center h-auto flex flex-row space-x-5">
-                                <a class="text-[12px] sm:text-[18px] mx-auto sm:py-1 text-gray-700 hover:scale-105
+                                <a onclick="toggleModal('modal-id')" class="text-[12px] sm:text-[18px] mx-auto sm:py-1 text-gray-700 hover:scale-105
                                 hover:text-green-111 border-2 rounded-[4px] sm:rounded-[6px] w-full" href="#">
                                   <span>Batal</span>
                                 </a>
@@ -66,6 +66,7 @@
                                 </a>
                             </div>
                                 <!--  -->
+                                
                         </div>
                     </div>
                       <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id-backdrop"></div>
@@ -90,12 +91,12 @@
     </div>
     
     <div class="pb-[400px] sm:pb-10 py-10 flex mx-auto flex-row space-x-2 justify-center" href="#home">
-                    <a href="#"><img class="h-6 w-6 hover:ring-1 hover:ring-green-111" src="Pictures/arrow-left-line.png" alt="whatsapp"></a>
+                    <a href="#"><img class="h-6 w-6 hover:ring-1 " src="Pictures/arrow-left-line.png" alt="whatsapp"></a>
                     <a class="hover:underline focus:underline" href="#">1</a>
                     <a class="hover:underline focus:underline" href="#">2</a>
                     <a class="hover:underline focus:underline" href="#">3</a>
                     <a>...</a>
-                    <a href="#"><img class="h-6 w-6 hover:ring-1 hover:ring-green-111" src="Pictures/arrow-right-line.png" alt="whatsapp"></a>
+                    <a href="#"><img class="h-6 w-6 hover:ring-1" src="Pictures/arrow-right-line.png" alt="whatsapp"></a>
                 </div>
   </div>
 </section>

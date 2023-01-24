@@ -16,18 +16,33 @@
         </div>
         <!-- soal -->
         <div class="container flex-col sm:w-[1280px] space-y-[10px] sm:space-x-[20px] flex sm:flex-row">
-            <h1 class="text-2xl flex sm:text-4xl sm:m-[10px] sm:w-full ">Lorem ipsum dolor sit amet pretium consectetur adipiscing elit.
+            <h1 class="text-2xl flex sm:text-4xl sm:m-[10px] sm:w-full ">Lorem ipsum dolorbcx sit amet pretium consectetur adipiscing elit.
             Lorem consectetur adipiscing elit
         </h1>
         </div>
         <!-- button jawaban -->
         <div class="flex flex-row sm:flex-wrap space-x-3 sm:space-x-0">
-        <div class="container sm:w-[1280px] w-[150px] h-fit sm:h-[320px] flex flex-col sm:flex-row">
-            <a href="#A">
-            <button class="bg-[#ED6A5E] hover:scale-105 hover:brightness-125 rounded-[10px] shadow-boxjawaban w-[150px] h-[150px] sm:h-[300px] sm:w-[300px] m-[10px]">
+        <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" class="container sm:w-[1280px] w-[150px] h-fit sm:h-[320px] flex flex-col sm:flex-row">
+            <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)" id="drag1" 
+            class="bg-[#ED6A5E] hover:scale-105 hover:brightness-125 rounded-[10px] shadow-boxjawaban w-[150px] h-[150px] sm:h-[300px] 
+            sm:w-[300px] m-[10px]">
                 A
-            </button>
-            </a>
+            </div>
+            <script>
+                function allowDrop(ev) {
+                ev.preventDefault();
+                }
+
+                function drag(ev) {
+                ev.dataTransfer.setData("text", ev.target.id);
+                }
+
+                function drop(ev) {
+                ev.preventDefault();
+                var data = ev.dataTransfer.getData("text");
+                ev.target.appendChild(document.getElementById(data));
+                }
+        </script>
             <a href="#B">
             <button class="bg-[#A5F1E9] hover:scale-105 hover:brightness-125 rounded-[10px] shadow-boxjawaban w-[150px] h-[150px] sm:h-[300px] sm:w-[300px] m-[10px]">
                 B

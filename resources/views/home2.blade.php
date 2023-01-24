@@ -7,18 +7,16 @@
         <div class="flex flex-col justify-center items-center w-full lg:flex-row lg:w-1/2">
             <div class="max-w-lg">
                 <p class="text-xl tracking-wide md:text-3xl lg:text-4xl font-inter font-semibold">
-                    aasdasdl</p>
+                    "Get Rid From Sadness With Pantun" </p>
+                    <p class="text-sm"></p>
                     <br>
                     <div class="backdrop-filter backdrop-blur-lg md:backdrop-filter-none bg-green-111">
 <!-- ... -->
                 </div>
-                <p class="mt-4 font-poppins">Lorem ipsum, dolor sit amet consectetur
-                    adipisicing elit. Aut quia asperiores alias vero magnam recusandae adipisci ad vitae
-                    laudantium quod rem voluptatem eos accusantium cumque.</p>
+                <p class="mt-4 font-poppins">SmartPantun adalah sebuah platform digital yang menyediakan sarana belajar untuk pelajar yang ingin belajar pantun </p>
                 <div class="mt-6">
-                    <button href="#"
-                        class="inline-block px-3 py-2 font-semibold text-center text-white transition-colors duration-200 transform
-                        bg-green-111 rounded-md hover:text-green-700">
+                    <button href="#" class="inline-block px-3 py-2 font-semibold text-center text-white 
+                    bg-green-111 rounded-md focus:shadow-card">
                         Read More</button>
                 </div>
             </div>
@@ -34,10 +32,7 @@
 <div class="text-center w-3/4">
     <a class="font-inter font-extrabold text-4xl">Fitur utama kami</a>
     <br></br>
-    <a>Lorem ipsum dolor sit amet consectetur.
-        Diam cursus lacus tincidunt fermentum pulvinar nunc sollicitudin scelerisque.
-        Mauris ullamcorper nascetur suspendisse elit vulputate lorem dolor.
-        Adipiscing orci et erat eu placerat commodo. Arcu in nec id nibh interdum.</a>
+    <a>Kami menyediakan kedua fitur utama kami yaitu quiz dan modul </a>
         </div>
     </div>
 </section>
@@ -49,9 +44,9 @@
                 <img class="object-cover w-[40px] max-w-2xllg:h-full"
                 src="pictures/puzzle.png" alt="anak-kecil">
                 <h1 class="text-3xl font-medium">Quiz</h1>
-                <p class="pb-[50px] sm:mt-4 font-poppins">Lorem ipsum, dolor sit amet consectetur
-                    adipisicing elit. Aut quia asperiores alias vero magnam recusandae adipisci ad vitae
-                    laudantium quod rem voluptatem eos accusantium cumquea.</p>
+                <p class="pb-[50px] sm:mt-4 font-poppins">Didalam fitur kuis pelajar bisa menggunakan fitur ini untuk mencari dan
+                    mengerjakan sebuah kuis yang sudah disediakan
+                </p>
             </div>
         </div>
 <!-- ... -->
@@ -60,9 +55,9 @@
                 <img class="object-cover w-[40px] max-w-2xllg:h-full"
                 src="pictures/buku.png" alt="anak-kecil">
                 <h1 class="text-3xl font-medium">Modul</h1>
-                <p class="pb-[50px] sm:mt-4 font-poppins">Lorem ipsum, dolor sit amet consectetur
-                    adipisicing elit. Aut quia asperiores alias vero magnam recusandae adipisci ad vitae
-                    laudantium quod rem voluptatem eos accusantium cumque.</p>
+                <p class="pb-[50px] sm:mt-4 font-poppins">Di dalam fitur modul pelajar bisa menggunakan fitur ini untuk menambah wawasan
+                    dengan cara membaca modul" pembelajaran yang disediakan
+                </p>
             </div>
         </div>
     </div>

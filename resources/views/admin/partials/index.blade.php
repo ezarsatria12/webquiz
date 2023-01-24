@@ -7,7 +7,7 @@
         @livewireStyles
     </head>
     <body>
-        @include('admin.partials.navadmin')
+        @include('admin.partials.nav2')
             <main class="content">
                 @yield('container')   
             </main>

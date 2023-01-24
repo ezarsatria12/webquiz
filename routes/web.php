@@ -50,7 +50,7 @@ Route::get('/addsoal', function () {
 });
 
 Route::get('/profile', function () {
-    return view('admin.profile');
+    return view('profile');
 })->name('profile');
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);

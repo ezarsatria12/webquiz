@@ -7,10 +7,9 @@
     
         <!--nav button-->
     <div id="nav-content"class="hidden sm:flex  content-center text-grey-fade m-auto text-center">
-        <a class="mr-5  font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700" href="/aboutus">About Us</a>
+        <a class="mr-5  font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700" href="/aboutus">Profile</a>
         <a class="mx-5 font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700" href="/quiz">Quiz</a>
         <a class="mx-5 font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700" href="/modul">Modul</a>
-        <a class="ml-5 font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700" href="/help">Profile</a>
     </div>
     <!-- hamburger -->
         <span  class="pl-[135px]">

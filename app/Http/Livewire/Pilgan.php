@@ -6,28 +6,25 @@ use Livewire\Component;
 
 class Pilgan extends Component
 {
-    public $Pilgan = [];
     public $opsi = [];
     protected $listeners = ['events' => 'addPilgan'];
 
     public function mount()
     {
-        $this->Pilgan[] = [
-        ];
         $this->opsi[] = [];
     }
-    public function addPilgan(){
-        $this->Pilgan[] = [];
+    public function addopsi(){
+        $this->opsi[] = [];
     }
- 
-    public function addopsi()
+    public function removeProduct($index)
     {
-        $this->opsi[] = [];
+        unset($this->opsi[$index]);
+        $this->opsi = array_values($this->opsi);
     }
     
     public function render()
     {
-        info($this->Pilgan);
+        info($this->opsi);
         return view('livewire.pilgan');
     }
     

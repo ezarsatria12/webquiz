@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignId('id_category')->references('id')->on('categories');
             $table->string('quiztitle');
             $table->text('quizdesc');
+            $table->text('media');
             $table->timestamps();
         });
     }

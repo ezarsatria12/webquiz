@@ -43,7 +43,6 @@
                         <span>Delete</span>
                       </button>
                       </form>
-                    <!-- tanda panah klo bukan admin -->
             </div>
           </div>
           </a>

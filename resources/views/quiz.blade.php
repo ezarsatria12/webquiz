@@ -18,11 +18,12 @@
     <a class="hover:text-green-111 focus:text-green-111" href="#">Sulit</a>
 </div>
     <!-- cardsection -->
-    <div class="container mx-auto flex flex-wrap sm:flex-row space-x-2 h-fit pb-[10px] space-y-3 sm:w-[1280px] sm:flex-wrap sm:space-y-5">
+    
+    <div class="container mx-auto flex gap-4 flex-wrap h-fit pb-[10px] sm:w-[1280px] sm:flex-wrap ">
     <!-- card1 -->
     <a href="#">
         <div type="button" onclick="toggleModal('modal-id')"
-        class="toggleModal container w-[150px] m-auto pb-5 flex flex-col justify-start h-fit sm:w-[400px] sm:space-y-3 sm:h-fit shadow-card rounded-[10px] bg-white">
+        class="toggleModal container w-[150px] mx-auto flex flex-col justify-start h-fit sm:w-[400px] sm:space-y-3 sm:h-fit shadow-card rounded-[10px] bg-white">
             <div>
             <img class="my-[15px] mx-auto rounded-[10px] px-[10px] sm:w-[350px] sm:h-[185px]  "
             src="pictures/template.png" alt="thumbnail-modul">
@@ -30,32 +31,49 @@
             <p class="text-[8px] sm:text-[20px] flex flex-col font-light justify-start px-3 sm:px-7">deskripsi Quiz</p>
         </div>
             <!-- tanda panah klo bukan admin -->
-            <div class="container justify-end w-full h-auto flex pr-3 sm:pr-5 mb-3 sm:mb-5 mt-auto flex-row">
+            <div class="container justify-end w-full h-auto sm:pb-[20px] flex pr-3 sm:pr-5 mb-3 sm:mb-5 mt-auto flex-row">
             <img class="w-[16px] h-[16px] sm:w-[50px] sm:h-[50px]" src="pictures/go.png" alt="">
         </div>
     </div>
-</div>
-</a>
+    </a>
+    <!-- card end -->
+    <!-- card1 -->
+    <a href="#">
+        <div type="button" onclick="toggleModal('modal-id')"
+        class="toggleModal container w-[150px] mx-auto flex flex-col justify-start h-fit sm:w-[400px] sm:space-y-3 sm:h-fit shadow-card rounded-[10px] bg-white">
+            <div>
+            <img class="my-[15px] mx-auto rounded-[10px] px-[10px] sm:w-[350px] sm:h-[185px]  "
+            src="pictures/template.png" alt="thumbnail-modul">
+            <h1 class="flex justify-start px-3 sm:px-7 font-medium text-[12px] sm:text-[16px] sm:text-3xl ">Judul Quiz</h1>
+            <p class="text-[8px] sm:text-[20px] flex flex-col font-light justify-start px-3 sm:px-7">deskripsi Quiz</p>
+        </div>
+            <!-- tanda panah klo bukan admin -->
+            <div class="container justify-end w-full h-auto sm:pb-[20px] flex pr-3 sm:pr-5 mb-3 sm:mb-5 mt-auto flex-row">
+            <img class="w-[16px] h-[16px] sm:w-[50px] sm:h-[50px]" src="pictures/go.png" alt="">
+        </div>
+    </div>
+    </a>
     <!-- card end -->
 </div>
+</div>
 <div class="pb-[400px] sm:pb-10 py-10 flex mx-auto flex-row space-x-2 justify-center" href="#home">
-    <a href="#"><img class="h-6 w-6 hover:ring-1 hover:ring-green-111" src="Pictures/arrow-left-line.png" alt="whatsapp"></a>
+    <a href="#"><img class="h-6 w-6 hover:scale-105" src="Pictures/arrow-left-line.png" alt="whatsapp"></a>
     <a class="hover:underline focus:underline" href="#">1</a>
     <a class="hover:underline focus:underline" href="#">2</a>
     <a class="hover:underline focus:underline" href="#">3</a>
     <a>...</a>
-    <a href="#"><img class="h-6 w-6 hover:ring-1 hover:ring-green-111" src="Pictures/arrow-right-line.png" alt="whatsapp"></a>
+    <a href="#"><img class="h-6 w-6 hover:scale-105" src="Pictures/arrow-right-line.png" alt="whatsapp"></a>
     </div>
 </section>
 
 <!-- card ngambang -->
         <!--  -->
 <div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="modal-id">
-    <div id="card" class="container flex flex-col justify-start py-5 z-10 w-fit h-fit sm:w-[491px] sm:h-[654px] 
+    <div id="card" class="container flex flex-col justify-start py-5 mx-10 z-10 w-full h-[400px] sm:w-[491px] sm:h-[654px]
     rounded-[10px] shadow-card bg-white space-y-2 sm:space-y-3">
         <div class="flex flex-col px-5 self-end">
         <!-- back button -->
-        <button class="background-transparent font-bold uppercase text-sm outline-none 
+        <button class="background-transparent font-bold uppercase text-sm outline-none
             focus:outline-none transition-all duration-150" onclick="toggleModal('modal-id')">
             <img class="hover:scale-110 rounded-[10px] m-auto w-[16px] h-[16px] sm:w-[32px] sm:h-[32px]"
                 src="pictures/cross.png" alt="backcard">

@@ -38,11 +38,14 @@
     </div>
 </div>
         <!-- area jawaban -->
-    <div class="container justify-center  mx-auto sm:w-[400px] h-fit flex flex-wrap gap-5">
-        <div id="drag1" ondragover="allowDrop(event)"
+    <div class="container justi fy-center  mx-auto sm:w-[400px] h-fit flex flex-wrap gap-5">
+        <label for="opsi-2" >
+        <input class=""  id="opsi-2"/>
+        <div id="opsi-2" value="20" ondragover="allowDrop(event)"
         draggable="true" ondragstart="drag(event)" id="drag1" 
         class="bg-slate-200 w-fit h-fit px-4 py-1 shadow-card">
         1
+        </label>
     </div>
         <div id="drag2" ondrop="drop(event)" ondragover="allowDrop(event)"
         draggable="true" ondragstart="drag(event)" id="drag1" 
@@ -69,6 +72,7 @@
         class="bg-slate-200 w-fit h-fit px-4 py-1 shadow-card">
         6
     </div>
+    
         <!-- dnd 1 js -->
         <script>
         function allowDrop(ev) {
@@ -83,6 +87,16 @@
         ev.preventDefault();
         var data = ev.dataTransfer.getData("text");
         ev.target.appendChild(document.getElementById(data));
+        }
+        function checkAnswers() {
+        let score = 0;
+        const answers = document.getElementsByTagName("input");
+        for (let i = 0; i < answers.length; i++) {
+            if (answers[i].checked) {
+            score += parseInt(answers[i].value);
+            }
+        }
+        alert("Your score is: " + score);
         }
         </script>
     </div>
@@ -99,7 +113,9 @@
                 <img src="pictures/prev.png" alt="">
                 </a>
             <a class="hover:brightness-110 hover:scale-105 justify-center w-[60px] h-[60px] sm:w-[80px] sm:h-[80px]" href="#next">
+                <button class="submit-button" onclick="checkAnswers()">
                 <img src="pictures/next.png" alt="">
+                </button>
                 </a>
             </div>
         </div>

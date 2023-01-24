@@ -9,6 +9,9 @@ module.exports = {
   // tailwind.config.js
   theme: {
     extend: {
+      zIndex: {
+        '1': '1',
+      },
       spacing: {
         '1440': '90rem',
         '199': '12.4375rem',

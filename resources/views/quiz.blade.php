@@ -84,8 +84,7 @@
             <img class="self-center mx-auto rounded-[10px] px-[10px] w-[300px] h-[150px] sm:w-[450px] sm:h-[250px]  "
                 src="pictures/template.png" alt="thumbnail-modul">
             <h1 class="flex self-start font-medium text-[16px] sm:text-3xl ">Judul Quiz</h1>
-            <p class="text-[12px] sm:text-[20px] flex flex-col font-light self-start">deskripsi Quizaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+            <p class="text-[12px] sm:text-[20px] flex flex-col font-light self-start">Ini adalah descripsi quiz</p>
         </div>
         <!-- button masuk -->
         <div class="container mx-auto w-full px-6 text-center h-full flex flex-col justify-end">

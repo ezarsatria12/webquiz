@@ -47,12 +47,12 @@
                                 </a>
                                 <a class="text-[12px] sm:text-[18px] mx-auto sm:py-1 text-gray-700 hover:scale-105
                       hover:text-green-111 border-2 rounded-[4px] sm:rounded-[6px] w-full"
-                                    href="/quiz/{{ $quiz->id}}/edit">
+                                    href="/quiz/{{ $quiz->id }}/edit">
                                     <span>Edit</span>
                                 </a>
                                 <a class="text-[12px] sm:text-[18px] mx-auto sm:py-1 text-gray-700 hover:scale-105
                                                       hover:text-green-111 border-2 rounded-[4px] sm:rounded-[6px] w-full"
-                                    href="{{route('quiz.show', $quiz)}}">
+                                    href="{{ route('quiz.show', $quiz) }}">
                                     <span>Add & Edit Soal</span>
                                 </a>
                                 <a class="text-[12px] sm:text-[18px] mx-auto sm:py-1 bg-red-redFF6767 text-gray-700 hover:scale-105
@@ -70,15 +70,7 @@
         </div>
 
         <div class=" py-10 flex mx-auto flex-row space-x-2 justify-center" href="#home">
-            <a href="#"><img class="h-6 w-6 hover:ring-1 hover:ring-green-111" src="Pictures/arrow-left-line.png"
-                    alt="whatsapp"></a>
-            <a class="hover:underline focus:underline" href="#">1</a>
-            <a class="hover:underline focus:underline" href="#">2</a>
-            <a class="hover:underline focus:underline" href="#">3</a>
-            <a>...</a>
-            <a href="#"><img class="h-6 w-6 hover:ring-1 hover:ring-green-111" src="Pictures/arrow-right-line.png"
-                    alt="whatsapp"></a>
-        </div>
+            {{ $quizs->links() }}
         </div>
     </section>
 @endsection

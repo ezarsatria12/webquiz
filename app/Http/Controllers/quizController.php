@@ -18,7 +18,7 @@ class quizController extends Controller
     public function index()
     {
         return view('admin.quizadmin', [
-            'quizs' => quiz::where('id_user', auth()->user()->id)->get()
+            'quizs' => quiz::where('id_user', auth()->user()->id)->paginate(9)
         ]);
     }
 

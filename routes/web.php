@@ -50,7 +50,7 @@ Route::get('/addsoal', function () {
 });
 
 Route::get('/profile', function () {
-    return view('profile');
+    return view('admin.profile2');
 })->name('profile');
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
@@ -60,7 +60,7 @@ Route::post('/logout', [LoginController::class, 'out']);
 Route::get('/auth/google/redirect', [AuthGoogleController::class, 'redirectToProvider']);
 Route::get('/auth/google/callback', [AuthGoogleController::class, 'handleProviderCallback']);
 
-/*resource*/
+
 Route::resource('/user', UserController::class);
 Route::resource('/quiz', QuizController::class);
 Route::resource('/addquiz', AddQuizController::class);

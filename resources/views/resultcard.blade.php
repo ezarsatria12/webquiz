@@ -50,7 +50,7 @@
             window.onload = function() {
                 var pos = 0;
                 var soal1 = 20;
-                var soal2 = 10
+                var soal2 = 29;
                 var result = pos + soal1 + soal2; //point nilai soal
                 //our box element
                 var bar = document.getElementById('p1');

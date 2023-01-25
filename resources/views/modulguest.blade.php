@@ -18,7 +18,7 @@
             <!-- card1 -->
             @foreach ( $moduls as $modul )
             <a href="#">
-            <div class="container w-[150px] m-auto flex flex-col justify-start h-fit sm:w-[400px] sm:h-[430px] shadow-card rounded-[10px] bg-white">
+            <div type="button" onclick="toggleModal('modal-id')" class="container w-[150px] m-auto flex flex-col justify-start h-fit sm:w-[400px] sm:h-[430px] shadow-card rounded-[10px] bg-white">
                     <div>
                     <img class="my-[15px] rounded-[10px] px-[10px] sm:w-[350px] sm:h-[185px]  "
                     src="pictures/template.png" alt="thumbnail-modul">
@@ -32,6 +32,48 @@
             </div>
             @endforeach
             <!-- card end -->
+            <!-- card ngambang -->
+            <!--  -->
+            <div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center"
+                id="modal-id">
+                <div id="card" class="container flex flex-col justify-start py-5 mx-10 z-10 w-full h-[400px] sm:w-[491px] sm:h-[654px]
+                rounded-[10px] shadow-card bg-white space-y-2 sm:space-y-3">
+                    <div class="flex flex-col px-5 self-end">
+                        <!-- back button -->
+                        <button class="background-transparent font-bold uppercase text-sm outline-none
+                        focus:outline-none transition-all duration-150" onclick="toggleModal('modal-id')">
+                            <img class="hover:scale-110 rounded-[10px] m-auto w-[16px] h-[16px] sm:w-[32px] sm:h-[32px]"
+                                src="pictures/cross.png" alt="backcard">
+                        </button>
+                    </div>
+                    <!-- body -->
+                    <div class="container mx-auto w-full px-6 h-full flex space-y-2 flex-col">
+                            <img class="self-center mx-auto rounded-[10px] px-[10px] w-[300px] h-[150px] sm:w-[450px] sm:h-[250px]  "
+                                src="pictures/template.png" alt="thumbnail-modul">
+                        <h1 class="flex self-start font-medium text-[16px] sm:text-3xl ">Judul Modul</h1>
+                        <p class="text-[12px] sm:text-[20px] flex flex-col font-light self-start">Ini adalah descripsi modul</p>
+                    </div>
+                    <!-- button masuk -->
+                    <div class="container mx-auto w-full px-6 text-center h-full flex flex-col justify-end">
+                        <a class="text-[12px] sm:text-[18px] mx-auto sm:py-1 text-gray-700 hover:scale-105
+                        hover:text-green-111 border-2 rounded-[4px] sm:rounded-[6px] w-full" href="#">
+                            <span>masuk</span>
+                        </a>
+                    </div>
+                    <!--  -->
+                </div>
+            </div>
+            <!-- js modal -->
+            <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id-backdrop"></div>
+            <script type="text/javascript">
+                var modal = document.getElementById(modalID);
+                function toggleModal(modalID){
+                    document.getElementById(modalID).classList.toggle("hidden");
+                    document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
+                    document.getElementById(modalID).classList.toggle("flex");
+                    document.getElementById(modalID + "-backdrop").classList.toggle("flex");
+                }
+            </script>
         </div>
     </div>
 

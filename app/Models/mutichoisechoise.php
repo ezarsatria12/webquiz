@@ -10,7 +10,7 @@ class mutichoisechoise extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id_multichoise',
+        'multichoise_id',
         'correct',
         'answer'
     ];

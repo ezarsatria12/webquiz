@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\category;
+use App\Models\multichoise;
 use App\Models\quiz;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,7 +19,7 @@ class quizController extends Controller
     public function index()
     {
         return view('admin.quizadmin', [
-            'quizs' => quiz::where('id_user', auth()->user()->id)->paginate(9)
+            'quizs' => quiz::where('user_id', auth()->user()->id)->paginate(9)
         ]);
     }
 
@@ -46,13 +47,13 @@ class quizController extends Controller
         $validatedData = $request->validate([
             'quiztitle'=>'required',
             'quizdesc'=>'required',
-            'id_category'=>'required',
+            'category_id'=>'required',
             'media'=>'required|file'
         ]);
         if($request->file('media')){
-            $validatedData['media'] = $request->file('media')->store('public/modulemedia');
+            $validatedData['media'] = $request->file('media')->store('public/tumbnailquizmedia');
         }
-        $validatedData['id_user'] = Auth::id();
+        $validatedData['user_id'] = Auth::id();
         quiz::create($validatedData);
         return redirect()->route('quiz.index');
     }
@@ -92,13 +93,12 @@ class quizController extends Controller
      */
     public function update(Request $request, quiz $quiz)
     {
-        $rules=([
+        $validatedData = $request->validate([
             'quiztitle' => 'required',
             'quizdesc' => 'required',
-            'id_category' => 'required',
+            'category_id' => 'required',
             'media' => 'required|file'
         ]);
-        $validatedData = $request->validate($rules);
         !is_null($quiz->media) && Storage::delete($quiz->media);
         $validatedData['media'] = $request->file('media')->store('public/modulemedia');
         quiz::where('id', $quiz->id)->update($validatedData);
@@ -112,8 +112,12 @@ class quizController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(quiz $quiz)
     {
-        //
+        $question = multichoise::find($quiz);
+        ddd($question);
+        Storage::delete($quiz->media);
+        $quiz->delete();
+        return redirect()->route('quiz.index');
     }
 }

@@ -57,7 +57,7 @@ class AddQuizController extends Controller
             'media'=> $request->media,
             'question' => $request->question,
         ]);
-        $validatedData['id_quiz'] = quiz::id();
+        $validatedData['quiz_id'] = quiz::id();
         foreach ($request->opsi as $opsi) {
             $order->products()->attach(
                 $opsi['product_id'],

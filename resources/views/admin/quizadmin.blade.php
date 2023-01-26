@@ -34,9 +34,9 @@
                                     src="pictures/template.png" alt="thumbnail-modul">
                                 <h1
                                     class="flex justify-start px-3 sm:px-7 font-medium text-[12px] sm:text-[16px] sm:text-3xl ">
-                                    Judul Quiz</h1>
+                                    {{$quiz->quiztitle}}</h1>
                                 <p class="text-[8px] sm:text-[20px] flex flex-col font-light justify-start px-3 sm:px-7">
-                                    deskripsi Quiz</p>
+                                    {{$quiz->quizdesc}}</p>
                             </div>
                             <!-- tombol kalo login -->
                             <div class="container mx-auto w-full px-6 text-center h-auto flex space-y-2 flex-col">
@@ -55,11 +55,15 @@
                                     href="{{ route('quiz.show', $quiz) }}">
                                     <span>Add & Edit Soal</span>
                                 </a>
-                                <a class="text-[12px] sm:text-[18px] mx-auto sm:py-1 bg-red-redFF6767 text-gray-700 hover:scale-105
+                                <form action="/quiz/{{ $quiz->id}}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                <button class="text-[12px] sm:text-[18px] mx-auto sm:py-1 bg-red-redFF6767 text-gray-700 hover:scale-105
                       hover:text-white rounded-[4px] sm:rounded-[6px] w-full"
                                     href="">
                                     <span>Delete</span>
-                                </a>
+                                </button>
+                                </form>
                                 <!-- tanda panah klo bukan admin -->
                             </div>
                         </div>

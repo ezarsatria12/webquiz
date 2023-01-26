@@ -14,7 +14,7 @@ class module extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'id_user',
+        'user_id',
         'moduletitle',
         'moduledesc',
         'media'

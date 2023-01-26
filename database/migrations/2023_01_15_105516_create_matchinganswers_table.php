@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('matchinganswers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_matchings')->references('id')->on('matchings');
+            $table->foreignId('matching_id')->references('id')->on('matchings');
             $table->text('question');
             $table->text('answer');
             $table->timestamps();

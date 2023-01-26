@@ -17,7 +17,7 @@ class ModuleController extends Controller
     public function index()
     {
         return view('admin.modul2', [
-            'moduls' => module::where('id_user', auth()->user()->id)->get()
+            'moduls' => module::where('user_id', auth()->user()->id)->get()
         ]);
     }
 
@@ -48,7 +48,7 @@ class ModuleController extends Controller
         if($request->file('media')){
             $validatedData['media'] = $request->file('media')->store('public/modulemedia');
         }
-        $validatedData['id_user'] = Auth::id();
+        $validatedData['user_id'] = Auth::id();
         module::create($validatedData);
         return redirect('/module');
     }

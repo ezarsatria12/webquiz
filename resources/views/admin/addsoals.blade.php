@@ -2,7 +2,7 @@
 
 @section('container')
     <section>
-        <form action="{{ $quiz->id ? route('quiz.update', $quiz->id) : route('quiz.store') }}" method="post"
+        <form action="{{ $quiz->id ? route('quiz.update', $quiz->id) : route('quiz.store', $quiz->id) }}" method="post"
             enctype="multipart/form-data">
             @csrf
             @if ($quiz->id)
@@ -14,13 +14,13 @@
                     <div name="Title" class="h-fit w-full sm:w-[630px] space-y-3">
                         <p class="">Quiz Title</p>
                         <textarea required class="outline-green-111 rounded border-2 p-2 w-full sm:w-[630px] border-gray-200 resize-none"
-                            name="quiztitle" id="quiztitle" rows="2" placeholder="Masukkan Judul Quiz" value="{{ $quiz->quiztitle ?? '' }}"></textarea>
+                            name="quiztitle" id="quiztitle" rows="2" placeholder="Masukkan Judul Quiz" >{{ old('quiztitle') ?? $quiz->quiztitle }}</textarea>
                     </div>
                     <div name="Title" class="h-fit w-full space-y-3 sm:w-1/2">
                         <p class="">Kategori</p>
-                        <select id="id_category" name="id_category" required
+                        <select id="id_category" name="category_id" required
                             class="w-full sm:w-full select-none text-black-primary
-                invalid:text-gray-400 focus:outline-green-111 rounded border-2 border-gray-200 box-border h-10 p-2 ">
+                invalid:text-gray-400 focus:outline-green-111 rounded border-2 border-gray-200 box-border h-10 p-2 " >
                             <option disabled selected>Pilih Kategori</option>
                             @foreach ($categories as $cate)
                                 <option value="{{ $cate->id }}">{{ $cate->category }}</option>
@@ -33,7 +33,7 @@
                         <div>
                             <p class="">Quiz Description</p>
                             <textarea class="w-full sm:w-[630px] outline-green-111 rounded border-2 p-2 border-gray-200 resize-none" name="quizdesc"
-                                id="quizedesc" cols="80" rows="6" placeholder="Masukkan Judul Quiz" value="{{ $quiz->quizdesc ?? '' }}"></textarea>
+                                id="quizedesc" cols="80" rows="6" placeholder="Masukkan Judul Quiz">{{ old('quiztitle') ?? $quiz->quizdesc }}</textarea>
                             <!-- thumbnail pict upload -->
                         </div>
 

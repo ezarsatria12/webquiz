@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('multichoises', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_quiz')->references('id')->on('quizzes');
+            $table->foreignId('quiz_id')->references('id')->on('quizzes');
             $table->text('question');
-            $table->string('media');
+            $table->string('media')->nullable();
             $table->timestamps();
         });
     }

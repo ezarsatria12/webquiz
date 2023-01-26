@@ -4,8 +4,9 @@
     @section('container')
     <section>
         <div>
-            <form action="{{ route("quiz.pilgan.store", $quiz) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route("quiz.pilgan.update", [$quiz, $pilgan]) }}" method="POST" enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
                 <div name="pilgan" class="container m-auto white w-full sm:w-[1440px] space-y-5">
                     <div id="file" class="flex flex-col">
                         <p><input type="file" name="media" id="file-modul" onchange="loadFile(event)"

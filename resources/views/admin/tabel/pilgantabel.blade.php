@@ -31,50 +31,35 @@
                         </tr>
                     </thead>
                     <tbody>
+
+                        @foreach ( $pilgans->multichoise as $pilgan)
+                            
                         <tr class=" border-b  border-green-111">
                             <th scope="row" class="border-x border-opacity-25 border-green-111 px-6 py-4 ">
-                                1.
+                                {{ $loop->iteration}}
                             </th>
                             <td class="border-x border-opacity-25 border-green-111 px-6 py-4">
-                                puisi adalah
+                                {{ $pilgan->question}}
                             </td>
                             <td class="border-x border-opacity-25 border-green-111 px-6 py-4">
-                                contohpuisi.jpeg
+                               <p> {{ $pilgan->media}}</p>
                             </td>
                             <td class="border-x border-opacity-25 border-green-111 px-6 py-4">
-                                <p>a</p>
-                                <p>b</p>
-                                <p>c</p>
+                                @foreach ($pilgan->mutichoisechoise as $choise)
+                                    <p>{{ $choise->answer }}</p>
+                                @endforeach
                             </td>
                             <td class="border-x border-opacity-25 border-green-111 px-6 py-4">
-                                <a href="#"
-                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                                <a href="#"
-                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">delete</a>
+                                <a href="{{ route("quiz.pilgan.edit", [$quiz, $pilgan]) }}"
+                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><span>Edit</span></a>
+                                <form action="{{ route("quiz.pilgan.destroy", [$quiz, $pilgan]) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit">delete</button>
+                                </form>
                             </td>
                         </tr>
-                        <tr class=" border-b  border-green-111">
-                            <th scope="row" class="border-x border-opacity-25 border-green-111 px-6 py-4 ">
-                                1.
-                            </th>
-                            <td class="border-x border-opacity-25 border-green-111 px-6 py-4">
-                                puisi adalah
-                            </td>
-                            <td class="border-x border-opacity-25 border-green-111 px-6 py-4">
-                                contohpuisi.jpeg
-                            </td>
-                            <td class="border-x border-opacity-25 border-green-111 px-6 py-4">
-                                <p>a</p>
-                                <p>b</p>
-                                <p>c</p>
-                            </td>
-                            <td class="border-x border-opacity-25 border-green-111 px-6 py-4">
-                                <a href="#"
-                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                                <a href="#"
-                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">delete</a>
-                            </td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

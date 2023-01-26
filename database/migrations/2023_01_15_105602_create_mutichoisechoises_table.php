@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('mutichoisechoises', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_multichoise')->references('id')->on('multichoises');
+            $table->foreignId('multichoise_id')->references('id')->on('multichoises');
             $table->boolean('correct');
             $table->text('answer');
             $table->timestamps();

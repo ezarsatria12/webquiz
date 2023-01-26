@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('modules', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_user')->references('id')->on('users');
+            $table->foreignId('user_id')->references('id')->on('users');
             $table->string('moduletitle');
             $table->text('moduledesc');
             $table->string('media');

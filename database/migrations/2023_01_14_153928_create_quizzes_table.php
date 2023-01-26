@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('quizzes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_user')->references('id')->on('users');
-            $table->foreignId('id_category')->references('id')->on('categories');
+            $table->foreignId('user_id')->references('id')->on('users');
+            $table->foreignId('category_id')->references('id')->on('categories');
             $table->string('quiztitle');
             $table->text('quizdesc');
             $table->text('media');

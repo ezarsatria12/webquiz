@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('studentesayaswers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_quiz')->references('id')->on('quizzes');
-            $table->foreignId('id_student')->references('id')->on('students');
+            $table->foreignId('quiz_id')->references('id')->on('quizzes');
+            $table->foreignId('student_id')->references('id')->on('students');
             $table->text('answer');
             $table->timestamps();
         });

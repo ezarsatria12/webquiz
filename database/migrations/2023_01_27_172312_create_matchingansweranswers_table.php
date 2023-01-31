@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('matchinganswers', function (Blueprint $table) {
+        Schema::create('matchingansweranswers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('matching_id')->references('id')->on('matchings');
-            $table->text('question');
+            $table->foreignId('matchinganswer_id')->references('id')->on('matchinganswers')->onDelete('cascade');
+            $table->text('answer');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('matchinganswers');
+        Schema::dropIfExists('matchingansweranswers');
     }
 };

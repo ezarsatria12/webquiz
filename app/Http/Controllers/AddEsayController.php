@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\quiz;
+use App\Models\esay;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AddEsayController extends Controller
 {
@@ -11,9 +14,10 @@ class AddEsayController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($quiz)
     {
-        //
+        $esays = quiz::with(['esay'])->find($quiz);
+        return view('admin.tabel.esaytabel', compact('esays', 'quiz'));
     }
 
     /**
@@ -21,9 +25,9 @@ class AddEsayController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($quiz)
     {
-        //
+        return view('admin.tabel.form.addesay', compact('quiz'));
     }
 
     /**
@@ -32,9 +36,18 @@ class AddEsayController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $quiz)
     {
-        //
+        $validatedData = $request->validate([
+            'question' => 'required',
+            'media' => 'file'
+        ]);
+        if ($request->file('media')) {
+            $validatedData['media'] = $request->file('media')->store('public/esayquizmedia');
+        }
+        $validatedData['quiz_id'] = $quiz;
+        esay::create($validatedData);
+        return redirect()->route('quiz.esay.index', compact('quiz'));
     }
 
     /**
@@ -43,9 +56,9 @@ class AddEsayController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($quiz, $esay)
     {
-        //
+        
     }
 
     /**
@@ -54,9 +67,9 @@ class AddEsayController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($quiz, $esay)
     {
-        //
+        return view('admin.tabel.form.editesay', compact('quiz', 'esay'));
     }
 
     /**
@@ -66,9 +79,19 @@ class AddEsayController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $quiz, $esay)
     {
-        //
+        $validatedData = $request->validate([
+            'question' => 'required',
+            'media' => 'file'
+        ]);
+        $question = esay::find($esay);
+        !is_null($question->media) && Storage::delete($question->media);
+        if ($request->file('media')) {
+            $validatedData['media'] = $request->file('media')->store('public/esayquizmedia');
+        }
+        esay::where('id', $esay)->update($validatedData);
+        return redirect()->route('quiz.esay.index', compact('quiz'));
     }
 
     /**
@@ -77,8 +100,11 @@ class AddEsayController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($quiz, $esay)
     {
-        //
+        $question = esay::find($esay);
+        !is_null($question->media) && Storage::delete($question->media);
+        $question->delete();
+        return redirect()->route('quiz.esay.index', compact('quiz'));
     }
 }

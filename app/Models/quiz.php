@@ -15,11 +15,11 @@ class quiz extends Model
      */
     protected $fillable = [
         'user_id',
+        'quiz_id',
         'category_id',
         'quiztitle',
         'quizdesc',
-        'media',
-        
+        'media'
     ];
 
     public function User()

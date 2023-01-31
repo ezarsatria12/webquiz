@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\quiz;
+use App\Models\matching;
+use App\Models\matchinganswer;
+use App\Models\matchingansweranswer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AddDNDController extends Controller
 {
@@ -11,10 +16,10 @@ class AddDNDController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($parentId, $id)
+    public function index($quiz)
     {
-        ddd($parentId);
-        return view('admin.tabel.dndtabel');
+        $dnds = quiz::with(['matching.matchinganswer.matchingansweranswer'])->find($quiz);
+        return view('admin.tabel.dndtabel', compact('dnds', 'quiz'));
     }
 
     /**
@@ -22,9 +27,9 @@ class AddDNDController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($quiz)
     {
-        //
+        return view('admin.tabel.form.adddnd', compact('quiz'));
     }
 
     /**
@@ -33,9 +38,33 @@ class AddDNDController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $quiz)
     {
-        //
+        $validatedData = $request->validate([
+            'question' => 'required',
+            'media' => 'file'
+        ]);
+
+        if ($request->file('media')) {
+            $validatedData['media'] = $request->file('media')->store('public/dndquizmedia');
+        }
+        $validatedData['quiz_id'] = $quiz;
+        $maching = matching::create($validatedData);
+        foreach ($request->answerfield as $key => $value) {
+            if (!empty($value['question']) && !empty($value['answer'])) {
+            $data1 = [
+                'matching_id' => $maching->id,
+                'question' => $value['question'],
+            ];
+            $machings = matchinganswer::create($data1);
+            $data2 = [
+                'matchinganswer_id' => $machings->id,
+                'answer' => $value['answer'],
+            ];
+            matchingansweranswer::create($data2);
+        }
+        }
+        return redirect()->route('quiz.dragndrop.index', compact('quiz'));
     }
 
     /**
@@ -67,9 +96,34 @@ class AddDNDController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $quiz, $pilgan)
     {
-        //
+        $validatedData = $request->validate([
+            'question' => 'required',
+            'media' => 'file'
+        ]);
+        $question = matching::with('mutichoisechoise')->find($pilgan);
+        !is_null($question->media) && Storage::delete($question->media);
+        if ($request->file('media')) {
+            $validatedData['media'] = $request->file('media')->store('public/pilganquizmedia');
+        }
+        matching::where('id', $pilgan)->update($validatedData);
+        $question->mutichoisechoise()->delete();
+        foreach ($request->answerfield as $key => $value) {
+            if (!empty($value['question']) && !empty($value['answer'])) {
+                $data1 = [
+                    'matching_id' => $pilgan,
+                    'question' => $value['question'],
+                ];
+                $machings = matchinganswer::create($data1);
+                $data2 = [
+                    'matchinganswer_id' => $machings->id,
+                    'answer' => $value['answer'],
+                ];
+                matchingansweranswer::create($data2);
+            }
+        }
+        return redirect()->route('quiz.pilgan.index', compact('quiz'));
     }
 
     /**

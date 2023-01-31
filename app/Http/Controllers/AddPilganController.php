@@ -41,26 +41,29 @@ class AddPilganController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store($quiz, Request $request)
+    public function store(Request $request, $quiz )
     {
-        
         $validatedData = $request->validate([
             'question' => 'required',
             'media' => 'file'
         ]);
-        $validatedData2 = $request->validate([
-            'correct' => 'boolean',
-            'answer' => 'required',
-        ]);
+        
         if ($request->file('media')) {
             $validatedData['media'] = $request->file('media')->store('public/pilganquizmedia');
         }
         $validatedData['quiz_id'] = $quiz;
         $multichoise = multichoise::create($validatedData);
-        $id = $multichoise->id;
-        $validatedData2['multichoise_id'] = $id;
-        $is_active = $validatedData['correct'] ?? 0;
-        $multichoise = mutichoisechoise::create(array_merge($validatedData2, ['correct' => $is_active]));
+        foreach ($request->answerfield as $key => $value) {
+            if (!empty($value['question']) && !empty($value['answer'])) {
+            $is_active = $value['correct'] ?? 0;
+            $data = [
+                'multichoise_id' => $multichoise->id,
+                'answer' => $value['answer'],
+                'correct' => $is_active
+            ];
+            mutichoisechoise::create($data);
+        }
+        }
         return redirect()->route('quiz.pilgan.index', compact('quiz'));
     }
 
@@ -95,14 +98,9 @@ class AddPilganController extends Controller
      */
     public function update(Request $request, $quiz, $pilgan)
     {
-        
         $validatedData = $request->validate([
             'question' => 'required',
             'media' => 'file'
-        ]);
-        $validatedData2 = $request->validate([
-            'correct' => 'boolean',
-            'answer' => 'required',
         ]);
         $questionn = multichoise::where($pilgan);
         $question = multichoise::with('mutichoisechoise')->find($pilgan);
@@ -110,9 +108,19 @@ class AddPilganController extends Controller
         if ($request->file('media')) {
             $validatedData['media'] = $request->file('media')->store('public/pilganquizmedia');
         }
-        $is_active = $validatedData['correct'] ?? 0;
         multichoise::where('id', $pilgan)->update($validatedData);
-        mutichoisechoise::where('id', $pilgan)->update(array_merge($validatedData2, ['correct' => $is_active]));
+        $question->mutichoisechoise()->delete();
+        foreach ($request->answerfield as $key => $value) {
+            if (!empty($value['question']) && !empty($value['answer'])) {
+            $is_active = $value['correct'] ?? 0;
+            $data = [
+                'multichoise_id' => $pilgan,
+                'answer' => $value['answer'],
+                'correct' => $is_active
+            ];
+            mutichoisechoise::create($data);
+        }
+        }
         return redirect()->route('quiz.pilgan.index', compact('quiz'));
     }
 

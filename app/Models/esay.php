@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class esay extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'quiz_id',
+        'question',
+        'media'
+    ];
+
+    public function quiz()
+    {
+        return $this->belongsTo(quiz::class);
+    }
 }

@@ -10,12 +10,16 @@ class matchinganswer extends Model
     use HasFactory;
 
     protected $fillable = [
+        'matching_id',
         'question',
-        'answer'
     ];
 
     public function matching()
     {
         return $this->belongsTo(matching::class);
+    }
+    public function matchingansweranswer()
+    {
+        return $this->hasOne(matchingansweranswer::class);
     }
 }

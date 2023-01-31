@@ -4,9 +4,8 @@
     @section('container')
     <section>
         <div>
-            <form action="{{ route("quiz.pilgan.update", [$quiz, $pilgan]) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route("quiz.dragndrop.store", $quiz) }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                @method('PUT')
                 <div name="pilgan" class="container m-auto white w-full sm:w-[1440px] space-y-5">
                     <div id="file" class="flex flex-col">
                         <p><input type="file" name="media" id="file-modul" onchange="loadFile(event)"
@@ -34,49 +33,74 @@
                     <div class="space-y-5 w-full">
                         <!-- opsi -->
                         <div class="flex flex-col w-full space-y-3">
-                            <p class="font-thin">Opsi 1</p>
+                            <p class="font-thin">1</p>
                             <label class="inline-flex items-center w-full">
-                                <input name="answerfield[0][correct]" type="checkbox"
-                                    class="accent-green-111 w-6 h-6 border-0 rounded-md focus:ring-0" value="1">
                                 <span class="ml-2 w-[1280px]" name="jawaban">
                                     <textarea required class="outline-green-111 rounded
                                                 border-2 p-2 w-[300px] sm:w-full border-gray-200 resize-none"
+                                        name="answerfield[0][question]" id="answer" rows="1" placeholder="Masukkan jawaban"></textarea>
+                                </span>
+                            </label>
+                            <label class="inline-flex items-center w-full">
+                                <span class="ml-2 w-[1280px]" name="jawaban">
+                                    <textarea required class="outline-green-111 rounded
+                                                                            border-2 p-2 w-[300px] sm:w-full border-gray-200 resize-none"
                                         name="answerfield[0][answer]" id="answer" rows="1" placeholder="Masukkan jawaban"></textarea>
                                 </span>
                             </label>
                         </div>
                         <div class="flex flex-col w-full space-y-3">
-                            <p class="font-thin">Opsi 1</p>
+                            <p class="font-thin">2</p>
                             <label class="inline-flex items-center w-full">
-                                <input name="answerfield[1][correct]" type="checkbox"
-                                    class="accent-green-111 w-6 h-6 border-0 rounded-md focus:ring-0" value="1">
                                 <span class="ml-2 w-[1280px]" name="jawaban">
                                     <textarea required class="outline-green-111 rounded
                                                                         border-2 p-2 w-[300px] sm:w-full border-gray-200 resize-none"
+                                        name="answerfield[1][question]" id="answer" rows="1" placeholder="Masukkan jawaban"></textarea>
+                                </span>
+                            </label>
+                            <label class="inline-flex items-center w-full">
+                                <span class="ml-2 w-[1280px]" name="jawaban">
+                                    <textarea required
+                                        class="outline-green-111 rounded
+                                                                                                    border-2 p-2 w-[300px] sm:w-full border-gray-200 resize-none"
                                         name="answerfield[1][answer]" id="answer" rows="1" placeholder="Masukkan jawaban"></textarea>
                                 </span>
                             </label>
                         </div>
                         <div class="flex flex-col w-full space-y-3">
-                            <p class="font-thin">Opsi 1</p>
+                            <p class="font-thin">3</p>
                             <label class="inline-flex items-center w-full">
-                                <input name="answerfield[2][correct]" type="checkbox"
-                                    class="accent-green-111 w-6 h-6 border-0 rounded-md focus:ring-0" value="1">
                                 <span class="ml-2 w-[1280px]" name="jawaban">
-                                    <textarea required class="outline-green-111 rounded
-                                                                        border-2 p-2 w-[300px] sm:w-full border-gray-200 resize-none"
+                                    <textarea 
+                                        class="outline-green-111 rounded
+                                                                                                border-2 p-2 w-[300px] sm:w-full border-gray-200 resize-none"
+                                        name="answerfield[2][question]" id="answer" rows="1" placeholder="Masukkan jawaban"></textarea>
+                                </span>
+                            </label>
+                            <label class="inline-flex items-center w-full">
+                                <span class="ml-2 w-[1280px]" name="jawaban">
+                                    <textarea 
+                                        class="outline-green-111 rounded
+                                                                                                                            border-2 p-2 w-[300px] sm:w-full border-gray-200 resize-none"
                                         name="answerfield[2][answer]" id="answer" rows="1" placeholder="Masukkan jawaban"></textarea>
                                 </span>
                             </label>
                         </div>
                         <div class="flex flex-col w-full space-y-3">
-                            <p class="font-thin">Opsi 1</p>
+                            <p class="font-thin">4</p>
                             <label class="inline-flex items-center w-full">
-                                <input name="answerfield[3][correct]" type="checkbox"
-                                    class="accent-green-111 w-6 h-6 border-0 rounded-md focus:ring-0" value="1">
                                 <span class="ml-2 w-[1280px]" name="jawaban">
-                                    <textarea required class="outline-green-111 rounded
-                                                                        border-2 p-2 w-[300px] sm:w-full border-gray-200 resize-none"
+                                    <textarea 
+                                        class="outline-green-111 rounded
+                                                                                                border-2 p-2 w-[300px] sm:w-full border-gray-200 resize-none"
+                                        name="answerfield[3][question]" id="answer" rows="1" placeholder="Masukkan jawaban"></textarea>
+                                </span>
+                            </label>
+                            <label class="inline-flex items-center w-full">
+                                <span class="ml-2 w-[1280px]" name="jawaban">
+                                    <textarea 
+                                        class="outline-green-111 rounded
+                                                                                                                            border-2 p-2 w-[300px] sm:w-full border-gray-200 resize-none"
                                         name="answerfield[3][answer]" id="answer" rows="1" placeholder="Masukkan jawaban"></textarea>
                                 </span>
                             </label>

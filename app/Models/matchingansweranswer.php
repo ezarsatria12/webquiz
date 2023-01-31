@@ -5,22 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class matching extends Model
+class matchingansweranswer extends Model
 {
     use HasFactory;
-
     protected $fillable = [
-        'quiz_id',
-        'question',
-        'media'
+        'matchinganswer_id',
+        'answer'
     ];
-
-    public function quiz()
-    {
-        return $this->belongsTo(quiz::class);
-    }
     public function matchinganswer()
     {
-        return $this->hasMany(matchinganswer::class);
+        return $this->belongsTo(mmatchinganswer::class);
     }
 }

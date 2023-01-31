@@ -1,14 +1,14 @@
 <nav class="top-0 ">
     <div class="px-8 py-6 flex flex-row justify-between bg-white ">
         <!--logo-->
-    <a href="/home">
+    <a href="/">
     <h3 class=" text-2xl lg:text-3xl font-medium block">SmartPantun</h3>
     </a>
     
         <!--nav button-->
     <div id="nav-content"class="hidden sm:flex  content-center text-grey-fade m-auto text-center">
         <a class="mr-5  font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700" href="/aboutus">About Us</a>
-        <a class="mx-5 font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700" href="/quis">Quiz</a>
+        <a class="mx-5 font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700" href="{{route('quizguest.index')}}">Quiz</a>
         <a class="mx-5 font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700" href="/modul">Modul</a>
         <a class="ml-5 font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700" href="/help">Help</a>
     </div>

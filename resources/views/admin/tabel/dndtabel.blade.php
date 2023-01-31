@@ -47,10 +47,6 @@
                                     @foreach ($dnd->matchinganswer as $question)
                                     
                                         <p>{{ $loop->iteration }} {{ $question->question }}</p>
-                                        @foreach ($question->matchingansweranswer as $itema)
-                                        @dd($itema)
-                                            <p> {{ $itema->answer }}</p>
-                                        @endforeach
                                     @endforeach 
                                 </td>
                                 <td class="border-x border-opacity-25 border-green-111 px-6 py-4">

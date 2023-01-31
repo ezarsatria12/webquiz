@@ -9,6 +9,7 @@ use App\Http\Controllers\AddQuizController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\AuthGoogleController;
+use App\Http\Controllers\GuestQuizController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ModuleController;
 use App\Http\Controllers\ModuleGuestController;
@@ -25,7 +26,7 @@ use App\Http\Controllers\ModuleGuestController;
 */
 
 Route::get('/', function () {
-    return view('quiz');
+    return view('home2');
 });
 Route::get('/home', function () {
     return view('home2');
@@ -60,7 +61,7 @@ Route::post('/logout', [LoginController::class, 'out']);
 Route::get('/auth/google/redirect', [AuthGoogleController::class, 'redirectToProvider']);
 Route::get('/auth/google/callback', [AuthGoogleController::class, 'handleProviderCallback']);
 
-
+Route::resource('quizguest', GuestQuizController::class);
 Route::resource('/user', UserController::class);
 Route::resource('/quiz', QuizController::class);
 Route::resource('/addquiz', AddQuizController::class);

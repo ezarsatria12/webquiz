@@ -29,34 +29,31 @@
         <!-- button jawaban -->
         <div class="container sm:w-[1280px] sm:h-[320px] gap-3 m-auto flex flex-wrap sm:flex-row">
             <!-- opsi benar -->
-            <label for="opsi-1"
-                class="focus-within:brightness-50 hover:scale-110 hover:brightness-75 bg-red-redFF6767 py-[20px] text-start shadow-boxjawaban sm:h-[300px] h-[150px] w-[150px] sm:w-[300px] flex rounded focus:text-black ml-2 text-sm font-medium text-gray-900">
-                <input class="" id="opsi-1" type="radio" value="10" name="opsi"
-                    class="focus-within:brightness-50 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
-                <span class="text-2xl m-auto">Jawaban Betul</span>
-            </label>
+            <button for="opsi-1"
+                class="flex focus:brightness-75 hover:scale-110 hover:brightness-75 bg-red-redFF6767 py-[20px] text-start shadow-boxjawaban sm:h-[300px] h-[150px] w-[150px] sm:w-[300px] rounded focus:text-black ml-2 text-sm font-medium text-gray-900">
+                <span class="text-2xl m-auto focus:brightness-50">Jawaban benar</span>
+                <input class="hidden" id="opsi-1" type="radio" value="10" name="opsi">
+                <br>
+            </button>
             <!-- opsi salah -->
-            <label for="opsi-2"
-                class="flex focus-within:brightness-50 hover:scale-110 hover:brightness-75 bg-red-redFF6767 py-[20px] text-start shadow-boxjawaban sm:h-[300px] h-[150px] w-[150px] sm:w-[300px] rounded focus:text-black ml-2 text-sm font-medium text-gray-900">
-                <input class="" id="opsi-2" type="radio" value="0" name="opsi"
-                    class="mx-auto w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
-                <br>
+            <button for="opsi-2"
+                class="flex focus:brightness-75 hover:scale-110 hover:brightness-75 bg-red-redFF6767 py-[20px] text-start shadow-boxjawaban sm:h-[300px] h-[150px] w-[150px] sm:w-[300px] rounded focus:text-black ml-2 text-sm font-medium text-gray-900">
                 <span class="text-2xl m-auto focus:brightness-50">Jawaban salah</span>
-            </label>
-            <label for="opsi-3"
-                class="flex focus-within:brightness-50 hover:scale-110 hover:brightness-75 bg-red-redFF6767 py-[20px] text-start shadow-boxjawaban sm:h-[300px] h-[150px] w-[150px] sm:w-[300px] rounded focus:text-black ml-2 text-sm font-medium text-gray-900">
-                <input class="" id="opsi-3" type="radio" value="0" name="opsi"
-                    class="mx-auto w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
+                <input class="hidden" id="opsi-2" type="radio" value="0" name="opsi">
                 <br>
+            </button>
+            <button for="opsi-3"
+                class="flex focus:brightness-75 hover:scale-110 hover:brightness-75 bg-red-redFF6767 py-[20px] text-start shadow-boxjawaban sm:h-[300px] h-[150px] w-[150px] sm:w-[300px] rounded focus:text-black ml-2 text-sm font-medium text-gray-900">
                 <span class="text-2xl m-auto focus:brightness-50">Jawaban salah</span>
-            </label>
-            <label for="opsi-4"
-                class="flex focus-within:brightness-50 hover:scale-110 hover:brightness-75 bg-red-redFF6767 py-[20px] text-start shadow-boxjawaban sm:h-[300px] h-[150px] w-[150px] sm:w-[300px] rounded focus:text-black ml-2 text-sm font-medium text-gray-900">
-                <input class="" id="opsi-4" type="radio" value="0" name="opsi"
-                    class="mx-auto w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
+                <input class="hidden" id="opsi-3" type="radio" value="0" name="opsi">
                 <br>
+            </button>
+            <button for="opsi-4 " value="10" id="opsi-4" name="opsi"
+                class="flex focus:brightness-75 hover:scale-110 hover:brightness-75 bg-red-redFF6767 py-[20px] text-start shadow-boxjawaban sm:h-[300px] h-[150px] w-[150px] sm:w-[300px] rounded focus:text-black ml-2 text-sm font-medium text-gray-900">
+                <input class="hidden" type="radio">
                 <span class="text-2xl m-auto focus:brightness-50">Jawaban salah</span>
-            </label>
+                <br>
+            </button>
         </div>
         <!-- next/prev button -->
         <div class="container justify-end w-[335px] sm:w-[1280px] sm:h-[104px] flex flex-row">
@@ -71,19 +68,8 @@
                 </button>
             </a>
         </div>
-        <script>
-        function checkAnswers() {
-            let score = 0;
-            const answers = document.getElementsByTagName("input");
-            for (let i = 0; i < answers.length; i++) {
-                if (answers[i].checked) {
-                    score += parseInt(answers[i].value);
-                }
-            }
-            alert("Your score is: " + score);
-        }
-        </script>
     </div>
+    <!-- pilgan end -->
     <!-- dnd -->
     <div class="container h-fit sm:w-[1280px] sm:h-[960px] px-3 pt-[32px] flex flex-col space-y-[20px]">
         <div class="w-[50px] h-[50px]">
@@ -193,7 +179,16 @@
             </a>
         </div>
     </div>
-    </div>
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+    </script>
+    </script>
+    <!-- dnd end -->
     <!-- essay -->
     <div class="container h-fit sm:w-[1280px] sm:h-[960px] px-3 pt-[32px] flex flex-col space-y-[20px]">
         <div class="w-[50px] h-[50px]">
@@ -230,6 +225,7 @@
             </a>
         </div>
     </div>
+    <!-- essay end -->
 </body>
 
 </html>

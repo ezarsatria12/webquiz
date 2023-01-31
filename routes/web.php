@@ -61,7 +61,9 @@ Route::post('/logout', [LoginController::class, 'out']);
 Route::get('/auth/google/redirect', [AuthGoogleController::class, 'redirectToProvider']);
 Route::get('/auth/google/callback', [AuthGoogleController::class, 'handleProviderCallback']);
 
-Route::resource('quizguest', GuestQuizController::class);
+Route::get('/quizguest', [GuestQuizController::class, 'index'])->name('quizguest.index');
+Route::get('/quizguest/play/{quiz}', [GuestQuizController::class, 'user']);
+
 Route::resource('/user', UserController::class);
 Route::resource('/quiz', QuizController::class);
 Route::resource('/addquiz', AddQuizController::class);

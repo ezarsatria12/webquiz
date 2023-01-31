@@ -63,7 +63,7 @@
                             <!-- button masuk -->
                             <div class="container mx-auto w-full px-6 text-center h-full flex flex-col justify-end">
                                 <a class="text-[12px] sm:text-[18px] mx-auto sm:py-1 text-gray-700 hover:scale-105
-                                hover:text-green-111 border-2 rounded-[4px] sm:rounded-[6px] w-full" href="#">
+                                hover:text-green-111 border-2 rounded-[4px] sm:rounded-[6px] w-full" href="/quizguest/play/{{$quiz->id}}">
                                     <span>masuk</span>
                                 </a>
                             </div>

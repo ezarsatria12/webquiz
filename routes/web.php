@@ -63,6 +63,14 @@ Route::get('/auth/google/callback', [AuthGoogleController::class, 'handleProvide
 
 Route::get('/quizguest', [GuestQuizController::class, 'index'])->name('quizguest.index');
 Route::get('/quizguest/play/{quiz}', [GuestQuizController::class, 'user']);
+Route::post('/quizguest/play/{quiz}', [GuestQuizController::class, 'usersave'])->name('usersave');
+Route::get('/quizguest/play/{quiz}/student/{student}', [GuestQuizController::class, 'play'])->name('play');
+
+Route::get('/quizguest/play/{quiz}/student/{student}/pilgan/{pilgan}', [GuestQuizController::class, 'showpilgan'])->name('showpilgan');
+Route::post('/quizguest/play/{quiz}/student/{student}/pilgan/{pilgan}', [GuestQuizController::class, 'pilganvalid'])->name('pilganvalid');
+
+Route::get('/quizguest/play/{quiz}/student/{student}/dnd/{dnd}', [GuestQuizController::class, 'showdnd'])->name('showdnd');
+
 
 Route::resource('/user', UserController::class);
 Route::resource('/quiz', QuizController::class);

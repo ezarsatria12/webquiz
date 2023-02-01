@@ -43,7 +43,7 @@ class AddEsayController extends Controller
             'media' => 'file'
         ]);
         if ($request->file('media')) {
-            $validatedData['media'] = $request->file('media')->store('public/esayquizmedia');
+            $validatedData['media'] = $request->file('media')->store('esayquizmedia');
         }
         $validatedData['quiz_id'] = $quiz;
         esay::create($validatedData);
@@ -88,7 +88,7 @@ class AddEsayController extends Controller
         $question = esay::find($esay);
         !is_null($question->media) && Storage::delete($question->media);
         if ($request->file('media')) {
-            $validatedData['media'] = $request->file('media')->store('public/esayquizmedia');
+            $validatedData['media'] = $request->file('media')->store('esayquizmedia');
         }
         esay::where('id', $esay)->update($validatedData);
         return redirect()->route('quiz.esay.index', compact('quiz'));

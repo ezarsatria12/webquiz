@@ -46,7 +46,7 @@ class AddDNDController extends Controller
         ]);
 
         if ($request->file('media')) {
-            $validatedData['media'] = $request->file('media')->store('public/dndquizmedia');
+            $validatedData['media'] = $request->file('media')->store('dndquizmedia');
         }
         $validatedData['quiz_id'] = $quiz;
         $maching = matching::create($validatedData);
@@ -105,7 +105,7 @@ class AddDNDController extends Controller
         $question = matching::with('mutichoisechoise')->find($pilgan);
         !is_null($question->media) && Storage::delete($question->media);
         if ($request->file('media')) {
-            $validatedData['media'] = $request->file('media')->store('public/pilganquizmedia');
+            $validatedData['media'] = $request->file('media')->store('pilganquizmedia');
         }
         matching::where('id', $pilgan)->update($validatedData);
         $question->mutichoisechoise()->delete();

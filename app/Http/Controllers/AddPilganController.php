@@ -43,18 +43,19 @@ class AddPilganController extends Controller
      */
     public function store(Request $request, $quiz )
     {
+        
         $validatedData = $request->validate([
             'question' => 'required',
             'media' => 'file'
         ]);
         
         if ($request->file('media')) {
-            $validatedData['media'] = $request->file('media')->store('public/pilganquizmedia');
+            $validatedData['media'] = $request->file('media')->store('pilganquizmedia');
         }
         $validatedData['quiz_id'] = $quiz;
         $multichoise = multichoise::create($validatedData);
         foreach ($request->answerfield as $key => $value) {
-            if (!empty($value['question']) && !empty($value['answer'])) {
+            if (!empty($value['answer'])) {
             $is_active = $value['correct'] ?? 0;
             $data = [
                 'multichoise_id' => $multichoise->id,
@@ -106,7 +107,7 @@ class AddPilganController extends Controller
         $question = multichoise::with('mutichoisechoise')->find($pilgan);
         !is_null($question->media) && Storage::delete($question->media);
         if ($request->file('media')) {
-            $validatedData['media'] = $request->file('media')->store('public/pilganquizmedia');
+            $validatedData['media'] = $request->file('media')->store('pilganquizmedia');
         }
         multichoise::where('id', $pilgan)->update($validatedData);
         $question->mutichoisechoise()->delete();

@@ -43,4 +43,8 @@ class quiz extends Model
     {
         return $this->hasMany(esay::class);
     }
+    public function student()
+    {
+        return $this->hasMany(student::class);
+    }
 }

@@ -46,7 +46,7 @@ class ModuleController extends Controller
             'media'=>'required|file'
         ]);
         if($request->file('media')){
-            $validatedData['media'] = $request->file('media')->store('public/modulemedia');
+            $validatedData['media'] = $request->file('media')->store('modulemedia');
         }
         $validatedData['user_id'] = Auth::id();
         module::create($validatedData);
@@ -94,7 +94,7 @@ class ModuleController extends Controller
         ];
         $validatedData = $request->validate($rules);
         storage::delete($module->media);
-        $validatedData['media'] = $request->file('media')->store('public/modulemedia');
+        $validatedData['media'] = $request->file('media')->store('modulemedia');
         module::where('id', $module)
             ->update($validatedData);
 

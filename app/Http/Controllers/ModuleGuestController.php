@@ -48,10 +48,8 @@ class ModuleGuestController extends Controller
      */
     public function show($module)
     {
-        $module = module::find($module);
-        return view('dasboard.viewbook',[
-            'book' => $module
-        ]);
+        $modules = module::find($module);
+        return view('playmodul', compact('modules'));
     }
 
     /**

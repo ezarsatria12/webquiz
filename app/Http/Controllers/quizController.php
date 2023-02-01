@@ -51,7 +51,7 @@ class quizController extends Controller
             'media'=>'required|file'
         ]);
         if($request->file('media')){
-            $validatedData['media'] = $request->file('media')->store('public/tumbnailquizmedia');
+            $validatedData['media'] = $request->file('media')->store('tumbnailquizmedia');
         }
         $validatedData['user_id'] = Auth::id();
         quiz::create($validatedData);
@@ -100,7 +100,7 @@ class quizController extends Controller
             'media' => 'required|file'
         ]);
         !is_null($quiz->media) && Storage::delete($quiz->media);
-        $validatedData['media'] = $request->file('media')->store('public/modulemedia');
+        $validatedData['media'] = $request->file('media')->store('tumbnailquizmedia');
         quiz::where('id', $quiz->id)->update($validatedData);
 
         return redirect()->route('quiz.index');

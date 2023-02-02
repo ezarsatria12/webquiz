@@ -17,10 +17,10 @@
                             </label></p>
                         <p><img id="filemodul" class="w-[300px] h-[200px]" /></p>
                         <script>
-                            var loadFile = function(event) {
-                                    var image = document.getElementById('filemodul');
-                                    image.src = URL.createObjectURL(event.target.files[0]);
-                                };
+                        var loadFile = function(event) {
+                            var image = document.getElementById('filemodul');
+                            image.src = URL.createObjectURL(event.target.files[0]);
+                        };
                         </script>
                     </div>
                     <div class="flex flex-row justify-between">

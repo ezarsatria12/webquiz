@@ -39,6 +39,7 @@
                             placeholder="Masukkan Judul Quiz">{{ old('quiztitle') ?? $quiz->quizdesc }}</textarea>
                         <!-- thumbnail pict upload -->
                     </div>
+                    <br>
 
                     <div id="file" class="flex flex-col">
                         <div name="add" class="space-y-3">

@@ -10,7 +10,8 @@
 <div class="justify-center flex m-auto my-[150px] w-full h-full">
 	<div
 		class="bg-white shadow-md border border-gray-200 rounded-lg sm:w-[491px] sm:h-[654px] p-4 sm:p-6 lg:p-8">
-		<form class="space-y-2 sm:space-y-6" action="#">
+		<form class="space-y-2 sm:space-y-6" action="{{route('authenticate')}}" method="POST">
+      @csrf
 			<h3 class="pb-[50px] text-xl font-medium text-center text-gray-900">Sign in</h3>
 			<div>
         <!-- username -->

@@ -22,7 +22,7 @@ class GuestQuizController extends Controller
      */
     public function index()
     {
-        $quizs = quiz::all();
+        $quizs = quiz::paginate(9);
         return view('quiz', compact('quizs'));
     }
 
@@ -65,6 +65,9 @@ class GuestQuizController extends Controller
                 return redirect()->route('showpilgan', compact('quiz', 'student', 'pilgan'));
             }
         } elseif ($questionb->esay != null) {
+            foreach ($questionb->esay as $esay) {
+                return redirect()->route('showpilgan', compact('quiz', 'student', 'esay'));
+            }
         }
     }
 
@@ -91,8 +94,8 @@ class GuestQuizController extends Controller
          //return redirect()->back()->with('success', 'Jawaban anda benar! Klik OK untuk melanjutkan soal berikutnya.'.'\n jawaban yang benar adalah : '.$correct->answer);
         }
         $questiond = matching::with('matchinganswer.matchingansweranswer')->find($quiz);
-        $questione = esay::find($quiz);
-       //dd($questiond->id);
+        $questione = quiz::with('esay')->find($quiz);
+        
         //return redirect()->back()->with('error', 'Jawaban anda salah. Klik OK untuk melanjutkan soal berikutnya.');
         $nextsoal = multichoise::where('quiz_id', $quiz)->where('id', '>', $pilgan)->first();
         if($nextsoal){
@@ -101,7 +104,9 @@ class GuestQuizController extends Controller
             return redirect()->route('showdnd', ['quiz' => $quiz, 'student' => $student, 'dnd' => $questiond->id]);
         }
         elseif($questione != null){
-            return redirect()->route('showesay', ['quiz' => $quiz, 'student' => $student, 'esay' => $questione->id]);
+            foreach ($questione->esay as $esay) {
+                return redirect()->route('showesay', compact('quiz', 'student', 'esay'));
+            }
         }
     }
 
@@ -134,6 +139,7 @@ class GuestQuizController extends Controller
     }
     public function showesayvalid(Request $request, $quiz, $student, $esay)
     {
+        
         $validatedData = $request->validate([
             'answer' => 'required',
         ]);

@@ -43,4 +43,25 @@ class LoginController extends Controller
         return redirect('/');
 
     }
+
+    public function indexregister()
+    {
+        return view('authuser.register');
+    }
+
+    public function storeregister(Request $request)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|email:dns|unique:users',
+            'password' => 'required|min:8'
+        ]);
+
+        $validatedData['password'] = bcrypt($validatedData['password']);
+
+        $user = User::create($validatedData);
+        auth()->login($user);
+        return redirect('/');
+    }
 }
+    

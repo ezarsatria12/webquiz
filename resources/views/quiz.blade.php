@@ -27,7 +27,7 @@
                             class="toggleModal container w-[150px] mx-auto flex flex-col justify-start h-fit sm:w-[400px] sm:space-y-3 sm:h-fit shadow-card rounded-[10px] bg-white">
                             <div>
                                 <img class="my-[15px] mx-auto rounded-[10px] px-[10px] sm:w-[350px] sm:h-[185px]  "
-                                    src="pictures/template.png" alt="thumbnail-modul">
+                                    src="{{ asset('storage/'.$quiz->media) }}" alt="thumbnail-modul">
                                 <h1
                                     class="flex justify-start font-inter text-[14px] sm:text-3xl text-black px-3 sm:px-7 font-medium ">
                                     {{$quiz->quiztitle}}</h1>
@@ -87,6 +87,9 @@
                 @endforeach
                 <!-- card end -->
             </div>
+        </div>
+        <div class=" py-10 flex mx-auto flex-row space-x-2 justify-center" href="#home">
+            {{ $quizs->links() }}
         </div>
     </section>
 @endsection

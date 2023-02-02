@@ -22,4 +22,8 @@ class studentesayaswer extends Model
     {
         return $this->belongsTo(student::class);
     }
+    public function esay()
+    {
+        return $this->belongsTo(student::class);
+    }
 }

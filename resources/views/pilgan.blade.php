@@ -20,12 +20,24 @@
         <!-- soal -->
         <div class="container flex-col sm:w-[1280px] sm:h-[426px] space-y-[10px] sm:space-x-[20px] flex sm:flex-row">
             @if ($pilgans->media != null)
+            @if(pathinfo($pilgans->media, PATHINFO_EXTENSION) == 'mp3'|| pathinfo($pilgans->media, PATHINFO_EXTENSION) == 'wav'|| pathinfo($pilgans->media, PATHINFO_EXTENSION) == 'ogg')
+            <audio id="video" class="rounded-[10px] h-fit w-[340px] sm:w-[400px] sm:h-[400px] sm:m-[10px]" controls>
+                <source src="{{ asset('storage/'.$pilgans->media) }}" type="audio/ogg">
+            </audio>
+            @elseif(pathinfo($pilgans->media, PATHINFO_EXTENSION) == 'mp4'|| pathinfo($pilgans->media, PATHINFO_EXTENSION) == 'mov'|| pathinfo($pilgans->media, PATHINFO_EXTENSION) == 'mpg')
+            <video id="video" class="rounded-[10px] h-fit w-[340px] sm:w-[400px] sm:h-[400px] sm:m-[10px]" controls>
+                <source id="video" src="{{asset('storage/'.$pilgans->media) }}" type="video/mp4">
+                Your browser does not support HTML video.
+            </video>
+            @elseif(pathinfo($pilgans->media, PATHINFO_EXTENSION) == 'jpg'|| pathinfo($pilgans->media, PATHINFO_EXTENSION) == 'png' || pathinfo($pilgans->media, PATHINFO_EXTENSION) == 'jpeg')
             <img class="rounded-[10px] h-fit w-[340px] sm:w-[400px] sm:h-[400px] sm:m-[10px]"
-                src="pictures/template.png" alt="asd">
+                src="{{asset('storage/'.$pilgans->media) }}" alt="asd" type="image">
+            @endif
             @endif
             <h1 class="text-2xl flex sm:text-4xl sm:m-[10px] sm:w-full ">{{$pilgans->question}}
             </h1>
         </div>
+        <!-- button jawaban -->
         <!-- button jawaban -->
         <form action="{{ route('pilganvalid',[$quiz, $student,$pilgans->id])}}" method="POST">
         <div class="container sm:w-[1280px] sm:h-[320px] gap-3 m-auto flex flex-wrap sm:flex-row">

@@ -54,7 +54,10 @@ Route::get('/profile', function () {
     return view('admin.profile2');
 })->name('profile');
 Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('/login', [LoginController::class, 'store']);
+Route::post('/login', [LoginController::class, 'authenticate'])->name('authenticate');
+
+Route::get('/register', [LoginController::class, 'indexregister']);
+Route::post('/register', [LoginController::class, 'storeregister']);
 
 Route::post('/logout', [LoginController::class, 'out']);
 

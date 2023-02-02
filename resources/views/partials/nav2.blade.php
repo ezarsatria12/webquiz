@@ -98,6 +98,13 @@
             @csrf 
             <button class="hidden sm:flex bg-green-111 hover:bg-white hover:text-green-111 px-4 py-2 rounded
             font-inter font-medium text-white hover:shadow-lg">
+                Login
+            </button>
+        </form>
+        <form action="/register">
+            @csrf
+            <button class="hidden sm:flex bg-green-111 hover:bg-white hover:text-green-111 px-4 py-2 rounded
+                    font-inter font-medium text-white hover:shadow-lg">
                 Sign In
             </button>
         </form>

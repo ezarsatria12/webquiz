@@ -103,7 +103,6 @@ class AddPilganController extends Controller
             'question' => 'required',
             'media' => 'file'
         ]);
-        $questionn = multichoise::where($pilgan);
         $question = multichoise::with('mutichoisechoise')->find($pilgan);
         !is_null($question->media) && Storage::delete($question->media);
         if ($request->file('media')) {

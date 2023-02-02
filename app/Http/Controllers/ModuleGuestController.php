@@ -15,7 +15,7 @@ class ModuleGuestController extends Controller
     public function index()
     {
         return view('modulguest', [
-            'moduls' => module::all()
+            'moduls' => module::paginate(3)
         ]);
     }
 

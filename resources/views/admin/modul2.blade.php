@@ -52,13 +52,8 @@
     </div>
     
     <div class=" py-10 flex mx-auto flex-row space-x-2 justify-center" href="#home">
-                    <a href="#"><img class="h-6 w-6 hover:ring-1 hover:ring-green-111" src="Pictures/arrow-left-line.png" alt="whatsapp"></a>
-                    <a class="hover:underline focus:underline" href="#">1</a>
-                    <a class="hover:underline focus:underline" href="#">2</a>
-                    <a class="hover:underline focus:underline" href="#">3</a>
-                    <a>...</a>
-                    <a href="#"><img class="h-6 w-6 hover:ring-1 hover:ring-green-111" src="Pictures/arrow-right-line.png" alt="whatsapp"></a>
-                </div>
+      {{ $moduls->links() }}
+    </div>
   </div>
 </section>
 @endsection

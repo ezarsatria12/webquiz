@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\category;
+use App\Models\esay;
 use App\Models\multichoise;
 use App\Models\quiz;
 use Illuminate\Http\Request;
@@ -114,10 +115,38 @@ class quizController extends Controller
      */
     public function destroy(quiz $quiz)
     {
-        $question = multichoise::find($quiz);
-        ddd($question);
-        Storage::delete($quiz->media);
-        $quiz->delete();
+        $quest = quiz::with('student')->find($quiz);
+        $question = multichoise::with('mutichoisechoise')->find($quiz);
+        $questionesay = esay::with('studentesayaswer')->find($quiz);
+        if ($question != null) {
+            foreach ($question as $pilgan) {
+                foreach($pilgan->mutichoisechoise as $jawaban){
+                    $jawaban->delete();
+                }
+                !is_null($pilgan->media) && Storage::delete($pilgan->media);
+                $pilgan->delete();
+            }
+        }
+        if($questionesay != null){
+            foreach ($questionesay as $esay) {
+                foreach ($esay->studentesayaswer as $jawaban) {
+                    $jawaban->delete();
+                }
+            }
+            foreach($questionesay as $esay){
+                !is_null($esay->media) && Storage::delete($esay->media);
+                $esay->delete();
+            }
+        }
+        if ($quest != null) {
+            foreach ($quest as $student) {
+                foreach ($student->student as $jawaban) {
+                    $jawaban->delete();
+                }
+            }
+            !is_null($quiz->media) && Storage::delete($quiz->media);
+            $quiz->delete();
+        }
         return redirect()->route('quiz.index');
     }
 }

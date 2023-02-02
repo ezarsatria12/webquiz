@@ -16,7 +16,7 @@
     @if(pathinfo($modules->media, PATHINFO_EXTENSION) == 'mp3')
     <audio controls><source src="{{ asset('storage/'.$modules->media) }}" type="audio/ogg"></audio>
     @elseif(pathinfo($modules->media, PATHINFO_EXTENSION) == 'mp4')
-    <div class="hidden sm:block w-full mx-auto bg-gray-400 px-14 my-20 flex flex-col gap-5">
+    <div class="hidden sm:block w-full mx-auto bg-gray-400 px-14 my-20 flex-col gap-5">
         <div class="  w-[50px] h-[50px] mt-[20px] hover:brightness-90">
             <a href="/modul">
                 <img src="{{ URL('pictures/back button.png') }}" alt="">

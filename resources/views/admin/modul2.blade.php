@@ -15,7 +15,7 @@
             </div>
         </div>
         <div
-            class="container h-fit space-x-3 justify-start flex m-auto sm:w-[1280px] lg:flex-row sm:space-y-0 sm:space-x-5">
+            class="hidden container h-fit space-x-3 justify-start flex m-auto sm:w-[1280px] lg:flex-row sm:space-y-0 sm:space-x-5">
             <a class="hover:text-green-111 focus:text-green-111" href="#">Terbaru</a>
             <a class="hover:text-green-111 focus:text-green-111" href="#">Mudah</a>
             <a class="hover:text-green-111 focus:text-green-111" href="#">Sedang</a>

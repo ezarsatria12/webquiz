@@ -23,12 +23,18 @@
                 </div>
             </div>
         </div>
-        <form action="/logout" method="POST">
+        <div class="container flex flex-col mx-auto ">
+            <form action="/logout" method="POST">
+                <div>
             @csrf
             <button class="bg-green-111 px-4 py-2 rounded font-inter font-medium text-white hover:shadow-lg">
                 logout
             </button>
         </form>
+        
+        </div>
+        
+            
     </div>
 </section>
 @endsection

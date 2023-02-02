@@ -22,27 +22,27 @@
             </div>
 
             <style>
-            .progress-bar {
-                width: 427px;
-                max-width: calc(100% - 1px);
-                height: 30px;
-                border: 2px solid #6bb36b;
-                border-radius: 10px;
-                position: relative;
-                overflow: hidden;
-                background: #D9D9D9;
-            }
+                .progress-bar {
+                    width: 427px;
+                    max-width: calc(100% - 1px);
+                    height: 30px;
+                    border: 2px solid #6bb36b;
+                    border-radius: 10px;
+                    position: relative;
+                    overflow: hidden;
+                    background: #D9D9D9;
+                }
 
-            progress::-webkit-progress-bar {
-                background-color: #D9D9D9;
-                border-radius: 2px;
-            }
+                progress::-webkit-progress-bar {
+                    background-color: #D9D9D9;
+                    border-radius: 2px;
+                }
 
-            progress::-webkit-progress-value {
-                background-color: #7FB77E;
-                box-shadow: 1px 1px 1px 1px rgba(107, 179, 107, 1);
-                border-radius: 2px;
-            }
+                progress::-webkit-progress-value {
+                    background-color: #7FB77E;
+                    box-shadow: 1px 1px 1px 1px rgba(107, 179, 107, 1);
+                    border-radius: 2px;
+                }
             </style>
             <!-- correct -->
 
@@ -73,26 +73,22 @@
             <div class="flex flex-col space-y-3 sm:space-y-5 content-end py-0 sm:py-5">
                 <div>
                     <form action="{{route('usersaveplay',$quiz)}}">
-                        <button id="cobalagi"
-                            class="hidden w-full h-fit border rounded-xl hover:border-green-111 hover:shadow-md border-green-111 py-1 text-xl sm:text-2xl text-green-111">Coba
-                            lagi</button>
-                    </form>
+                    <button id="cobalagi" 
+                        class="hidden w-full h-fit border rounded-xl hover:border-green-111 hover:shadow-md border-green-111 py-1 text-xl sm:text-2xl text-green-111">Coba
+                        lagi</button>
+                        </form>
                 </div>
                 <div>
                     <form action="{{route('quizguest.index')}}">
-                        <button id="lanjut"
-                            class="hidden w-full h-fit border hover:shadow-md rounded-xl bg-green-111 py-1 text-xl sm:text-2xl text-white">Kembali</button>
+                    <button id="lanjut"
+                        class="hidden w-full h-fit border hover:shadow-md rounded-xl bg-green-111 py-1 text-xl sm:text-2xl text-white">Kembali</button>
                     </form>
                 </div>
             </div>
             <script>
-            window.onload = function() {
+                window.onload = function() {
                 var pos = 0;
-                var soal1 = {
-                    {
-                        $poin
-                    }
-                };
+                var soal1 = {{$poin}};
                 var result = pos + soal1; //point nilai soal
                 //our box element
                 var bar = document.getElementById('p1');
@@ -107,17 +103,9 @@
                         clearInterval(t);
                         //benar salah
                         document.getElementById('demo').innerHTML = "Skor : " + result
-                        document.getElementById('correct').innerHTML = {
-                            {
-                                $bener
-                            }
-                        }
+                        document.getElementById('correct').innerHTML = {{$bener}}
                         document.getElementById('correcta').innerHTML = "Correct Answer"
-                        document.getElementById('wrong').innerHTML = {
-                            {
-                                $salah
-                            }
-                        }
+                        document.getElementById('wrong').innerHTML = {{$salah}}
                         document.getElementById('wronga').innerHTML = "Wrong Answer"
                         if (result >= 50) {
                             document.getElementById('result').innerHTML = "Passed"

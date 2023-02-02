@@ -2,9 +2,9 @@
 
 @section('container')
 <section>
-    <div class="container flex flex-col mt-[48px] gap-[48px]  m-auto px-3 sm:px-0 sm:w-[1280px] h-full">
-        <div class="container flex flex-col">
-            <h1 class="text-4xl">Bio</h1>
+    <div class="mx-auto sm:px-20 px-10 flex flex-col gap-5">
+        <div class="container flex flex-col mx-auto ">
+            <h1 class="text-3xl">Bio</h1>
             <br>
             <div class="space-y-5 w-full sm:w-1/2 flex-col flex">
                 <div class="flex flex-row w-full gap-5 justify-between">

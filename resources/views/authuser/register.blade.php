@@ -12,8 +12,9 @@
     <div class="justify-center flex m-auto my-[150px] w-full h-full">
         <div
             class="bg-white shadow-md mx-[20px] border w-full border-gray-200 rounded-lg sm:w-[491px] h-fit p-4 sm:p-6 lg:p-8">
-            <form class="space-y-2 sm:space-y-4" action="/register" method="POST">
-                <h3 class="pb-[30px] text-xl font-medium text-center text-gray-900">Register</h3>
+            <form class="space-y-2 sm:space-y-4" action="/register" method="POST" onsubmit="return validatePassword()">
+                @csrf
+                <h3 class="pb-[20px] text-xl sm:text-3xl font-medium text-center text-gray-900">Register</h3>
                 <div>
                     <!-- username -->
                     <label for="username" class="text-xs sm:text-sm font-medium text-gray-900 block mb-2">Your
@@ -43,7 +44,17 @@
                         <input type="checkbox" onclick="myFunction()" class="my-auto">
                         <p class="px-3">Show Password</p>
                     </div>
-
+                    <!-- validate pass min 8 char -->
+                    <script>
+                    function validatePassword() {
+                        var password = document.getElementById("password").value;
+                        if (password.length < 8) {
+                            alert("Password must be at least 8 characters long");
+                            return false;
+                        }
+                        return true;
+                    }
+                    </script>
                     <!--  -->
                     <script>
                     function myFunction() {
@@ -57,18 +68,20 @@
                     </script>
                     <br>
                     <!-- button -->
-                    <button type="submit" class="w-full text-white bg-green-111 hover:brightness-75
+                    <button type="submit" value="Submit" class="w-full text-white bg-green-111 hover:brightness-75
                         focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5
                         text-center">Create account</button>
                     <br>
+                    <a href="/login" class=" text-sm font-medium text-blue-700 hover:underline">Already have
+                        account?</a>
             </form>
             <p class="text-center">or</p>
             <form action="/auth/google/redirect">
-                <button type="submit" class="w-full text-black bg-white hover:brightness-75
-                        focus:ring-4 font-medium text-2xl rounded-lg px-5 py-2
-                        text-center flex flex-row">
-                    <img src="{{ URL('pictures/google.png') }}" class="w-10 h-10" alt="">
-                    <p class="text-center w-full">Login With Google</p>
+                <button type="submit" class="w-full border text-black bg-white hover:brightness-75
+                            focus:ring-4 font-medium text-2xl rounded-lg px-5 py-2
+                            text-center flex flex-row">
+                    <img src="{{ URL('pictures/google.png') }}" class="w-6 h-6 sm:w-10 sm:h-10 m-auto" alt="">
+                    <p class="text-center w-full m-auto text-sm sm:text-2xl">Login With Google</p>
                 </button>
             </form>
         </div>

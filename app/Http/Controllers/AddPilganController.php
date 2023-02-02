@@ -63,7 +63,7 @@ class AddPilganController extends Controller
                 'correct' => $is_active
             ];
             mutichoisechoise::create($data);
-        }
+            }
         }
         return redirect()->route('quiz.pilgan.index', compact('quiz'));
     }
@@ -112,7 +112,7 @@ class AddPilganController extends Controller
         multichoise::where('id', $pilgan)->update($validatedData);
         $question->mutichoisechoise()->delete();
         foreach ($request->answerfield as $key => $value) {
-            if (!empty($value['question']) && !empty($value['answer'])) {
+            if (!empty($value['answer'])) {
             $is_active = $value['correct'] ?? 0;
             $data = [
                 'multichoise_id' => $pilgan,

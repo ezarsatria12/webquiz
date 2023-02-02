@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('quiz_id')->references('id')->on('quizzes');
             $table->string('name');
             $table->string('class');
-            $table->integer('score');
+            $table->integer('score')->nullable();
             $table->timestamps();
         });
     }

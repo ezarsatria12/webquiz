@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\esay;
 use App\Models\matching;
 use App\Models\matchinganswer;
 use App\Models\matchingansweranswer;
@@ -9,6 +10,7 @@ use App\Models\multichoise;
 use App\Models\mutichoisechoise;
 use App\Models\quiz;
 use App\Models\student;
+use App\Models\studentesayaswer;
 use Illuminate\Http\Request;
 
 class GuestQuizController extends Controller
@@ -62,7 +64,7 @@ class GuestQuizController extends Controller
             foreach ($question->multichoise as $pilgan) {
                 return redirect()->route('showpilgan', compact('quiz', 'student', 'pilgan'));
             }
-        } elseif ($questionb->esay == null) {
+        } elseif ($questionb->esay != null) {
         }
     }
 
@@ -89,6 +91,7 @@ class GuestQuizController extends Controller
          //return redirect()->back()->with('success', 'Jawaban anda benar! Klik OK untuk melanjutkan soal berikutnya.'.'\n jawaban yang benar adalah : '.$correct->answer);
         }
         $questiond = matching::with('matchinganswer.matchingansweranswer')->find($quiz);
+        $questione = esay::find($quiz);
        //dd($questiond->id);
         //return redirect()->back()->with('error', 'Jawaban anda salah. Klik OK untuk melanjutkan soal berikutnya.');
         $nextsoal = multichoise::where('quiz_id', $quiz)->where('id', '>', $pilgan)->first();
@@ -97,17 +100,63 @@ class GuestQuizController extends Controller
         }elseif($questiond != null){
             return redirect()->route('showdnd', ['quiz' => $quiz, 'student' => $student, 'dnd' => $questiond->id]);
         }
+        elseif($questione != null){
+            return redirect()->route('showesay', ['quiz' => $quiz, 'student' => $student, 'esay' => $questione->id]);
+        }
     }
 
     public function showdnd(Request $request, $quiz, $student, $dnd){
-        $dnds = matching::with('matchinganswer.matchingansweranswer')->find($dnd);
-        //dd($questions);
-        return view('dnd', compact('quiz', 'student', 'dnds'));
+        //$dnd = matching::with('matchinganswer.matchingansweranswer')->find($dnd);
+        $questiona = quiz::with('matching')->find($quiz);
+        $questionb = quiz::with('esay')->find($quiz);
+       
+        if($questiona->matching != null){
+            foreach ($questiona->matching as $dnd) {
+                return view('dnd', compact('quiz', 'student', 'dnd'));
+            }
+        }
+        elseif($questionb->esay != null){
+            foreach ($questiona->matching as $esay) {
+                return view('essay', compact('quiz', 'student', 'esay'));
+            }
+        }
     }
     
-    public function showdndsteptwo(Request $request, $quiz, $student, $pilgan)
+    public function showdndvalid(Request $request, $quiz, $student, $pilgan)
     {
-        $pilgans = matching::with(['matchinganswer.matchingansweranswer'])->find($pilgan);
-        return view('pilgan', compact('quiz', 'student', 'pilgans'));
+        
+    }
+
+    public function showesay(Request $request, $quiz, $student, $esay)
+    {
+        $esays = esay::find($esay);
+        return view('essay', compact('quiz', 'student', 'esay', 'esays'));
+    }
+    public function showesayvalid(Request $request, $quiz, $student, $esay)
+    {
+        $validatedData = $request->validate([
+            'answer' => 'required',
+        ]);
+        $validatedData['student_id'] = $student;
+        $validatedData['quiz_id'] = $quiz;
+        $validatedData['esay_id'] = $esay;
+        studentesayaswer::create($validatedData);
+        
+        $nextsoal = esay::where('quiz_id', $quiz)->where('id', '>', $esay)->first();
+        if ($nextsoal) {
+            return redirect()->route('showesay', ['quiz' => $quiz, 'student' => $student, 'esay' => $nextsoal->id]);
+        }
+        return redirect()->route('result', compact('quiz', 'student',));
+    }
+    public function result(Request $request, $quiz, $student)
+    {
+        $esays = esay::find($quiz);
+        $qq = quiz::find($quiz)->multichoise;
+        $esaysd = student::where('quiz_id',$quiz)->where('id', $student)->first();
+        $qqq = $qq->count();
+        $poin = ($esaysd->score/$qqq)*10;
+        $bener = $esaysd->score / 10 ;
+        $salah = $qqq-($esaysd->score/10);
+        return view('resultcard', compact('quiz', 'student', 'esays','poin', 'bener', 'salah'));
     }
 }

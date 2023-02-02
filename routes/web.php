@@ -70,7 +70,12 @@ Route::get('/quizguest/play/{quiz}/student/{student}/pilgan/{pilgan}', [GuestQui
 Route::post('/quizguest/play/{quiz}/student/{student}/pilgan/{pilgan}', [GuestQuizController::class, 'pilganvalid'])->name('pilganvalid');
 
 Route::get('/quizguest/play/{quiz}/student/{student}/dnd/{dnd}', [GuestQuizController::class, 'showdnd'])->name('showdnd');
+Route::post('/quizguest/play/{quiz}/student/{student}/dnd/{dnd}', [GuestQuizController::class, 'showdndvalid'])->name('showdndvalid');
 
+Route::get('/quizguest/play/{quiz}/student/{student}/esay/{esay}', [GuestQuizController::class, 'showesay'])->name('showesay');
+Route::post('/quizguest/play/{quiz}/student/{student}/esay/{esay}', [GuestQuizController::class, 'showesayvalid'])->name('showesayvalid');
+
+Route::get('/quizguest/play/{quiz}/student/{student}/result', [GuestQuizController::class, 'result'])->name('result');
 
 Route::resource('/user', UserController::class);
 Route::resource('/quiz', QuizController::class);

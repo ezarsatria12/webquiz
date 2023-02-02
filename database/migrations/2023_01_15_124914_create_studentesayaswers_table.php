@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('quiz_id')->references('id')->on('quizzes');
             $table->foreignId('student_id')->references('id')->on('students');
+            $table->foreignId('esay_id')->references('id')->on('esays');
             $table->text('answer');
             $table->timestamps();
         });

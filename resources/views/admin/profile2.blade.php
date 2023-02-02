@@ -6,7 +6,7 @@
             <div class="container flex flex-col">
                 <h1 class="text-4xl">Bio</h1>
                 <br>
-                <div class="space-y-5 w-[75px] sm:w-1/2 flex-col flex">
+                <div class="space-y-5 w-full sm:w-1/2 flex-col flex">
                     <div class="flex flex-row w-full gap-5 justify-between">
                         <p>Nama
                         <p>:</p>

@@ -137,30 +137,30 @@
 
             <!-- dnd 1 js -->
             <script>
-                function allowDrop(ev) {
-                    ev.preventDefault();
-                }
+            function allowDrop(ev) {
+                ev.preventDefault();
+            }
 
-                function drag(ev) {
-                    ev.dataTransfer.setData("text", ev.target.id);
-                }
+            function drag(ev) {
+                ev.dataTransfer.setData("text", ev.target.id);
+            }
 
-                function drop(ev) {
-                    ev.preventDefault();
-                    var data = ev.dataTransfer.getData("text");
-                    ev.target.appendChild(document.getElementById(data));
-                }
+            function drop(ev) {
+                ev.preventDefault();
+                var data = ev.dataTransfer.getData("text");
+                ev.target.appendChild(document.getElementById(data));
+            }
 
-                function checkAnswers() {
-                    let score = 0;
-                    const answers = document.getElementsByTagName("input");
-                    for (let i = 0; i < answers.length; i++) {
-                        if (answers[i].checked) {
-                            score += parseInt(answers[i].value);
-                        }
+            function checkAnswers() {
+                let score = 0;
+                const answers = document.getElementsByTagName("input");
+                for (let i = 0; i < answers.length; i++) {
+                    if (answers[i].checked) {
+                        score += parseInt(answers[i].value);
                     }
-                    alert("Your score is: " + score);
                 }
+                alert("Your score is: " + score);
+            }
             </script>
         </div>
         <br>
@@ -186,12 +186,12 @@
             </div>
         </div>
         <script>
-            var swiper = new Swiper('.swiper-container', {
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-            });
+        var swiper = new Swiper('.swiper-container', {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
         </script>
 
         <!-- dnd end -->
@@ -215,11 +215,10 @@
             </div>
             <!-- button jawaban -->
             <div class="container sm:w-[1280px] sm:h-[320px] flex flex-col space-y-[20px]">
-                <textarea
-                    class="bg-gray-100 h-full w-full rounded-[10px] form-control block px-3 py-1.5 text-2xl font-normal text-gray-700
+                <textarea class="bg-gray-100 h-full w-full rounded-[10px] form-control block px-3 py-1.5 text-2xl font-normal text-gray-700
         bg-clip-padding border border-solid outline outline-gray-400 transition ease-in-outm-0
-        focus:text-gray-700 focus:bg-white focus:outline-green-111 focus:outline-4"
-                    id="exampleFormControlTextarea1" rows="4" placeholder="Masukkan Jawaban Disini">
+        focus:text-gray-700 focus:bg-white focus:outline-green-111 focus:outline-4" id="exampleFormControlTextarea1"
+                    rows="4" placeholder="Masukkan Jawaban Disini">
     </textarea>
             </div>
             <!-- next/prev button -->
@@ -236,12 +235,12 @@
         </div>
     </div>
     <script>
-        var swiper = new Swiper('.swiper-container', {
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
+    var swiper = new Swiper('.swiper-container', {
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
     </script>
     <!-- essay end -->
 </body>

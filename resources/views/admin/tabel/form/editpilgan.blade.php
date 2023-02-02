@@ -4,7 +4,8 @@
     @section('container')
     <section>
         <div>
-            <form action="{{ route("quiz.pilgan.update", [$quiz, $pilgan]) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route("quiz.pilgan.update", [$quiz, $pilgan]) }}" method="POST"
+                enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div name="pilgan" class="container m-auto white w-full sm:w-[1440px] space-y-5">
@@ -18,10 +19,10 @@
                             </label></p>
                         <p><img id="filemodul" class="w-[300px] h-[200px]" /></p>
                         <script>
-                            var loadFile = function(event) {
-                                    var image = document.getElementById('filemodul');
-                                    image.src = URL.createObjectURL(event.target.files[0]);
-                                };
+                        var loadFile = function(event) {
+                            var image = document.getElementById('filemodul');
+                            image.src = URL.createObjectURL(event.target.files[0]);
+                        };
                         </script>
                     </div>
                     <div class="flex flex-row justify-between">
@@ -41,7 +42,8 @@
                                 <span class="ml-2 w-[1280px]" name="jawaban">
                                     <textarea required class="outline-green-111 rounded
                                                 border-2 p-2 w-[300px] sm:w-full border-gray-200 resize-none"
-                                        name="answerfield[0][answer]" id="answer" rows="1" placeholder="Masukkan jawaban"></textarea>
+                                        name="answerfield[0][answer]" id="answer" rows="1"
+                                        placeholder="Masukkan jawaban"></textarea>
                                 </span>
                             </label>
                         </div>
@@ -51,9 +53,11 @@
                                 <input name="answerfield[1][correct]" type="checkbox"
                                     class="accent-green-111 w-6 h-6 border-0 rounded-md focus:ring-0" value="1">
                                 <span class="ml-2 w-[1280px]" name="jawaban">
-                                    <textarea required class="outline-green-111 rounded
+                                    <textarea required
+                                        class="outline-green-111 rounded
                                                                         border-2 p-2 w-[300px] sm:w-full border-gray-200 resize-none"
-                                        name="answerfield[1][answer]" id="answer" rows="1" placeholder="Masukkan jawaban"></textarea>
+                                        name="answerfield[1][answer]" id="answer" rows="1"
+                                        placeholder="Masukkan jawaban"></textarea>
                                 </span>
                             </label>
                         </div>
@@ -63,9 +67,11 @@
                                 <input name="answerfield[2][correct]" type="checkbox"
                                     class="accent-green-111 w-6 h-6 border-0 rounded-md focus:ring-0" value="1">
                                 <span class="ml-2 w-[1280px]" name="jawaban">
-                                    <textarea required class="outline-green-111 rounded
+                                    <textarea required
+                                        class="outline-green-111 rounded
                                                                         border-2 p-2 w-[300px] sm:w-full border-gray-200 resize-none"
-                                        name="answerfield[2][answer]" id="answer" rows="1" placeholder="Masukkan jawaban"></textarea>
+                                        name="answerfield[2][answer]" id="answer" rows="1"
+                                        placeholder="Masukkan jawaban"></textarea>
                                 </span>
                             </label>
                         </div>
@@ -75,9 +81,11 @@
                                 <input name="answerfield[3][correct]" type="checkbox"
                                     class="accent-green-111 w-6 h-6 border-0 rounded-md focus:ring-0" value="1">
                                 <span class="ml-2 w-[1280px]" name="jawaban">
-                                    <textarea required class="outline-green-111 rounded
+                                    <textarea required
+                                        class="outline-green-111 rounded
                                                                         border-2 p-2 w-[300px] sm:w-full border-gray-200 resize-none"
-                                        name="answerfield[3][answer]" id="answer" rows="1" placeholder="Masukkan jawaban"></textarea>
+                                        name="answerfield[3][answer]" id="answer" rows="1"
+                                        placeholder="Masukkan jawaban"></textarea>
                                 </span>
                             </label>
                         </div>

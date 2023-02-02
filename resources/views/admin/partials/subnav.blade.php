@@ -4,5 +4,5 @@
     <a class="mx-5 font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700 {{ Request::is('quiz') ? 'text-green-700' : ''}}"
         href="{{ route("quiz.dragndrop.index", $quiz) }}">Drag & Drop</a>
     <a class="mx-5 font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700 {{ Request::is('module') ? 'text-green-700' : ''}}"
-        href="{{ route("quiz.esay.index", $quiz) }}">Esay</a>
+        href="{{ route("quiz.esay.index", $quiz) }}">Essay</a>
 </div>

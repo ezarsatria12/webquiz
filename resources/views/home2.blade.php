@@ -6,7 +6,7 @@
         <div class="container px-6 py-4 mx-auto lg:flex lg:h-[800px] lg:py-20 ">
             <div class="flex flex-col justify-center items-center w-full lg:flex-row lg:w-1/2">
                 <div class="max-w-lg">
-                    <p class="font-inter text-2xl text-black tracking-wide">
+                    <p class="font-inter text-2xl sm:text-3xl text-black tracking-wide">
                         "Get Rid From Sadness With Pantun" </p>
                     <p class="text-sm"></p>
                     <br>
@@ -30,7 +30,7 @@
 </section>
 <section class="flex justify-center mx-auto container relative bg-contain bg-white">
     <div class="text-center w-3/4">
-        <a class="font-inter text-2xl text-black">Fitur utama kami</a>
+        <a class="font-inter text-2xl sm:text-3xl text-black">Fitur utama kami</a>
         <br></br>
         <a class="font-poppins text-xl text-grey-fade">Kami menyediakan kedua fitur utama kami yaitu quiz dan modul </a>
     </div>

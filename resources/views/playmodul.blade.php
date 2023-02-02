@@ -10,9 +10,11 @@
 </head>
 
 <body class=" bg-black sm:w-[1440px] sm:h-[1024px] m-auto">
-    
+
     @if(pathinfo($modules->media, PATHINFO_EXTENSION) == 'mp3')
-    <audio controls><source src="{{ asset('storage/'.$modules->media) }}" type="audio/ogg"></audio>
+    <audio controls>
+        <source src="{{ asset('storage/'.$modules->media) }}" type="audio/ogg">
+    </audio>
     @elseif(pathinfo($modules->media, PATHINFO_EXTENSION) == 'mp4')
     <div class="w-full mx-auto bg-gray-400 px-14 my-20 flex flex-col gap-5">
         <div class="w-[50px] h-[50px] mt-[20px] hover:brightness-90">
@@ -28,7 +30,8 @@
         </div>
         <div class="flex flex-row justify-start w-full h-fit gap-5">
             <button onclick="playPause()" class="flex">
-                <img class="w-[50px] h-[50px] hover:brightness-90" id="play" src="{{ URL('pictures/play.png') }}" alt="">
+                <img class="w-[50px] h-[50px] hover:brightness-90" id="play" src="{{ URL('pictures/play.png') }}"
+                    alt="">
             </button>
             <!-- video slider -->
             <input type="range" id="slider" min="0" max="100" value="0" step="1" oninput="Setvideo(this.value)"
@@ -39,101 +42,102 @@
                 <span>/</span>
                 <span id="time-duration"></span>
             </div>
-    
+
             <button onclick="enableMute()" type="button" class="flex flex-row gap-5">
-                <img class="w-[50px] h-[50px] hover:brightness-90" id="sound" src="{{ URL('pictures/soundon.png') }}" alt="">
+                <img class="w-[50px] h-[50px] hover:brightness-90" id="sound" src="{{ URL('pictures/soundon.png') }}"
+                    alt="">
             </button>
-            <input class="my-auto" id="vol-control" type="range" min="0" max="100" step="1" oninput="SetVolume(this.value)"
-                onchange="SetVolume(this.value)"></input>
-    
+            <input class="my-auto" id="vol-control" type="range" min="0" max="100" step="1"
+                oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></input>
+
             <button onclick="openFullscreen();">
-                <img class="w-[50px] h-[50px] hover:brightness-90" id="play" src="{{ URL('pictures/fullscreen.png') }}" alt="">
+                <img class="w-[50px] h-[50px] hover:brightness-90" id="play" src="{{ URL('pictures/fullscreen.png') }}"
+                    alt="">
             </button>
-    
+
         </div>
     </div>
     <script>
-        var video = document.getElementById("video");
-        var slider = document.getElementById("slider");
-        var slidervolume = document.getElementById("vol-control");
-        var timeElapsed = document.getElementById("time-elapsed");
-        var timeDuration = document.getElementById("time-duration");
-    
-        video.ontimeupdate = function() {
-            var minutesElapsed = Math.floor(video.currentTime / 60);
-            var secondsElapsed = Math.floor(video.currentTime - minutesElapsed * 60);
-            timeElapsed.innerHTML = minutesElapsed + ":" + secondsElapsed.toString().padStart(2, '0');
-        };
-    
-    
-        slider.addEventListener("input", function() {
-            video.currentTime = (video.duration * slider.value) / 100;
-        });
-    
-        video.addEventListener("timeupdate", function() {
-            slider.value = (video.currentTime * 100) / video.duration;
-        });
-    
-        window.SetVolume = function(val) {
-            var image = document.getElementById("sound");
-            console.log('Before: ' + video.volume);
-            video.volume = val / 100;
-            console.log('After: ' + video.volume);
-            if (video.volume == 0) {
-                video.muted = true;
+    var video = document.getElementById("video");
+    var slider = document.getElementById("slider");
+    var slidervolume = document.getElementById("vol-control");
+    var timeElapsed = document.getElementById("time-elapsed");
+    var timeDuration = document.getElementById("time-duration");
+
+    video.ontimeupdate = function() {
+        var minutesElapsed = Math.floor(video.currentTime / 60);
+        var secondsElapsed = Math.floor(video.currentTime - minutesElapsed * 60);
+        timeElapsed.innerHTML = minutesElapsed + ":" + secondsElapsed.toString().padStart(2, '0');
+    };
+
+
+    slider.addEventListener("input", function() {
+        video.currentTime = (video.duration * slider.value) / 100;
+    });
+
+    video.addEventListener("timeupdate", function() {
+        slider.value = (video.currentTime * 100) / video.duration;
+    });
+
+    window.SetVolume = function(val) {
+        var image = document.getElementById("sound");
+        console.log('Before: ' + video.volume);
+        video.volume = val / 100;
+        console.log('After: ' + video.volume);
+        if (video.volume == 0) {
+            video.muted = true;
+            image.src = "pictures/soundoff.png";
+        } else {
+            video.muted = false;
+            image.src = "pictures/soundon.png";
+        }
+    }
+
+
+    function enableMute() {
+        var image = document.getElementById("sound");
+        if (!video.muted) {
+            video.muted = true;
+            slidervolume.value = 0;
+            if (image.src.match("pictures/soundon.png")) {
                 image.src = "pictures/soundoff.png";
-            } else {
-                video.muted = false;
+            }
+        } else {
+            video.muted = false;
+            slidervolume.value = 10;
+            video.volume = 0.1;
+            if (image.src.match("pictures/soundoff.png")) {
                 image.src = "pictures/soundon.png";
             }
         }
-    
-    
-        function enableMute() {
-            var image = document.getElementById("sound");
-            if (!video.muted) {
-                video.muted = true;
-                slidervolume.value = 0;
-                if (image.src.match("pictures/soundon.png")) {
-                    image.src = "pictures/soundoff.png";
-                }
-            } else {
-                video.muted = false;
-                slidervolume.value = 10;
-                video.volume = 0.1;
-                if (image.src.match("pictures/soundoff.png")) {
-                    image.src = "pictures/soundon.png";
-                }
+    }
+
+    function playPause() {
+        var image = document.getElementById("play");
+        if (video.paused) {
+            video.play();
+            if (image.src.match("pictures/play.png")) {
+                image.src = "pictures/pause.png";
+            }
+        } else {
+            video.pause();
+            if (image.src.match("pictures/pause.png")) {
+                image.src = "pictures/play.png";
             }
         }
-    
-        function playPause() {
-            var image = document.getElementById("play");
-            if (video.paused) {
-                video.play();
-                if (image.src.match("pictures/play.png")) {
-                    image.src = "pictures/pause.png";
-                }
-            } else {
-                video.pause();
-                if (image.src.match("pictures/pause.png")) {
-                    image.src = "pictures/play.png";
-                }
-            }
+    }
+
+    function openFullscreen() {
+        if (video.requestFullscreen) {
+            video.requestFullscreen();
+        } else if (myVideo.webkitRequestFullscreen) {
+            /* Safari */
+            video.webkitRequestFullscreen();
+        } else if (myVideo.msRequestFullscreen) {
+            /* IE11 */
+            video.msRequestFullscreen();
         }
-    
-        function openFullscreen() {
-            if (video.requestFullscreen) {
-                video.requestFullscreen();
-            } else if (myVideo.webkitRequestFullscreen) {
-                /* Safari */
-                video.webkitRequestFullscreen();
-            } else if (myVideo.msRequestFullscreen) {
-                /* IE11 */
-                video.msRequestFullscreen();
-            }
-        }
-        
+    }
     </script>
     @endif
     <!-- play video -->

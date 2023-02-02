@@ -41,7 +41,8 @@
                             {{ $student->score }}
                         </td>
                         <td class="border-x border-opacity-25 border-green-111 px-6 py-4">
-                            <a href="{{route('showjawaban',['quiz' => $quiz, 'student' => $student->id])}}" class="text-blue-600">View</a>
+                            <a href="{{route('showjawaban',['quiz' => $quiz, 'student' => $student->id])}}"
+                                class="text-blue-600">View</a>
                         </td>
                     </tr>
                     @endforeach

@@ -52,8 +52,8 @@
     </div>
     
     <div class=" py-10 flex mx-auto flex-row space-x-2 justify-center" href="#home">
-      {{ $moduls->links() }}
-    </div>
+            {{ $moduls->links() }}
+        </div>
   </div>
 </section>
 @endsection

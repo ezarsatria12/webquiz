@@ -47,9 +47,17 @@
             focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5
             text-center">Login to your account</button>
             <br>
-						Not registered? <a href="/auth/google/redirect" class=" text-sm font-medium text-blue-700 hover:underline">Create account</a>
+						Not registered? <a href="/register" class=" text-sm font-medium text-blue-700 hover:underline">Create account</a>
 						</div>
 		</form>
+    <form action="/auth/google/redirect">
+      <button type="submit" class="w-full text-black bg-white hover:brightness-75
+                            focus:ring-4 font-medium text-2xl rounded-lg px-5 py-2
+                            text-center flex flex-row">
+        <img src="{{ URL('pictures/google.png') }}" class="w-10 h-10" alt="">
+        <p class="text-center w-full">Login With Google</p>
+      </button>
+    </form>
 	</div>
 	</p>
 </div>

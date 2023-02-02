@@ -23,7 +23,7 @@
             </div>
 
             <style>
-                .progress-bar {
+                .progress-bar { 
                     width: 427px;
                     max-width: calc(100% - 1px);
                     height: 30px;

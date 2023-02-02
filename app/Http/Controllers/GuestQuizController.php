@@ -60,15 +60,13 @@ class GuestQuizController extends Controller
             return redirect()->route('showpilgan', compact('quiz','student','pilgan'));
             }
         }
-        elseif($questiona->matching != null){
-            foreach ($question->multichoise as $pilgan) {
-                return redirect()->route('showpilgan', compact('quiz', 'student', 'pilgan'));
-            }
-        } elseif ($questionb->esay != null) {
+        if ($questionb->esay != null) {
+            
             foreach ($questionb->esay as $esay) {
-                return redirect()->route('showpilgan', compact('quiz', 'student', 'esay'));
+                return redirect()->route('showesay', compact('quiz', 'student', 'esay'));
             }
         }
+       
     }
 
     public function showpilgan(Request $request, $quiz,$student, $pilgan)
@@ -108,6 +106,7 @@ class GuestQuizController extends Controller
                 return redirect()->route('showesay', compact('quiz', 'student', 'esay'));
             }
         }
+        return redirect()->route('result', compact('quiz', 'student',));
     }
 
     public function showdnd(Request $request, $quiz, $student, $dnd){
@@ -139,7 +138,7 @@ class GuestQuizController extends Controller
     }
     public function showesayvalid(Request $request, $quiz, $student, $esay)
     {
-        
+        $question = quiz::with('multichoise')->find($quiz);
         $validatedData = $request->validate([
             'answer' => 'required',
         ]);
@@ -152,6 +151,10 @@ class GuestQuizController extends Controller
         if ($nextsoal) {
             return redirect()->route('showesay', ['quiz' => $quiz, 'student' => $student, 'esay' => $nextsoal->id]);
         }
+        elseif($question->multichoise == null){
+            return redirect()->route('quizguest.index');
+        }
+        dd($question->multichoise);
         return redirect()->route('result', compact('quiz', 'student',));
     }
     public function result(Request $request, $quiz, $student)

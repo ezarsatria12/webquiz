@@ -45,7 +45,7 @@ Route::get('/app', function () {
 });
 Route::get('/login', function () {
     return view('authuser.login');
-});
+})->middleware('guest');
 Route::get('/addsoal', function () {
     return view('addsoal');
 });
@@ -53,16 +53,16 @@ Route::get('/addsoal', function () {
 Route::get('/profile', function () {
     return view('admin.profile2');
 })->name('profile');
-Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('/login', [LoginController::class, 'authenticate'])->name('authenticate');
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'authenticate'])->name('authenticate')->middleware('guest');
 
-Route::get('/register', [LoginController::class, 'indexregister']);
-Route::post('/register', [LoginController::class, 'storeregister']);
+Route::get('/register', [LoginController::class, 'indexregister'])->middleware('guest');
+Route::post('/register', [LoginController::class, 'storeregister'])->middleware('guest');
 
 Route::post('/logout', [LoginController::class, 'out']);
 
-Route::get('/auth/google/redirect', [AuthGoogleController::class, 'redirectToProvider']);
-Route::get('/auth/google/callback', [AuthGoogleController::class, 'handleProviderCallback']);
+Route::get('/auth/google/redirect', [AuthGoogleController::class, 'redirectToProvider'])->middleware('guest');
+Route::get('/auth/google/callback', [AuthGoogleController::class, 'handleProviderCallback'])->middleware('guest');
 
 Route::get('/quizguest', [GuestQuizController::class, 'index'])->name('quizguest.index');
 Route::get('/quizguest/play/{quiz}', [GuestQuizController::class, 'user'])->name('usersaveplay');;
@@ -84,11 +84,11 @@ Route::get('/quiz/{quiz}/hasil', [GuestQuizController::class, 'showhasil'])->nam
 Route::get('/quiz/{quiz}/hasil/{student}', [GuestQuizController::class, 'showjawaban'])->name('showjawaban');
 
 
-Route::resource('/user', UserController::class);
-Route::resource('/quiz', QuizController::class);
+Route::resource('/user', UserController::class)->middleware('guest');
+Route::resource('/quiz', QuizController::class)->middleware('auth');
 Route::resource('/addquiz', AddQuizController::class);
-Route::resource('/module', ModuleController::class);
+Route::resource('/module', ModuleController::class)->middleware('auth');
 Route::resource('/modul', ModuleGuestController::class);
-Route::resource('quiz.pilgan', AddPilganController::class);
-Route::resource('quiz.dragndrop', AddDNDController::class);
-Route::resource('quiz.esay', AddEsayController::class);
+Route::resource('quiz.pilgan', AddPilganController::class)->middleware('auth');
+Route::resource('quiz.dragndrop', AddDNDController::class)->middleware('auth');
+Route::resource('quiz.esay', AddEsayController::class)->middleware('auth');

@@ -159,4 +159,17 @@ class GuestQuizController extends Controller
         $salah = $qqq-($esaysd->score/10);
         return view('resultcard', compact('quiz', 'student', 'esays','poin', 'bener', 'salah'));
     }
+
+    public function showhasil($quiz)
+    {
+        $esays = quiz::with('student')->find($quiz);
+       
+        return view('admin.tabel.hasil', compact('quiz','esays'));
+    }
+    public function showjawaban($quiz,$student)
+    {
+        $esays = student::with('studentesayaswer')->find($student); //studentesayaswer::where('quiz_id', $quiz)->where('student_id', $student)->first();
+        //dd($esays);
+        return view('admin.tabel.hasilesay', compact('quiz', 'esays'));
+    }
 }

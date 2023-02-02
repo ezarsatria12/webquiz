@@ -62,7 +62,7 @@ Route::get('/auth/google/redirect', [AuthGoogleController::class, 'redirectToPro
 Route::get('/auth/google/callback', [AuthGoogleController::class, 'handleProviderCallback']);
 
 Route::get('/quizguest', [GuestQuizController::class, 'index'])->name('quizguest.index');
-Route::get('/quizguest/play/{quiz}', [GuestQuizController::class, 'user']);
+Route::get('/quizguest/play/{quiz}', [GuestQuizController::class, 'user'])->name('usersaveplay');;
 Route::post('/quizguest/play/{quiz}', [GuestQuizController::class, 'usersave'])->name('usersave');
 Route::get('/quizguest/play/{quiz}/student/{student}', [GuestQuizController::class, 'play'])->name('play');
 
@@ -76,6 +76,10 @@ Route::get('/quizguest/play/{quiz}/student/{student}/esay/{esay}', [GuestQuizCon
 Route::post('/quizguest/play/{quiz}/student/{student}/esay/{esay}', [GuestQuizController::class, 'showesayvalid'])->name('showesayvalid');
 
 Route::get('/quizguest/play/{quiz}/student/{student}/result', [GuestQuizController::class, 'result'])->name('result');
+
+Route::get('/quiz/{quiz}/hasil', [GuestQuizController::class, 'showhasil'])->name('showhasil');
+Route::get('/quiz/{quiz}/hasil/{student}', [GuestQuizController::class, 'showjawaban'])->name('showjawaban');
+
 
 Route::resource('/user', UserController::class);
 Route::resource('/quiz', QuizController::class);

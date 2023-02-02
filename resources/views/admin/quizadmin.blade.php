@@ -42,7 +42,7 @@
                             <div class="container mx-auto w-full px-6 text-center h-auto flex space-y-2 flex-col">
                                 <a class="text-[12px] sm:text-[18px] mx-auto sm:py-1 text-gray-700 hover:scale-105
                       hover:text-green-111 border-2 rounded-[4px] sm:rounded-[6px] w-full"
-                                    href="">
+                                    href="{{route('showhasil',$quiz)}}">
                                     <span>Review</span>
                                 </a>
                                 <a class="text-[12px] sm:text-[18px] mx-auto sm:py-1 text-gray-700 hover:scale-105

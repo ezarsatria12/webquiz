@@ -73,13 +73,17 @@
             <!-- button -->
             <div class="flex flex-col space-y-3 sm:space-y-5 content-end py-0 sm:py-5">
                 <div>
-                    <button id="cobalagi"
+                    <form action="{{route('usersaveplay',$quiz)}}">
+                    <button id="cobalagi" 
                         class="hidden w-full h-fit border rounded-xl hover:border-green-111 hover:shadow-md border-green-111 py-1 text-xl sm:text-2xl text-green-111">Coba
                         lagi</button>
+                        </form>
                 </div>
                 <div>
+                    <form action="{{route('quizguest.index')}}">
                     <button id="lanjut"
                         class="hidden w-full h-fit border hover:shadow-md rounded-xl bg-green-111 py-1 text-xl sm:text-2xl text-white">Kembali</button>
+                    </form>
                 </div>
             </div>
             <script>

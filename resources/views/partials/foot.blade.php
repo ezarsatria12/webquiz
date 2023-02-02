@@ -12,11 +12,11 @@
         <div class="flex flex-col gap-3 h-fit">
             <span class="text-2xl">Contact</span>
             <div class="flex flex-row w-full gap-2">
-                <img src="pictures/Whatsapp-icon.png" class="w-[32px] h-[32px]" alt="">
+                <img src="{{ URL('pictures/Whatsapp-icon.png') }}" class="w-[32px] h-[32px]" alt="">
                 <span class="text-xl">0891234567890</span>
             </div>
             <div class="flex flex-row w-full gap-2">
-                <img src="pictures/Instagram-icon.png" class="w-[31px] h-[31px]" alt="">
+                <img src="{{ URL('pictures/Instagram-icon.png') }}" class="w-[31px] h-[31px]" alt="">
                 <span class="text-xl">@ezarganz</span>
             </div>
         </div>

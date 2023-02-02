@@ -8,7 +8,7 @@
         <!--nav button-->
         <div id="nav-content" class="hidden sm:flex  content-center text-grey-fade m-auto text-center">
             <a class="mr-5  font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700"
-                href="/aboutus">Profile</a>
+                href="/profile">Profile</a>
             <a class="mx-5 font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700"
                 href="/quiz">Quiz</a>
             <a class="mx-5 font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700"
@@ -16,7 +16,7 @@
         </div>
         <!-- hamburger -->
         <span class="pl-[135px]">
-            <img onclick="openNav()" src="pictures/hamburgerbutton.png" class="pl- w-[32px] h-[32px] sm:hidden" alt="">
+            <img onclick="openNav()" src="pictures/hamburgerbutton.png" class="pl- w-[32px] h-[32px] block sm:hidden" alt="">
         </span>
 
         <div id="myNav" class="overlay" class="h-full w-0 fixed left-0 top-0 overflow-x-hidden z-1">
@@ -24,7 +24,7 @@
             <!-- Button to close the overlay navigation -->
             <div class="flex flex-col w-fit h-full">
                 <div>
-                    <a href="# " class="absolute text-6xl flex self-end p-5 bg-white w-full" onclick="closeNav()">
+                    <a href="/home" class="absolute text-6xl flex self-end p-5 bg-white w-full" onclick="closeNav()">
                         <img src="pictures/back button.png" class="w-[32px] h-[32px] my-auto sm:hidden" alt="">
                         <h3 class=" text-4xl lg:text-3xl font-medium block">SmartPantun</h3>
                     </a>
@@ -34,10 +34,9 @@
                 <div class="text-grey-fade gap-5 h-full bg-white pt-10 text-4xl block relative flex-col mt-20 justify-start space-y-5"
                     id="overlay-content">
                     <a href="/home" class="self-start mx-10 hover:text-green-111 hover:px-5">Beranda</a>
-                    <a href="/aboutus" class="self-start mx-10 hover:text-green-111 hover:px-5">About Us</a>
+                    <a href="/profile" class="self-start mx-10 hover:text-green-111 hover:px-5">Profile</a>
                     <a href="/quiz" class="self-start mx-10 hover:text-green-111 hover:px-5">Quiz</a>
-                    <a href="/modul" class="self-start mx-10 hover:text-green-111 hover:px-5">Modul</a>
-                    <a href="/help" class="self-start mx-10 hover:text-green-111 hover:px-5">Help</a>
+                    <a href="/module" class="self-start mx-10 hover:text-green-111 hover:px-5">Modul</a>
                 </div>
             </div>
         </div>
@@ -95,7 +94,7 @@
         @if(Auth::check())
         <form action="/profile">
             @csrf
-            <button class=" px-4 py-2  font-inter font-medium text-black ">
+            <button class="hidden sm:flex px-4 py-2 font-inter font-medium text-black ">
                 {{ Auth::user()->name}}
             </button>
         </form>

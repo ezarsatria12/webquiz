@@ -11,7 +11,7 @@
                 </div>
             </div>
             <div
-                class="container font-inter text-grey-fade h-fit space-x-3 justify-start flex m-auto sm:w-[1280px] lg:flex-row sm:space-y-0 sm:space-x-5">
+                class="hidden container font-inter text-grey-fade h-fit space-x-3 justify-start m-auto sm:w-[1280px] lg:flex-row sm:space-y-0 sm:space-x-5">
                 <a class="hover:text-green-111 focus:text-green-111" href="#">Terbaru</a>
                 <a class="hover:text-green-111 focus:text-green-111" href="#">Mudah</a>
                 <a class="hover:text-green-111 focus:text-green-111" href="#">Sedang</a>
@@ -26,7 +26,7 @@
                         <div type="button" onclick="toggleModal('modal-'+{{$quiz->id}})"
                             class="toggleModal container w-[150px] mx-auto flex flex-col justify-start h-fit sm:w-[400px] sm:space-y-3 sm:h-fit shadow-card rounded-[10px] bg-white">
                             <div>
-                                <img class="my-[15px] mx-auto rounded-[10px] px-[10px] sm:w-[350px] sm:h-[185px]  "
+                                <img class="my-[15px] mx-auto rounded-sm px-[10px] sm:w-[350px] sm:h-[185px]  "
                                     src="{{ asset('storage/'.$quiz->media) }}" alt="thumbnail-modul">
                                 <h1
                                     class="flex justify-start font-inter text-[14px] sm:text-3xl text-black px-3 sm:px-7 font-medium ">
@@ -36,7 +36,7 @@
                             </div>
                             <!-- tanda panah klo bukan admin -->
                             <div
-                                class="container justify-end w-full h-auto sm:pb-[20px] flex pr-3 sm:pr-5 sm:mb-5 mt-auto flex-row">
+                                class="container justify-end w-full h-auto flex pb-3 sm:pb-5 pr-3 sm:pr-5 sm:mb-5 mt-auto flex-row">
                                 <img class="w-[16px] h-[16px] sm:w-[50px] sm:h-[50px]" src="pictures/go.png" alt="">
                             </div>
                         </div>
@@ -57,14 +57,14 @@
                             <!-- body -->
                             <div class="container mx-auto w-full px-6 h-full flex space-y-2 flex-col">
                                 <img class="self-center mx-auto rounded-[10px] px-[10px] w-[300px] h-[150px] sm:w-[450px] sm:h-[250px]  "
-                                    src="pictures/template.png" alt="thumbnail-modul">
+                                    src="{{ asset('storage/'.$quiz->media) }}" alt="thumbnail-modul">
                                 <h1 class="flex self-start font-medium text-[16px] font-inter text-black sm:text-3xl ">{{$quiz->quiztitle}}</h1>
                                 <p class="text-[12px] flex flex-col font-poppins sm:text-2xl text-grey-fade self-start">{{$quiz->quizdesc}}</p>
                             </div>
                             <!-- button masuk -->
                             <div class="container mx-auto w-full px-6 text-center h-full flex flex-col justify-end">
-                                <a class="text-[12px] sm:text-[18px] mx-auto sm:py-1 text-gray-700 hover:scale-105
-                                hover:text-green-111 border-2 rounded-[4px] sm:rounded-[6px] w-full" href="/quizguest/play/{{$quiz->id}}">
+                                <a class="text-[12px] sm:text-[18px] py-2 mx-auto sm:py-3 hover:scale-105
+                                bg-green-111 text-white border-2 rounded-[4px] sm:rounded-[6px] w-full" href="/quizguest/play/{{$quiz->id}}">
                                     <span>masuk</span>
                                 </a>
                             </div>

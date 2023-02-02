@@ -17,10 +17,10 @@
                             </label></p>
                         <p><img id="filemodul" class="w-[300px] h-[200px]" /></p>
                         <script>
-                            var loadFile = function(event) {
-                                    var image = document.getElementById('filemodul');
-                                    image.src = URL.createObjectURL(event.target.files[0]);
-                                };
+                        var loadFile = function(event) {
+                            var image = document.getElementById('filemodul');
+                            image.src = URL.createObjectURL(event.target.files[0]);
+                        };
                         </script>
                     </div>
                     <div class="flex flex-row justify-between">
@@ -38,14 +38,17 @@
                                 <span class="ml-2 w-[1280px]" name="jawaban">
                                     <textarea required class="outline-green-111 rounded
                                                 border-2 p-2 w-[300px] sm:w-full border-gray-200 resize-none"
-                                        name="answerfield[0][question]" id="answer" rows="1" placeholder="Masukkan jawaban"></textarea>
+                                        name="answerfield[0][question]" id="answer" rows="1"
+                                        placeholder="Masukkan jawaban"></textarea>
                                 </span>
                             </label>
                             <label class="inline-flex items-center w-full">
                                 <span class="ml-2 w-[1280px]" name="jawaban">
-                                    <textarea required class="outline-green-111 rounded
+                                    <textarea required
+                                        class="outline-green-111 rounded
                                                                             border-2 p-2 w-[300px] sm:w-full border-gray-200 resize-none"
-                                        name="answerfield[0][answer]" id="answer" rows="1" placeholder="Masukkan jawaban"></textarea>
+                                        name="answerfield[0][answer]" id="answer" rows="1"
+                                        placeholder="Masukkan jawaban"></textarea>
                                 </span>
                             </label>
                         </div>
@@ -53,9 +56,11 @@
                             <p class="font-thin">2</p>
                             <label class="inline-flex items-center w-full">
                                 <span class="ml-2 w-[1280px]" name="jawaban">
-                                    <textarea required class="outline-green-111 rounded
+                                    <textarea required
+                                        class="outline-green-111 rounded
                                                                         border-2 p-2 w-[300px] sm:w-full border-gray-200 resize-none"
-                                        name="answerfield[1][question]" id="answer" rows="1" placeholder="Masukkan jawaban"></textarea>
+                                        name="answerfield[1][question]" id="answer" rows="1"
+                                        placeholder="Masukkan jawaban"></textarea>
                                 </span>
                             </label>
                             <label class="inline-flex items-center w-full">
@@ -63,7 +68,8 @@
                                     <textarea required
                                         class="outline-green-111 rounded
                                                                                                     border-2 p-2 w-[300px] sm:w-full border-gray-200 resize-none"
-                                        name="answerfield[1][answer]" id="answer" rows="1" placeholder="Masukkan jawaban"></textarea>
+                                        name="answerfield[1][answer]" id="answer" rows="1"
+                                        placeholder="Masukkan jawaban"></textarea>
                                 </span>
                             </label>
                         </div>
@@ -71,18 +77,20 @@
                             <p class="font-thin">3</p>
                             <label class="inline-flex items-center w-full">
                                 <span class="ml-2 w-[1280px]" name="jawaban">
-                                    <textarea 
+                                    <textarea
                                         class="outline-green-111 rounded
                                                                                                 border-2 p-2 w-[300px] sm:w-full border-gray-200 resize-none"
-                                        name="answerfield[2][question]" id="answer" rows="1" placeholder="Masukkan jawaban"></textarea>
+                                        name="answerfield[2][question]" id="answer" rows="1"
+                                        placeholder="Masukkan jawaban"></textarea>
                                 </span>
                             </label>
                             <label class="inline-flex items-center w-full">
                                 <span class="ml-2 w-[1280px]" name="jawaban">
-                                    <textarea 
+                                    <textarea
                                         class="outline-green-111 rounded
                                                                                                                             border-2 p-2 w-[300px] sm:w-full border-gray-200 resize-none"
-                                        name="answerfield[2][answer]" id="answer" rows="1" placeholder="Masukkan jawaban"></textarea>
+                                        name="answerfield[2][answer]" id="answer" rows="1"
+                                        placeholder="Masukkan jawaban"></textarea>
                                 </span>
                             </label>
                         </div>
@@ -90,18 +98,20 @@
                             <p class="font-thin">4</p>
                             <label class="inline-flex items-center w-full">
                                 <span class="ml-2 w-[1280px]" name="jawaban">
-                                    <textarea 
+                                    <textarea
                                         class="outline-green-111 rounded
                                                                                                 border-2 p-2 w-[300px] sm:w-full border-gray-200 resize-none"
-                                        name="answerfield[3][question]" id="answer" rows="1" placeholder="Masukkan jawaban"></textarea>
+                                        name="answerfield[3][question]" id="answer" rows="1"
+                                        placeholder="Masukkan jawaban"></textarea>
                                 </span>
                             </label>
                             <label class="inline-flex items-center w-full">
                                 <span class="ml-2 w-[1280px]" name="jawaban">
-                                    <textarea 
+                                    <textarea
                                         class="outline-green-111 rounded
                                                                                                                             border-2 p-2 w-[300px] sm:w-full border-gray-200 resize-none"
-                                        name="answerfield[3][answer]" id="answer" rows="1" placeholder="Masukkan jawaban"></textarea>
+                                        name="answerfield[3][answer]" id="answer" rows="1"
+                                        placeholder="Masukkan jawaban"></textarea>
                                 </span>
                             </label>
                         </div>

@@ -14,7 +14,7 @@
                 </div>
             </div>
             <div
-                class="container h-fit sm:mx-10 font-inter text-[20px] text-black space-x-3 justify-start flex m-auto lg:flex-row sm:space-y-0 sm:space-x-5">
+                class="hidden container h-fit sm:mx-10 font-inter text-[20px] text-black space-x-3 justify-start flex m-auto lg:flex-row sm:space-y-0 sm:space-x-5">
                 <a class="hover:text-green-111 focus:text-green-111" href="#">Terbaru</a>
                 <a class="hover:text-green-111 focus:text-green-111" href="#">Mudah</a>
                 <a class="hover:text-green-111 focus:text-green-111" href="#">Sedang</a>
@@ -115,6 +115,8 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
                     <div class="hidden overflow-x-hidden m-auto overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center"
                         id="modal-id{{ $quiz->id }}">
                         <div id="modal-id{{ $quiz->id }}"
@@ -150,22 +152,17 @@
                         </div>
                     </div>
                     <!-- js modal -->
-                    <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-{{ $quiz->id }}-backdrop">
-                    </div>
-                    <div class="hidden opacity-25 my-auto fixed inset-0 z-40 bg-black"
-                        id="modal-{{ $quiz->id }}-backdrop"></div>
+                    <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-{{ $quiz->id }}-backdrop"></div>
+                    <div class="hidden opacity-25 my-auto fixed inset-0 z-40 bg-black" id="modal-id{{ $quiz->id }}-backdrop"></div>
                     <script type="text/javascript">
                         var modal = document.getElementById(modal + {{ $quiz->id }});
-
                         function toggleModal(modalID) {
                             document.getElementById(modalID).classList.toggle("hidden");
                             document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
                             document.getElementById(modalID).classList.toggle("flex");
                             document.getElementById(modalID + "-backdrop").classList.toggle("flex");
                             event.preventDefault();
-
                         }
-
                         function togglekonfirm(modalID) {
                             document.getElementById(modalID).classList.toggle("hidden");
                             document.getElementById(modalID + "-backdrop").classList.toggle("hidden");

@@ -108,6 +108,7 @@ class GuestQuizController extends Controller
                 return redirect()->route('showesay', compact('quiz', 'student', 'esay'));
             }
         }
+        return redirect()->route('result', compact('quiz', 'student',)); 
     }
 
     public function showdnd(Request $request, $quiz, $student, $dnd){

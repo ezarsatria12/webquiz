@@ -2,7 +2,7 @@
 
 @section('container')
     <section>
-        <div class="container space-y-5 m-auto px-3 sm:px-0 sm:w-[1440px] sm:h-max sm:space-y-[32px]">
+        <div class="container space-y-5 m-auto px-3 sm:px-0 sm:w-[1440px] sm:space-y-[32px]">
             <div
                 class="container h-fit space-y-5 justify-start flex m-auto sm:w-[1280px] lg:flex-row sm:space-y-0 sm:space-x-20">
                 <div
@@ -10,14 +10,8 @@
                     <h1>Daftar modul</h1>
                 </div>
             </div>
-            <div
-                class="container h-fit space-x-3 justify-start flex m-auto sm:w-[1280px] lg:flex-row sm:space-y-0 sm:space-x-5">
-                <a class="hover:text-green-111 focus:text-green-111" href="#">Terbaru</a>
-                <a class="hover:text-green-111 focus:text-green-111" href="#">Puisi</a>
-                <a class="hover:text-green-111 focus:text-green-111" href="#">Pantun</a>
-            </div>
             <!-- cardsection -->
-            <div class="container mx-auto flex gap-4 flex-wrap h-fit pb-[10px] sm:w-[1280px] sm:flex-wrap">
+            <div class="container mx-auto flex gap-4 flex-wrap h-full pb-[10px] sm:w-[1280px] sm:flex-wrap">
                 <!-- card1 -->
                 @foreach ($moduls as $modul)
                     <a href="#">
@@ -62,8 +56,8 @@
                             </div>
                             <!-- button masuk -->
                             <div class="container mx-auto w-full px-6 text-center h-full flex flex-col justify-end">
-                                <a class="text-[12px] sm:text-[18px] mx-auto sm:py-1 text-gray-700 hover:scale-105
-                                            hover:text-green-111 border-2 rounded-[4px] sm:rounded-[6px] w-full"
+                                <a class="text-[12px] sm:text-[18px] mx-auto sm:py-1
+                                            hover:scale-105 text-white bg-green-111 border-2 rounded-[4px] sm:rounded-[6px] w-full"
                                     href="{{route('modul.show',$modul->id)}}">
                                     <span>masuk</span>
                                 </a>
@@ -75,12 +69,12 @@
                     <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-{{$modul->id}}-backdrop"></div>
                     <script type="text/javascript">
                         var modal = document.getElementById(modal+{{$modul->id}});
-
                         function toggleModal(modalID) {
                             document.getElementById(modalID).classList.toggle("hidden");
                             document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
                             document.getElementById(modalID).classList.toggle("flex");
                             document.getElementById(modalID + "-backdrop").classList.toggle("flex");
+                            event.preventDefault();
                         }
                     </script>
                 @endforeach

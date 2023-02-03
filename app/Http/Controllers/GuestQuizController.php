@@ -66,6 +66,7 @@ class GuestQuizController extends Controller
                 return redirect()->route('showesay', compact('quiz', 'student', 'esay'));
             }
         }
+        return redirect()->route('quizguest.index');
        
     }
 
@@ -151,10 +152,10 @@ class GuestQuizController extends Controller
         if ($nextsoal) {
             return redirect()->route('showesay', ['quiz' => $quiz, 'student' => $student, 'esay' => $nextsoal->id]);
         }
-        elseif($question->multichoise == null){
+        
+        if($question->multichoise->isEmpty()){
             return redirect()->route('quizguest.index');
-        }
-        dd($question->multichoise);
+        }else
         return redirect()->route('result', compact('quiz', 'student',));
     }
     public function result(Request $request, $quiz, $student)

@@ -1,33 +1,34 @@
 @extends('admin.partials.index')
 
 @section('container')
-    <section>
-        <div class="container space-y-2 m-auto px-3 sm:px-0 sm:h-max">
-            <div class="container sm:mx-10 h-fit space-y-5 justify-start flex my-auto lg:flex-row sm:space-y-0 sm:space-x-0">
-                <div
-                    class="container font-inter text-2xl text-black h-fit relative flex flex-wrap justify-between sm:text-3xl sm:h-[40px]">
-                    <h1>Daftar Quiz</h1>
-                    <a href="/quiz/create" class="self-center">
-                        <img class="w-6 h-6 bg-blend-color-burn hover:shadow-sm sm:w-8 sm:h-8"
-                            src="{{ URL('Pictures/plus.png') }}" alt="whatsapp">
-                    </a>
-                </div>
-            </div>
+<section>
+    <div class="container space-y-2 m-auto px-3 sm:px-0 sm:h-max">
+        <div
+            class="container sm:mx-10 h-fit space-y-5 justify-start flex my-auto lg:flex-row sm:space-y-0 sm:space-x-0">
             <div
-                class="container h-fit sm:mx-10 font-inter text-[20px] text-black space-x-3 justify-start flex m-auto lg:flex-row sm:space-y-0 sm:space-x-5">
-                <a class="hover:text-green-111 focus:text-green-111" href="#">Terbaru</a>
-                <a class="hover:text-green-111 focus:text-green-111" href="#">Mudah</a>
-                <a class="hover:text-green-111 focus:text-green-111" href="#">Sedang</a>
-                <a class="hover:text-green-111 focus:text-green-111" href="#">Sulit</a>
+                class="container font-inter text-2xl text-black h-fit relative flex flex-wrap justify-between sm:text-3xl sm:h-[40px]">
+                <h1>Daftar Quiz</h1>
+                <a href="/quiz/create" class="self-center">
+                    <img class="w-6 h-6 bg-blend-color-burn hover:shadow-sm sm:w-8 sm:h-8"
+                        src="{{ URL('Pictures/plus.png') }}" alt="whatsapp">
+                </a>
             </div>
-            <!-- cardsection -->
-            <div
-                class="container sm:mx-10 flex flex-wrap sm:flex-row space-x-3 w-[360px] h-fit pb-[10px] space-y-10 sm:w-[1280px] sm:flex-wrap sm:space-y-20">
-                @foreach ($quizs as $quiz)
-                    <!-- card1 -->
-                    <a type="button" onclick="toggleModal('modal-'+{{ $quiz->id }})">
-                        <div
-                            class="container m-auto flex flex-col justify-start h-fit
+        </div>
+        <div
+            class="hidden container h-fit sm:mx-10 font-inter text-[20px] text-black space-x-3 justify-start flex m-auto lg:flex-row sm:space-y-0 sm:space-x-5">
+            <a class="hover:text-green-111 focus:text-green-111" href="#">Terbaru</a>
+            <a class="hover:text-green-111 focus:text-green-111" href="#">Mudah</a>
+            <a class="hover:text-green-111 focus:text-green-111" href="#">Sedang</a>
+            <a class="hover:text-green-111 focus:text-green-111" href="#">Sulit</a>
+        </div>
+        <!-- cardsection -->
+
+        <div
+            class="container sm:mx-10 flex flex-wrap w-full space-x-3 h-fit pb-[10px] space-y-10 sm:flex-wrap sm:space-y-20">
+            @foreach ($quizs as $quiz)
+            <!-- card1 -->
+            <a type="button" onclick="toggleModal('modal-'+{{ $quiz->id }})">
+                <div class="container m-auto flex flex-wrap justify-start h-fit
                         w-[300px] mx-auto sm:w-[400px] sm:space-y-5 sm:h-fit shadow-card
                         rounded-[10px] bg-white">
                     <div class="w-full flex flex-col justify-center mx-auto">
@@ -64,6 +65,7 @@
                             </button>
                         </div>
                     </div>
+
                     <!-- action="/quiz/{{ $quiz->id }}" method="post" -->
                     <!-- tanda panah klo bukan admin -->
                 </div>
@@ -97,60 +99,58 @@
                     <div class="container mx-auto w-full px-6 text-center h-full flex flex-col justify-end gap-3">
                         <a class="font-inter text-black text-[12px] sm:text-[18px] mx-auto sm:py-1 hover:scale-105
                                   hover:text-green-111 border-2 rounded-[4px] sm:rounded-[6px] w-full"
-                                    href="/quiz/{{ $quiz->id }}/edit">
-                                    <span>Edit</span>
-                                </a>
-                                <div type="button" onclick="togglekonfirm('modal-id'+{{ $quiz->id }})">
-                                    <button
-                                        class="font-inter text-black text-[12px] sm:text-[18px] mx-auto sm:py-1 bg-red-redFF6767 hover:scale-105
-                                  hover:text-white rounded-[4px] sm:rounded-[6px] w-full"
-                                        href="">
+                            href="/quiz/{{ $quiz->id }}/edit">
+                            <span>Edit</span>
+                        </a>
+                        <div type="button" onclick="togglekonfirm('modal-id'+{{ $quiz->id }})">
+                            <button class="font-inter text-black text-[12px] sm:text-[18px] mx-auto sm:py-1 bg-red-redFF6767 hover:scale-105
+                                  hover:text-white rounded-[4px] sm:rounded-[6px] w-full" href="">
+                                <span>Delete</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="hidden overflow-x-hidden m-auto overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center"
+                id="modal-id{{ $quiz->id }}">
+                <div id="modal-id{{ $quiz->id }}" class="container m-auto flex flex-col justify-start py-5 z-10 px-5 w-full h-fit sm:w-[800px]
+                                    rounded-[10px] shadow-card bg-white space-y-2 mx-4 sm:space-y-3">
+                    <div class="flex flex-col px-2 self-center w-full">
+                        <!-- text  -->
+                        <div
+                            class="w-full flex justify-center font-inter p-3 sm:text-3xl text-2xl text-[14px] text-black">
+                            <p>Apakah anda yakin ingin menghapus quiz?</p>
+                        </div>
+                        <!-- button  -->
+                        <div class="flex flex-row w-full gap-3 m-auto">
+                            <div type="button" class="w-1/2" onkeydown="myFunction(event)"
+                                onclick="togglekonfirm('modal-id'+{{ $quiz->id }})">
+                                <button
+                                    class="font-inter text-black text-[12px] sm:text-[18px] mx-auto sm:py-1 hover:scale-105
+                                  hover:text-green-111 border-2 rounded-[4px] sm:rounded-[6px] h-fit py-2 px-3 w-full">Batal</button>
+                            </div>
+                            <div type="button" class="w-1/2">
+                                <form action="/quiz/{{ $quiz->id }}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <button class="font-inter text-black text-[12px] sm:text-[18px] mx-auto sm:py-1 bg-red-redFF6767 hover:scale-105
+                                  hover:text-white rounded-[4px] sm:rounded-[6px] h-fit py-2 px-3 w-full">
                                         <span>Delete</span>
                                     </button>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
-                    <div class="hidden overflow-x-hidden m-auto overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center"
-                        id="modal-id{{ $quiz->id }}">
-                        <div id="modal-id{{ $quiz->id }}"
-                            class="container m-auto flex flex-col justify-start py-5 z-10 px-5 w-full h-fit sm:w-[800px]
-                                    rounded-[10px] shadow-card bg-white space-y-2 mx-4 sm:space-y-3">
-            <div class="flex flex-col px-2 self-center w-full">
-                <!-- text  -->
-                <div class="w-full flex justify-center font-inter p-3 sm:text-3xl text-2xl text-[14px] text-black">
-                    <p>Apakah anda yakin ingin menghapus quiz?</p>
                 </div>
-                <!-- button  -->
-                <div class="flex flex-row w-full gap-3 m-auto">
-                    <div type="button" class="w-1/2" onkeydown="myFunction(event)"
-                        onclick="togglekonfirm('modal-id'+{{ $quiz->id }})">
-                        <button
-                            class="font-inter text-black text-[12px] sm:text-[18px] mx-auto sm:py-1 hover:scale-105
-                                  hover:text-green-111 border-2 rounded-[4px] sm:rounded-[6px] h-fit py-2 px-3 w-full">Batal</button>
-                    </div>
-                    <div type="button" class="w-1/2">
-                        <form action="/quiz/{{ $quiz->id }}" method="post">
-                            @csrf
-                            @method('delete')
-                            <button class="font-inter text-black text-[12px] sm:text-[18px] mx-auto sm:py-1 bg-red-redFF6767 hover:scale-105
-                                  hover:text-white rounded-[4px] sm:rounded-[6px] h-fit py-2 px-3 w-full">
-                                                <span>Delete</span>
-                                            </button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- js modal -->
-                    <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-{{ $quiz->id }}-backdrop">
-                    </div>
-                    <div class="hidden opacity-25 my-auto fixed inset-0 z-40 bg-black"
-                        id="modal-{{ $quiz->id }}-backdrop"></div>
-                    <script type="text/javascript">
-                        var modal = document.getElementById(modal + {{ $quiz->id }});
-
+            </div>
+            <!-- js modal -->
+            <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-{{ $quiz->id }}-backdrop"></div>
+            <div class="hidden opacity-25 my-auto fixed inset-0 z-40 bg-black" id="modal-id{{ $quiz->id }}-backdrop">
+            </div>
+            <script type="text/javascript">
+                var modal = document.getElementById(modal + {{ $quiz->id }});
                         function toggleModal(modalID) {
                             document.getElementById(modalID).classList.toggle("hidden");
                             document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
@@ -165,9 +165,9 @@
                             document.getElementById(modalID + "-backdrop").classList.toggle("flex");
                             event.preventDefault();
                         }
-    </script>
-    @endforeach
-    </div>
+            </script>
+            @endforeach
+        </div>
     </div>
 
     <!-- js modal -->

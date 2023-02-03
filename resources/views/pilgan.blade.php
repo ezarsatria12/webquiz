@@ -9,7 +9,7 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="container bg-black sm:bg-gray-800 sm:w-[1440px] sm:h-[1024px] m-auto">
+<body class="container bg-white sm:bg-white sm:w-[1440px] sm:h-[1024px] m-auto">
     <div class="my-auto self-center text-2xl text-center sm:hidden block">
        <p class="m-auto text-white text-center pt-72 pb-5">Please rotate your phone</p>
     <img src="{{ URL('pictures/rotate.gif') }}" class="m-auto w-[200px] h-[200px]" alt=""></div>
@@ -50,9 +50,9 @@
                 @csrf
                 <!-- opsi benar -->
                 @foreach ($pilgans->mutichoisechoise as $opsi)
-                <button id="box" onload="getRandomColor()" for="opsi-1" name="pilgan" value="{{ $opsi->id }}"
+                <button id="box{{ $opsi->id }}" onload="getRandomColor()" for="opsi-1" name="pilgan" value="{{ $opsi->id }}"
                     class="flex focus:brightness-75 hover:scale-110 hover:brightness-75 py-[20px] text-start shadow-boxjawaban
-                    sm:h-[300px] h-[150px] w-[150px] sm:w-[300px] rounded focus:text-black ml-2 text-sm font-medium text-gray-900 ">
+                    sm:h-[300px] h-[150px] w-[150px] sm:w-[300px] rounded focus:text-black ml-2 text-sm font-medium text-white ">
                     <span class="text-2xl m-auto focus:brightness-50">{{$opsi->answer}}</span>
                     <input class="hidden" id="opsi-1" type="radio" value="10" name="pilgan" value="{{ $opsi->id }}">
                     <br>
@@ -67,7 +67,7 @@
                         return color;
                     }
 
-                    var container = document.getElementById("box");
+                    var container = document.getElementById("box"+{{ $opsi->id }});
                     container.style.backgroundColor = getRandomColor();
                 </script>
                 @endforeach

@@ -16,7 +16,7 @@
                     <p class="mt-4 font-poppins">SmartPantun adalah sebuah platform digital yang menyediakan sarana
                         belajar untuk pelajar yang ingin belajar pantun </p>
                     <div class="mt-6">
-                        <button href="#" class="inline-block px-3 py-2 font-inter text-2xl text-center text-white 
+                        <button href="#" class="inline-block px-3 py-2 font-inter text-xs text-center text-white 
                     bg-green-111 rounded-md focus:shadow-card">
                             Read More</button>
                     </div>

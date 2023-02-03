@@ -9,7 +9,7 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="container bg-black sm:bg-gray-800 sm:w-[1440px] sm:h-[1024px] m-auto">
+<body class="container bg-white sm:bg-wtite sm:w-[1440px] sm:h-[1024px] m-auto">
     <div class="my-auto self-center text-2xl text-center sm:hidden block">
        <p class="m-auto text-white text-center pt-72 pb-5">Please rotate your phone</p>
     <img src="{{ URL('pictures/rotate.gif') }}" class="m-auto w-[200px] h-[200px]" alt=""></div>

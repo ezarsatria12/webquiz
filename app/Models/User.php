@@ -20,6 +20,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'id_google',
         'password',
     ];
 
@@ -31,6 +32,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'two_factor_recovery_codes',
+        'two_factor_secret',
     ];
 
     /**
@@ -41,4 +44,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function module()
+    {
+        return $this->hasmany(module::class);
+    }
+    
+    /*public function quiz()
+    {
+        return $this->hasmany(quiz::class);
+    }*/
 }

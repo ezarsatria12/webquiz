@@ -1,21 +1,18 @@
 @extends('admin.partials.index')
 
 @section('container')
-<section>
-    <div class="container space-y-5 m-auto px-3 sm:px-0 sm:w-[1440px] sm:h-max sm:space-y-[32px]">
-        <div
-            class="container h-fit space-y-5 justify-start flex m-auto sm:w-[1280px] lg:flex-row sm:space-y-0 sm:space-x-20">
+    <section>
+        <div class="container space-y-5 m-auto px-3 sm:px-0 sm:w-[1440px] h-full sm:space-y-[32px]">
             <div
-                class="container h-fit mx-auto relative flex flex-wrap w-full justify-between font-medium text-2xl sm:text-3xl sm:w-[1280px] sm:h-[40px]">
+                class="container font-inter text-2xl text-black h-fit relative flex flex-wrap justify-between sm:text-3xl sm:h-[40px]">
                 <h1>Daftar Module</h1>
                 <a href="/module/create" class="self-center">
                     <img class="w-6 h-6 bg-blend-color-burn hover:ring-1 hover:ring-green-111 sm:w-8 sm:h-8"
                         src="{{ URL('pictures/plus.png') }}" alt="whatsapp">
                 </a>
             </div>
-        </div>
         <div
-            class="container h-fit space-x-3 justify-start flex m-auto sm:w-[1280px] lg:flex-row sm:space-y-0 sm:space-x-5">
+            class="hidden container h-fit space-x-3 justify-start flex m-auto sm:w-[1280px] lg:flex-row sm:space-y-0 sm:space-x-5">
             <a class="hover:text-green-111 focus:text-green-111" href="#">Terbaru</a>
             <a class="hover:text-green-111 focus:text-green-111" href="#">Mudah</a>
             <a class="hover:text-green-111 focus:text-green-111" href="#">Sedang</a>
@@ -44,21 +41,61 @@
                             href="/module/{{ $modul->id}}/edit">
                             <span>Edit</span>
                         </a>
-                        <form action="/module/{{ $modul->id}}" method="post" onclick="togglekonfirm('modal-id1')">
-                            @csrf
-                            @method('delete')
-                            <button class="text-[12px] sm:text-[18px] mx-auto sm:py-1 bg-red-redFF6767 text-gray-700 hover:scale-105
-                      hover:text-white rounded-[4px] sm:rounded-[6px] w-full" href="">
+                        <div type="button" onclick="togglekonfirm('modal-id'+{{ $modul->id }})">
+                            <button class="font-inter text-black text-[12px] sm:text-[18px] mx-auto sm:py-1 bg-red-redFF6767 hover:scale-105
+                                  hover:text-white rounded-[4px] sm:rounded-[6px] w-full" href="">
                                 <span>Delete</span>
                             </button>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </a>
             @endforeach
             <!-- card end -->
+            <div class="hidden overflow-x-hidden m-auto overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center"
+                id="modal-id{{ $modul->id }}">
+                <div id="modal-id{{ $modul->id }}" class="container m-auto flex flex-col justify-start py-5 z-10 px-5 w-full h-fit sm:w-[800px]
+                                    rounded-[10px] shadow-card bg-white space-y-2 mx-4 sm:space-y-3">
+                    <div class="flex flex-col px-2 self-center w-full">
+                        <!-- text  -->
+                        <div
+                            class="w-full flex justify-center font-inter p-3 sm:text-3xl text-2xl text-[14px] text-black">
+                            <p>Apakah anda yakin ingin menghapus quiz?</p>
+                        </div>
+                        <!-- button  -->
+                        <div class="flex flex-row w-full gap-3 m-auto">
+                            <div type="button" class="w-1/2" onkeydown="myFunction(event)"
+                                onclick="togglekonfirm('modal-id'+{{ $modul->id }})">
+                                <button
+                                    class="font-inter text-black text-[12px] sm:text-[18px] mx-auto sm:py-1 hover:scale-105
+                                  hover:text-green-111 border-2 rounded-[4px] sm:rounded-[6px] h-fit py-2 px-3 w-full">Batal</button>
+                            </div>
+                            <div type="button" class="w-1/2">
+                                <form action="/module/{{ $modul->id }}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <button class="font-inter text-black text-[12px] sm:text-[18px] mx-auto sm:py-1 bg-red-redFF6767 hover:scale-105
+                                  hover:text-white rounded-[4px] sm:rounded-[6px] h-fit py-2 px-3 w-full">
+                                        <span>Delete</span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+         
+            </div>
         </div>
     </div>
+    <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id{{$modul->id}}-backdrop"></div>
+                    <script type="text/javascript">
+                        function togglekonfirm(modalID) {
+                            document.getElementById(modalID).classList.toggle("hidden");
+                            document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
+                            document.getElementById(modalID).classList.toggle("flex");
+                            document.getElementById(modalID + "-backdrop").classList.toggle("flex");
+                            event.preventDefault();
+                        }
+                    </script>
 
     <div class=" py-10 flex mx-auto flex-row space-x-2 justify-center" href="#home">
       {{ $moduls->links() }}

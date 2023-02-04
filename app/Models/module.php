@@ -17,6 +17,7 @@ class module extends Model
         'user_id',
         'moduletitle',
         'moduledesc',
+        'moduledescimg',
         'media'
     ];
 

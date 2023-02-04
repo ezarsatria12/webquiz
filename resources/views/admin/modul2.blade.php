@@ -50,7 +50,7 @@
                     </div>
                 </div>
             </a>
-            @endforeach
+            
             <!-- card end -->
             <div class="hidden overflow-x-hidden m-auto overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center"
                 id="modal-id{{ $modul->id }}">
@@ -96,7 +96,7 @@
                             event.preventDefault();
                         }
                     </script>
-
+@endforeach
     <div class=" py-10 flex mx-auto flex-row space-x-2 justify-center" href="#home">
       {{ $moduls->links() }}
     </div>

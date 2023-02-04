@@ -44,7 +44,7 @@
                             href="/module/{{ $modul->id}}/edit">
                             <span>Edit</span>
                         </a>
-                        <form method="post" onclick="togglekonfirm('modal-id1')">
+                        <form action="/module/{{ $modul->id}}" method="post" onclick="togglekonfirm('modal-id1')">
                             @csrf
                             @method('delete')
                             <button class="text-[12px] sm:text-[18px] mx-auto sm:py-1 bg-red-redFF6767 text-gray-700 hover:scale-105

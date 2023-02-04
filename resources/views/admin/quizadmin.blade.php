@@ -102,7 +102,7 @@
                             href="/quiz/{{ $quiz->id }}/edit">
                             <span>Edit</span>
                         </a>
-                        <div type="button" onclick="togglekonfirm('modal-id'+{{ $quiz->id }})">
+                        <div action="" type="button" onclick="togglekonfirm('modal-id'+{{ $quiz->id }})">
                             <button class="font-inter text-black text-[12px] sm:text-[18px] mx-auto sm:py-1 bg-red-redFF6767 hover:scale-105
                                   hover:text-white rounded-[4px] sm:rounded-[6px] w-full" href="">
                                 <span>Delete</span>

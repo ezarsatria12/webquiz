@@ -190,36 +190,9 @@
                 /* IE11 */
                 video.msRequestFullscreen();
             }
-<<<<<<< Updated upstream
-        }
-        
+    }
+    
     </script>
-=======
-
-            function openFullscreen() {
-                if (video.requestFullscreen) {
-                    video.requestFullscreen();
-                } else if (myVideo.webkitRequestFullscreen) {
-                    /* Safari */
-                    video.webkitRequestFullscreen();
-                } else if (myVideo.msRequestFullscreen) {
-                    /* IE11 */
-                    video.msRequestFullscreen();
-                }
-            }
-        </script>
-    @elseif(pathinfo($modules->media, PATHINFO_EXTENSION) == 'jpg' ||
-            pathinfo($modules->media, PATHINFO_EXTENSION) == 'png' ||
-            pathinfo($modules->media, PATHINFO_EXTENSION) == 'jpeg')
-            <div class="hidden sm:block w-full mx-auto px-14 my-20 flex-col gap-5">
-                <img class="rounded-[10px] mx-auto h-fit w-fit "
-            src="{{ asset('storage/' . $modules->media) }}" alt="asd" type="image">
-            </div>
-        
-    @elseif(pathinfo($modules->media, PATHINFO_EXTENSION) == 'pdf' ||
-    pathinfo($modules->media, PATHINFO_EXTENSION) == 'pptx') )
-        <embed src="{{ asset('storage/' . $modules->media)}}'#toolbar=0'" width="100%" height="500px" alt="pdf" type="pdf">
->>>>>>> Stashed changes
     @endif
 
     <div class="hidden sm:block w-full mx-auto h-fit rounded-[10px] justify-center pb-20 pt-5  bg-gray-400 px-20 my-20 flex-col gap-5">

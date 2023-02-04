@@ -30,7 +30,7 @@
                     </div>
                     <textarea required class="outline-green-111 rounded border-2 p-2 w-full sm:w-[1280px] 
                                     border-gray-200 resize-none" name="question" id="question" rows="1"
-                        placeholder="Masukkan Soal"></textarea>
+                        placeholder="Masukkan Soal">{{ old('question') ?? $esays->question }}</textarea>
                     <div class="container flex flex-row w-full sm:w-[1280px] h-[38px] justify-end">
                         <button type="submit" value="submit">
                             <a href="">

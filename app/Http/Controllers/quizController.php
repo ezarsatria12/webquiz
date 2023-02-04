@@ -82,7 +82,7 @@ class quizController extends Controller
     {
         $categories = category::all();
         $quiz = quiz::find($id);
-        return view('admin.addsoals', compact('quiz', 'categories'));
+        return view('admin.editsoals', compact('quiz', 'categories'));
     }
 
     /**
@@ -113,13 +113,13 @@ class quizController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(quiz $quiz)
+    public function destroy($quiz)
     {
         $quest = quiz::with('student')->find($quiz);
-        $question = multichoise::with('mutichoisechoise')->find($quiz);
-        $questionesay = esay::with('studentesayaswer')->find($quiz);
+        $question = quiz::with('multichoise.mutichoisechoise')->find($quiz);
+        $questionesay = quiz::with('esay.studentesayaswer')->find($quiz);
         if ($question != null) {
-            foreach ($question as $pilgan) {
+            foreach ($question->multichoise as $pilgan) {
                 foreach($pilgan->mutichoisechoise as $jawaban){
                     $jawaban->delete();
                 }
@@ -128,24 +128,22 @@ class quizController extends Controller
             }
         }
         if($questionesay != null){
-            foreach ($questionesay as $esay) {
+            foreach ($questionesay->studentesayaswer as $esay) {
                 foreach ($esay->studentesayaswer as $jawaban) {
                     $jawaban->delete();
                 }
             }
-            foreach($questionesay as $esay){
+            foreach($questionesay->esay as $esay){
                 !is_null($esay->media) && Storage::delete($esay->media);
                 $esay->delete();
             }
         }
         if ($quest != null) {
-            foreach ($quest as $student) {
-                foreach ($student->student as $jawaban) {
+                foreach ($quest->student as $jawaban) {
                     $jawaban->delete();
                 }
-            }
-            !is_null($quiz->media) && Storage::delete($quiz->media);
-            $quiz->delete();
+            !is_null($quest->media) && Storage::delete($quest->media);
+            $quest->delete();
         }
         return redirect()->route('quiz.index');
     }

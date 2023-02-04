@@ -69,7 +69,8 @@ class AddEsayController extends Controller
      */
     public function edit($quiz, $esay)
     {
-        return view('admin.tabel.form.editesay', compact('quiz', 'esay'));
+        $esays = esay::find($esay);
+        return view('admin.tabel.form.editesay', compact('quiz', 'esay', 'esays'));
     }
 
     /**

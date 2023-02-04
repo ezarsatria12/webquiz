@@ -11,7 +11,7 @@
                     <p class="">Modul Title</p>
                     <textarea class="outline-green-111 rounded border-2 p-2 w-full sm:w-[630px] border-gray-200 resize-none"
                         name="moduletitle" id="moduletitle" cols="80" rows="2" placeholder="Masukkan Judul Modul"
-                        autofocus required value="{{ old ('moduletitle') }}"></textarea>
+                        autofocus required ">{{ old('question') ?? $moduls->moduletitle }}</textarea>
                 </div>
             </div>
             <div class="m-auto h-[676px] flex flex-col justify-start space-y-10">
@@ -19,17 +19,17 @@
                     <p class="">Modul Description</p>
                     <textarea class="outline-green-111 rounded border-2 p-2 w-full sm:w-[630px] border-gray-200 resize-none"
                         name="moduledesc" id="moduledesc" cols="80" rows="6" placeholder="Masukkan Judul Modul"
-                        autofocus required value="{{ old ('moduledesc') }}"></textarea>
+                        autofocus required value="{{ old ('moduledesc') }}">{{ old('question') ?? $moduls->moduledesc }}</textarea>
                 </div>
                 <div name="add" class="space-y-3">
                     <input type="file" class="form-control-file" id="media" name="media" autofocus required
-                        value="{{ old ('media') }}" onchange="previewImage()">
+                        value="{{ old('question') ?? $moduls->media }}" onchange="previewImage()">
                 </div>
                 <div name="Title" class="space-y-3">
-                    <p class="">Modul Contents</p>
+                    <p class="">Modul Contents (khusus modul berbentuk gambar)</p>
                     <textarea class="outline-green-111 rounded border-2 p-2 w-full sm:w-[630px] border-gray-200 resize-none"
-                        name="moduledesc" id="moduledesc" cols="80" rows="6" placeholder="Masukkan Judul Modul"
-                        autofocus required value="{{ old ('moduledesc') }}"></textarea>
+                        name="moduledescimg" id="moduledescimg" cols="80" rows="6" placeholder="Masukkan Judul Modul" autofocus
+                        value="{{ old ('moduledesc') }}">{{ old('question') ?? $moduls->moduledescimg }}</textarea>
                 </div>
                 <div class="container flex flex-row h-[38px] justify-end">
                     <button type="submit">
@@ -47,7 +47,7 @@ function previewImage() {
     const imgPreview = document.querySelector('.img-preview');
     imgPreview.style.display = 'block';
     const oFReader = new FileReader();
-    oFReader.readAsDataURL(gambar.files[0]);
+    oFReader.readAsDataURL(gambar.files[]);
     oFReader.onload = function(OFREvent) {
         imgPreview.src = OFREvent.target.result;
     }

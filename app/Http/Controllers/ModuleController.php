@@ -43,7 +43,8 @@ class ModuleController extends Controller
         $validatedData = $request->validate([
             'moduletitle'=>'required',
             'moduledesc'=>'required',
-            'media'=>'required|file'
+            'media'=>'required|file',
+            'moduledescimg'=>'nullable'
         ]);
         if($request->file('media')){
             $validatedData['media'] = $request->file('media')->store('modulemedia');
@@ -87,15 +88,15 @@ class ModuleController extends Controller
      */
     public function update(Request $request,module $module)
     {
-        $rules=[
-            'moduletitle'=>'required',
-            'moduledesc'=>'required',
-            'media'=>'required|file'
-        ];
-        $validatedData = $request->validate($rules);
+        $validatedData = $request->validate([
+            'moduletitle' => 'required',
+            'moduledesc' => 'required',
+            'media' => 'required|file',
+            'moduledescimg' => 'nullable'
+        ]);
         storage::delete($module->media);
         $validatedData['media'] = $request->file('media')->store('modulemedia');
-        module::where('id', $module)
+        module::where('id', $module->id)
             ->update($validatedData);
 
         return redirect('/module');

@@ -1,4 +1,4 @@
-<nav class="top-0 ">
+<nav class="top-0">
     <!-- ini nav tanpa login -->
     <div class="px-8 py-6 flex flex-row justify-between bg-white ">
         <!--logo-->
@@ -7,15 +7,13 @@
         </a>
 
         <!--nav button-->
-        <div id="nav-content" class="hidden sm:flex  content-center text-grey-fade m-auto text-center">
-            <a class="mr-5  font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700"
-                href="/aboutus">About Us</a>
-            <a class="mr-5  font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700"
+        <div id="nav-content" class="hidden sm:flex text-xl gap-5 content-center text-grey-fade m-auto text-center">
+            <a class="font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700"
                 href="{{route('quizguest.index')}}">Quiz</a>
-            <a class="mr-5  font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700"
+            <a class="font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700"
                 href="/modul">Modul</a>
-            <a class="mr-5  font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700"
-                href="/help">Help</a>
+            <a class="font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700"
+                href="/aboutus">About Us</a>
         </div>
         <!--button sign in-->
 
@@ -24,7 +22,7 @@
             <form action="/profile" class="flex m-auto">
                 @csrf
                 <button class="hidden sm:flex px-4 py-2 font-inter font-medium text-black ">
-                    {{ substr(Auth::user()->name, 0, 8) }}
+                    {{ Auth::user()->name}}
                 </button>
             </form>
             @else
@@ -77,7 +75,6 @@
                 <a href="/aboutus" class="self-start mx-10 hover:text-green-111 hover:px-5">About Us</a>
                 <a href="{{route('quizguest.index')}}" class="self-start mx-10 hover:text-green-111 hover:px-5">Quiz</a>
                 <a href="/modul" class="self-start mx-10 hover:text-green-111 hover:px-5">Modul</a>
-                <a href="/help" class="self-start mx-10 hover:text-green-111 hover:px-5">Help</a>
 
             </div>
         </div>

@@ -68,10 +68,10 @@
             <p class="text-center text-xl py-2">or</p>
             <form action="/auth/google/redirect">
                 <button type="submit" class="w-full border text-black bg-white hover:brightness-75
-                            focus:ring-4 font-medium text-2xl rounded-lg px-5 py-2
+                            focus:ring-4 font-medium text-2xl rounded-lg px-5 py-2 font-poppins
                             text-center flex flex-row">
-                    <img src="{{ URL('pictures/google.png') }}" class="w-6 h-6 sm:w-10 sm:h-10 m-auto" alt="">
-                    <p class="text-center w-full m-auto text-sm sm:text-2xl">Login With Google</p>
+                    <img src="{{ URL('pictures/google.png') }}" class="w-2 h-2 sm:w-[30px] sm:h-[30px] m-auto" alt="">
+                    <p class="text-center w-full m-auto text-sm sm:text-sm font-poppins pr-8">Login With Google</p>
                 </button>
             </form>
         </div>

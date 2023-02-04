@@ -82,10 +82,8 @@
                             </div>
                         </div>
                     </div>
-         
             </div>
         </div>
-    </div>
     <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id{{$modul->id}}-backdrop"></div>
                     <script type="text/javascript">
                         function togglekonfirm(modalID) {

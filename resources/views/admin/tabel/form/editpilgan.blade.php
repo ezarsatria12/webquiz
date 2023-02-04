@@ -31,7 +31,7 @@
                     </div>
                     <textarea required class="outline-green-111 rounded border-2 p-2 w-full sm:w-[1280px] 
                                     border-gray-200 resize-none" name="question" id="question" rows="1"
-                        placeholder="Masukkan Soal"></textarea>
+                        placeholder="Masukkan Soal" >{{ old('question') ?? $pilgans->question }}</textarea>
                     <div class="space-y-5 w-full">
                         <!-- opsi -->
                         <div class="flex flex-col w-full space-y-3">
@@ -48,7 +48,7 @@
                             </label>
                         </div>
                         <div class="flex flex-col w-full space-y-3">
-                            <p class="font-thin">Opsi 1</p>
+                            <p class="font-thin">Opsi 2</p>
                             <label class="inline-flex items-center w-full">
                                 <input name="answerfield[1][correct]" type="checkbox"
                                     class="accent-green-111 w-6 h-6 border-0 rounded-md focus:ring-0" value="1">
@@ -62,7 +62,7 @@
                             </label>
                         </div>
                         <div class="flex flex-col w-full space-y-3">
-                            <p class="font-thin">Opsi 1</p>
+                            <p class="font-thin">Opsi 3</p>
                             <label class="inline-flex items-center w-full">
                                 <input name="answerfield[2][correct]" type="checkbox"
                                     class="accent-green-111 w-6 h-6 border-0 rounded-md focus:ring-0" value="1">
@@ -76,7 +76,7 @@
                             </label>
                         </div>
                         <div class="flex flex-col w-full space-y-3">
-                            <p class="font-thin">Opsi 1</p>
+                            <p class="font-thin">Opsi 4</p>
                             <label class="inline-flex items-center w-full">
                                 <input name="answerfield[3][correct]" type="checkbox"
                                     class="accent-green-111 w-6 h-6 border-0 rounded-md focus:ring-0" value="1">

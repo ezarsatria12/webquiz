@@ -87,7 +87,8 @@ class AddPilganController extends Controller
      */
     public function edit($quiz, $pilgan)
     {
-        return view('admin.tabel.form.editpilgan', compact('pilgan', 'quiz'));
+        $pilgans =  multichoise::find($pilgan);
+        return view('admin.tabel.form.editpilgan', compact('pilgan', 'quiz', 'pilgans'));
     }
 
     /**

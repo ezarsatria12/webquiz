@@ -2,6 +2,8 @@
 
 @section('container')
     <section> <!-- ini quiz guest -->
+    <div class="bg-white ">
+        <div class="container px-6 py-4 mx-auto lg:flex lg:h-[800px] lg:py-20 ">
         <div class="container space-y-5 m-auto px-3 sm:px-0 sm:w-[1440px] h-full sm:space-y-[32px]">
             <div
                 class="container h-fit space-y-5 justify-start flex m-auto sm:w-[1280px] lg:flex-row sm:space-y-0 sm:space-x-20">

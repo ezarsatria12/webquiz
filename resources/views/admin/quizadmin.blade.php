@@ -1,10 +1,8 @@
 @extends('admin.partials.index')
 
 @section('container')
-<section>
-    <div class="container space-y-2 m-auto px-3 sm:px-0 sm:h-max">
-        <div
-            class="container sm:mx-10 h-fit space-y-5 justify-start flex my-auto lg:flex-row sm:space-y-0 sm:space-x-0">
+    <section> <!-- ini quiz guest -->
+        <div class="container space-y-5 m-auto px-3 sm:px-0 sm:w-[1440px] h-full sm:space-y-[32px]">
             <div
                 class="container font-inter text-2xl text-black h-fit relative flex flex-wrap justify-between sm:text-3xl sm:h-[40px]">
                 <h1>Daftar Quiz</h1>
@@ -13,7 +11,6 @@
                         src="{{ URL('Pictures/plus.png') }}" alt="whatsapp">
                 </a>
             </div>
-        </div>
         <div
             class="hidden container h-fit sm:mx-10 font-inter text-[20px] text-black space-x-3 justify-start flex m-auto lg:flex-row sm:space-y-0 sm:space-x-5">
             <a class="hover:text-green-111 focus:text-green-111" href="#">Terbaru</a>
@@ -24,22 +21,24 @@
         <!-- cardsection -->
 
         <div
-            class="container sm:mx-10 flex flex-wrap w-full space-x-3 h-fit pb-[10px] space-y-10 sm:flex-wrap sm:space-y-20">
-            @foreach ($quizs as $quiz)
-            <!-- card1 -->
-            <a type="button" onclick="toggleModal('modal-'+{{ $quiz->id }})">
-                <div class="container m-auto flex flex-wrap justify-start h-fit
+                class="container sm:mx-10 flex flex-wrap sm:flex-row space-x-3 w-[360px] h-fit pb-[10px] space-y-10 sm:w-[1280px] sm:flex-wrap sm:space-y-20">
+                @foreach ($quizs as $quiz)
+                    <!-- card1 -->
+                    <a type="button" onclick="toggleModal('modal-'+{{ $quiz->id }})">
+                        <div
+                            class="container m-auto flex flex-col justify-start h-fit
                         w-[300px] mx-auto sm:w-[400px] sm:space-y-5 sm:h-fit shadow-card
                         rounded-[10px] bg-white">
-                    <div class="w-full flex flex-col justify-center mx-auto">
-                        <img class="my-[15px] rounded-[10px] mx-auto px-[10px] sm:w-[350px] sm:h-[185px]  "
-                            src="{{ asset('storage/' . $quiz->media) }}" alt="thumbnail-modul">
-                        <h1
-                            class="flex text-black justify-start px-3 sm:px-7 font-inter text-[18px] sm:text-[24px] sm:text-3xl ">
-                            {{ $quiz->quiztitle }}</h1>
-                        <p
-                            class="text-[16px] sm:text-[20px] flex flex-col font-poppins text-grey-fade justify-start px-3 sm:px-7">
-                            {{ substr(strip_tags($quiz->quizdesc), 0, 28) }}...</p>
+                            <div class="w-full flex flex-col justify-center mx-auto">
+                                <img class="my-[15px] rounded-[10px] mx-auto px-[10px] sm:w-[350px] sm:h-[185px]  "
+                                    src="{{ asset('storage/' . $quiz->media) }}" alt="thumbnail-modul">
+                                <h1
+                                    class="flex text-black justify-start px-3 sm:px-7 font-inter text-[18px] sm:text-[24px] sm:text-3xl ">
+                                    {{ $quiz->quiztitle }}</h1>
+                                <p
+                                    class="text-[16px] sm:text-[20px] flex flex-col font-poppins text-grey-fade justify-start px-3 sm:px-7">
+                                    {{ substr(strip_tags($quiz->quizdesc), 0, 28) }}...</p>
+
 
                         <!-- tombol kalo login -->
                         <div class="container mx-auto w-full px-6 text-center pb-5 h-auto flex space-y-2 flex-col">

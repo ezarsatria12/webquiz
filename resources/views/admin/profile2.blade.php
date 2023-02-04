@@ -1,9 +1,9 @@
 @extends('admin.partials.index')
 
 @section('container')
-<section>
-    <div class="mx-auto sm:px-20 px-10 flex flex-col gap-5">
-        <div class="container flex flex-col mx-auto ">
+<section class="mx-auto sm:px-20 px-10 flex h-full w-full flex-col">
+    <div class="mx-auto sm:px-20 px-10 flex h-full w-full flex-col gap-5">
+        <div class="container flex flex-col h-full w-full mx-auto ">
             <h1 class="text-3xl">Bio</h1>
             <br>
             <div class="space-y-5 w-full sm:w-1/2 flex-col flex">
@@ -22,8 +22,8 @@
                     </p>
                 </div>
             </div>
-        </div>
-        <div class="container flex flex-col mx-auto ">
+            <br>
+            <div class="container flex flex-col mx-auto ">
             <form action="/logout" method="POST">
                 <div>
             @csrf
@@ -36,5 +36,7 @@
         
             
     </div>
+        </div>
+        
 </section>
 @endsection

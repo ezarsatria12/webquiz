@@ -7,13 +7,14 @@
     <script src="{{ asset('/js/app.js') }}"></script>
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/modul.css')}}">
 </head>
-
-<body>
+<main class="content w-full h-full">
+<body class="flex flex-col bg-white">
     @include('partials.nav2')
-    <main class="content">
+    
         @yield('container')
-    </main>
+    
     @include('partials.foot')
 </body>
+</main>
 
 </html>

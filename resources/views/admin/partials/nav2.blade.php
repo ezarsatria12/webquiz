@@ -4,28 +4,26 @@
         <a href="/home">
             <h3 class=" text-2xl lg:text-3xl font-medium block">SmartPantun</h3>
         </a>
-
         <!--nav button-->
-        <div id="nav-content" class="hidden sm:flex  content-center text-grey-fade m-auto text-center">
-            <a class="mr-5  font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700"
+        <div id="nav-content" class="hidden sm:flex text-xl gap-5 content-center text-grey-fade m-auto text-center">
+            <a class="font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700"
                 href="/profile">Profile</a>
-            <a class="mx-5 font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700"
+            <a class="font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700"
                 href="/quiz">Quiz</a>
-            <a class="mx-5 font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700"
+            <a class="font-inter font-medium hover:text-green-111 focus:text-green-111 active:text-green-700"
                 href="/module">Modul</a>
         </div>
         <!-- hamburger -->
-        <span class="pl-[135px]">
-            <img onclick="openNav()" src="pictures/hamburgerbutton.png" class="pl- w-[32px] h-[32px] block sm:hidden" alt="">
+            <img onclick="openNav()" src="{{ URL('pictures/hamburgerbutton.png') }}" class="pl- w-[32px] h-[32px] block sm:hidden" alt="">
         </span>
 
         <div id="myNav" class="overlay" class="h-full w-0 fixed left-0 top-0 overflow-x-hidden z-1">
             <!-- hamburger nav menu -->
             <!-- Button to close the overlay navigation -->
             <div class="flex flex-col w-fit h-full">
-                <div>
-                    <a href="/home" class="absolute text-6xl flex self-end p-5 bg-white w-full" onclick="closeNav()">
-                        <img src="pictures/back button.png" class="w-[32px] h-[32px] my-auto sm:hidden" alt="">
+                <div class="bg-white">
+                    <a href="#" class="absolute text-6xl flex self-end p-5 bg-white w-full h-full" onclick="closeNav()">
+                        <img src="{{ URL('pictures/back button.png') }}" class="w-[32px] h-[32px] my-auto sm:hidden" alt="">
                         <h3 class=" text-4xl lg:text-3xl font-medium block">SmartPantun</h3>
                     </a>
                 </div>

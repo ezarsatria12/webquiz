@@ -1,3 +1,5 @@
+
+<!-- 
 <footer class="bottom-0 w-full static">
     <div class="bg-green-111 h-fit bottom-0 text-white w-full h-full py-[80px] px-[50px] gap-5  mx-auto sm:px-[80px] sm:py-[55px] sm:h-[200px] flex flex-col sm:flex-row content-center sm:justify-between">
         <div class="flex flex-col">
@@ -16,4 +18,4 @@
             </div>
         </div>
     </div>
-</footer>
+</footer> -->

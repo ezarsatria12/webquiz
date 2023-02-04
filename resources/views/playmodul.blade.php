@@ -11,18 +11,6 @@
 
 <body class="container bg-black sm:bg-gray-800 sm:w-full sm:h-full m-auto sm:gap-10">
     <div class="my-auto self-center text-2xl text-center sm:hidden block">
-<<<<<<< Updated upstream
-       <p class="m-auto text-white text-center pt-72 pb-5">Please rotate your phone</p>
-    <img src="{{ URL('pictures/rotate.gif') }}" class="m-auto w-[200px] h-[200px]" alt=""></div>
-    @if(pathinfo($modules->media, PATHINFO_EXTENSION) == 'mp3')
-    <audio controls><source src="{{ asset('storage/'.$modules->media) }}" type="audio/ogg"></audio>
-    @elseif(pathinfo($modules->media, PATHINFO_EXTENSION) == 'mp4')
-    <div class="hidden sm:block w-full mx-auto bg-gray-400 px-14 my-20 flex-col gap-5">
-        <div class="  w-[50px] h-[50px] mt-[20px] hover:brightness-90">
-            <a href="/modul">
-                <img src="{{ URL('pictures/back button.png') }}" alt="">
-            </a>
-=======
         <p class="m-auto text-white text-center pt-72 pb-5">Please rotate your phone</p>
         <img src="{{ URL('pictures/rotate.gif') }}" class="m-auto w-[200px] h-[200px]" alt="">
     </div>
@@ -80,7 +68,6 @@
                     </button>
                 </div>
             </div>
->>>>>>> Stashed changes
         </div>
         <div class="w-full bg-black">
             <video id="video" class="w-full" controls>

@@ -43,6 +43,12 @@ Route::get('/quis', function () {
 Route::get('/app', function () {
     return view('app');
 });
+Route::get('/info', function () {
+    return view('infopengembang');
+});
+Route::get('/aboutus', function () {
+    return view('aboutus');
+});
 Route::get('/login', function () {
     return view('authuser.login');
 })->middleware('guest');

@@ -14,6 +14,7 @@
         @yield('container')
     
     @include('partials.foot')
+    @vite('resources/js/app.js')
 </body>
 </main>
 
